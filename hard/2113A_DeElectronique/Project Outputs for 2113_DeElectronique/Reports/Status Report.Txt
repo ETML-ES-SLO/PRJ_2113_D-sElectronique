@@ -1,0 +1,10 @@
+Output: Bill of Materials
+Type  : BOM
+From  : Variant [[No Variations]] of Project [2113_DeElectronique.PrjPcb]
+   Generated File[Bill of Materials.xlsx]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 16:04:41 On 15.10.2021

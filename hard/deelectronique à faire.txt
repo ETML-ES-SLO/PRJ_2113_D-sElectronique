@@ -1,0 +1,15 @@
+
+Dé électronique
+
+-Faire le schéma électrique avec le régulateur(élevateur) TPS61070DDCR en plus du XCL102D303CR-G
+ pour pouvoir le faire en fonction des composants disponible et du prix. (Bobine à ajouter)
+
+-Vérifier le schéma
+
+-Router sur altium avec les composants modifiés
+
+-Commander le PCB + les composants
+
+-Monter le PCB et le tester
+
+-

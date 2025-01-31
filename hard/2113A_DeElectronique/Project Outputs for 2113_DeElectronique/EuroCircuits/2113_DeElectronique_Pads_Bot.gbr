@@ -1,0 +1,29 @@
+%TF.GenerationSoftware,Altium Limited,Altium Designer,20.1.11 (218)*%
+G04 Layer_Color=255*
+%FSLAX43Y43*%
+%MOMM*%
+%TF.SameCoordinates,0902B8E9-5046-4627-B484-87D6A3C90C05*%
+%TF.FilePolarity,Positive*%
+%TF.FileFunction,Pads,Bot*%
+%TF.Part,Single*%
+G01*
+G75*
+%TA.AperFunction,ComponentPad*%
+%ADD26C,1.524*%
+%ADD27R,1.524X1.524*%
+D26*
+X66591Y25260D02*
+D03*
+Y20180D02*
+D03*
+X66185Y22720D02*
+D03*
+Y27800D02*
+D03*
+X66591Y30340D02*
+D03*
+D27*
+X66185Y32880D02*
+D03*
+%TF.MD5,8fe637fad88aa2bb5a6b54e77ec73e6e*%
+M02*

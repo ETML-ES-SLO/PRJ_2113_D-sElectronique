@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [2113_DeElectronique.PcbDoc]
+   Generated File[2113_DeElectronique.TXT]
+   Generated File[2113_DeElectronique.LDP]
+   Generated File[2113_DeElectronique.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 16:15:08 On 15.10.2021
