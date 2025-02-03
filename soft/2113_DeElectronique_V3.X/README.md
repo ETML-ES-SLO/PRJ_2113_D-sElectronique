@@ -8,6 +8,9 @@ pending...
         Compiler          :  XC16 v1.35
         MPLAB 	          :  MPLAB X v5.05
 
+    The v3 of this app is designed and tested with :
+        Compiler          :  XC32 v2.5 
+        MPLAB 	          :  MPLAB X v5.50
 
 
 <a href='https://www.gitclear.com/github_profile_dynamic_readme_free?expand_widget=1' target='_blank'><img src='https://www.gitclear.com/chart_glimpses/e69bce52-4408-443d-a017-090adb21f92d.png' /></a>

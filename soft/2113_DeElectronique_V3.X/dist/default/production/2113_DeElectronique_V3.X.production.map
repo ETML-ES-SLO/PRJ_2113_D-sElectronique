@@ -1,111 +1,111 @@
 Archive member included because of file (symbol)
 
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(default-bootstrap-exception-handler.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc4vAIS9.o (_bootstrap_exception_handler)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cca0cyNF.o (_bootstrap_exception_handler)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(default-on-reset.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc4vAIS9.o (_on_reset)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cca0cyNF.o (_on_reset)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(default-on-bootstrap.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc4vAIS9.o (_on_bootstrap)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cca0cyNF.o (_on_bootstrap)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(default-nmi-handler.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc4vAIS9.o (_nmi_handler)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cca0cyNF.o (_nmi_handler)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(pic32_data_init.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc4vAIS9.o (__pic32_data_init)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cca0cyNF.o (__pic32_data_init)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(general-exception.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc4vAIS9.o (_general_exception_context)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cca0cyNF.o (_general_exception_context)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector0.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_0)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_0)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector1.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_1)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_1)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector2.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_2)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_2)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector3.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_3)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_3)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector4.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_4)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_4)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector5.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_5)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_5)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector6.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_6)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_6)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector7.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_7)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_7)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector8.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_8)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_8)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector9.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_9)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_9)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector10.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_10)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_10)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector12.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_12)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_12)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector13.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_13)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_13)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector14.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_14)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_14)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector15.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_15)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_15)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector16.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_16)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_16)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector17.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_17)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_17)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector18.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_18)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_18)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector19.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_19)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_19)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector20.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_20)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_20)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector21.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_21)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_21)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector22.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_22)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_22)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector23.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_23)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_23)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector24.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_24)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_24)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector25.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_25)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_25)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector26.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_26)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_26)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector27.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_27)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_27)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector28.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_28)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_28)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector29.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_29)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_29)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector30.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_30)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_30)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector31.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_31)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_31)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector32.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_32)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_32)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector33.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_33)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_33)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector34.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_34)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_34)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector35.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_35)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_35)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector36.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_36)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_36)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector37.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_37)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_37)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector38.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_38)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_38)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector39.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_39)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_39)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector40.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_40)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_40)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector41.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_41)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_41)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector42.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_42)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_42)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector43.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_43)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_43)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector44.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_44)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_44)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector45.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_45)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_45)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector46.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_46)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_46)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector47.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o (__vector_dispatch_47)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o (__vector_dispatch_47)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(defaultinterrupt.o)
                               c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(vector0.o) (_DefaultInterrupt)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\liblega-c.a(rand.o)
@@ -263,10 +263,10 @@ Discarded input sections
  .reginfo       0x00000000       0x18 build/default/production/Accelerometre.o
  .reginfo       0x00000000       0x18 build/default/production/DeElectronique.o
  .reginfo       0x00000000       0x18 build/default/production/Mc32Delays.o
- .reginfo       0x00000000       0x18 C:\Users\AYMCLA~1\AppData\Local\Temp\cc4vAIS9.o
- .reginfo       0x00000000       0x18 C:\Users\AYMCLA~1\AppData\Local\Temp\ccCnq47p.o
- .reginfo       0x00000000       0x18 C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o
- .discard       0x00000000       0xc0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o
+ .reginfo       0x00000000       0x18 C:\Users\AYMCLA~1\AppData\Local\Temp\cca0cyNF.o
+ .reginfo       0x00000000       0x18 C:\Users\AYMCLA~1\AppData\Local\Temp\ccCqxmLh.o
+ .reginfo       0x00000000       0x18 C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o
+ .discard       0x00000000       0xc0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o
  .reginfo       0x00000000       0x18 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\pic32_software_reset-mm.o
  .reginfo       0x00000000       0x18 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(default-bootstrap-exception-handler.o)
  .reginfo       0x00000000       0x18 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(default-on-reset.o)
@@ -368,9 +368,9 @@ LOAD build/default/production/Accelerometre.o
 LOAD build/default/production/DeElectronique.o
 LOAD build/default/production/Mc32Delays.o
                 0x00000001                __MPLAB_BUILD = 0x1
-LOAD C:\Users\AYMCLA~1\AppData\Local\Temp\cc4vAIS9.o
-LOAD C:\Users\AYMCLA~1\AppData\Local\Temp\ccCnq47p.o
-LOAD C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o
+LOAD C:\Users\AYMCLA~1\AppData\Local\Temp\cca0cyNF.o
+LOAD C:\Users\AYMCLA~1\AppData\Local\Temp\ccCqxmLh.o
+LOAD C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o
 LOAD c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\pic32_software_reset-mm.o
                 0x00000400                PROVIDE (_min_stack_size, 0x400)
                 0x00000001                PROVIDE (_vector_spacing, 0x1)
@@ -427,16 +427,16 @@ LOAD c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/.
 
 .reset          0xbfc00000      0x164
  *(.reset)
- .reset         0xbfc00000        0x8 C:\Users\AYMCLA~1\AppData\Local\Temp\cc4vAIS9.o
+ .reset         0xbfc00000        0x8 C:\Users\AYMCLA~1\AppData\Local\Temp\cca0cyNF.o
                 0xbfc00001                _reset
  *(.reset.startup)
  .reset.startup
-                0xbfc00008      0x15c C:\Users\AYMCLA~1\AppData\Local\Temp\cc4vAIS9.o
+                0xbfc00008      0x15c C:\Users\AYMCLA~1\AppData\Local\Temp\cca0cyNF.o
                 0xbfc00009                _startup
 
 .bev_excpt      0xbfc00380        0xc
  *(.bev_handler)
- .bev_handler   0xbfc00380        0xc C:\Users\AYMCLA~1\AppData\Local\Temp\cc4vAIS9.o
+ .bev_handler   0xbfc00380        0xc C:\Users\AYMCLA~1\AppData\Local\Temp\cca0cyNF.o
 
 .dbg_excpt      0xbfc00480        0x0
                 0xbfc00480                . = (. + DEFINED (_DEBUGGER)?0x8:0x0)
@@ -446,7 +446,7 @@ LOAD c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/.
 
 .app_excpt      0x9d000180        0xc
  *(.gen_handler)
- .gen_handler   0x9d000180        0xc C:\Users\AYMCLA~1\AppData\Local\Temp\cc4vAIS9.o
+ .gen_handler   0x9d000180        0xc C:\Users\AYMCLA~1\AppData\Local\Temp\cca0cyNF.o
 
 .vector_0       0x9d000200        0x8
  *(.vector_0)
@@ -1601,22 +1601,22 @@ LOAD data_init
  .data          0x00000000        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\pic32_software_reset-mm.o
 
 .bss%z113       0x00000000        0x0
- .bss           0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o
+ .bss           0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o
 
 .data%z114      0x00000000        0x0
- .data          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o
+ .data          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o
 
 .bss%z115       0x00000000        0x0
- .bss           0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccCnq47p.o
+ .bss           0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccCqxmLh.o
 
 .data%z116      0x00000000        0x0
- .data          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccCnq47p.o
+ .data          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccCqxmLh.o
 
 .bss%z117       0x00000000        0x0
- .bss           0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\cc4vAIS9.o
+ .bss           0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\cca0cyNF.o
 
 .data%z118      0x00000000        0x0
- .data          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\cc4vAIS9.o
+ .data          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\cca0cyNF.o
 
 .bss%z119       0x00000000        0x0
  .bss           0x00000000        0x0 build/default/production/Mc32Delays.o
@@ -1831,7 +1831,7 @@ LOAD data_init
 .text.main_entry
                 0x9d002270       0x44
  .text.main_entry
-                0x9d002270       0x44 C:\Users\AYMCLA~1\AppData\Local\Temp\cc4vAIS9.o
+                0x9d002270       0x44 C:\Users\AYMCLA~1\AppData\Local\Temp\cca0cyNF.o
                 0x9d00229b                __crt0_exit
 
 .text.rand      0x9d0022b4       0x44
@@ -2200,13 +2200,13 @@ LOAD data_init
  .text          0x00000000        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\libpic32.a(default-bootstrap-exception-handler.o)
 
 .text%z198      0x00000000        0x0
- .text          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccyJxKnW.o
+ .text          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccczKKYc.o
 
 .text%z199      0x00000000        0x0
- .text          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccCnq47p.o
+ .text          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccCqxmLh.o
 
 .text%z200      0x00000000        0x0
- .text          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\cc4vAIS9.o
+ .text          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\cca0cyNF.o
 
 .text%z201      0x00000000        0x0
  .text          0x00000000        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/micromips\debug-exception-return-mm.o
