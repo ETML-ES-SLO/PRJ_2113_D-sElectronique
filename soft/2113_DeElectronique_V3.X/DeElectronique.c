@@ -51,30 +51,6 @@ void DISPLAY_NUM6 (void)
     LED5 = 1;
     LED6 = 1;
 }
-char fade (char dutyCycle)
-{
-    bool flagFadeIn=true;
-    
-    if(flagFadeIn)
-    {
-        dutyCycle ++;
-        if (dutyCycle <= 100)
-        {
-            flagFadeIn = false;
-        }
-    }
-    else
-    {
-        dutyCycle --;
-        if (dutyCycle <= 1)
-        {
-            flagFadeIn = true;
-        }
-    }
-            
-    return dutyCycle;
-    
-}
 
 void Display_Dice_PWM (int NumberToDisplay, char dutyCycle)
 {
@@ -122,99 +98,6 @@ void Display_Dice_PWM (int NumberToDisplay, char dutyCycle)
             compteurPWM =0;
         }
    }
-   
-   
-   /*
-    
-    
-    */
-   
-    
-    /*
-    compteurPWM++;
-    
-    if(compteurPWM< dutyCycle)
-    {
-        
-    }
-    else
-    {
-    
-    
-    }
-    if (compteurPWM)
-    {
-        compteurPWM =0;
-    }
-     */
-    
-       
-    //char (*randomNumPtr)(int seed)= RandomNum;
-    /*
-    static char cntBaseTime= 0;
-    static char setTimeBasae=10;
-    static char timeUp= 5;
-    static char setDisplay= 0;
-    
-    if (firstTime)
-    {
-        cntBaseTime++;
-        if(cntBaseTime>setTimeBasae)
-        {
-            cntBaseTime=0;
-        }
-    
-        if(cntBaseTime>timeUp)
-        {
-          DISPLAYNONUM();
-        }
-        else
-        {
-            if(!setDisplay)
-            {
-                switch (randomNumPtr(seed))
-                {
-                    case 0 :
-                        DISPLAY_NUM1();
-                        break;
-                    case 1 :
-                        DISPLAY_NUM2();
-            
-                        break;
-                     case 2 :
-                        DISPLAY_NUM3();
-            
-                        break;
-                    case 3 :
-                        DISPLAY_NUM4();
-
-                        break;
-                    case 4 :
-                        DISPLAY_NUM5();
-
-                        break;
-                    case 5 :
-
-                        DISPLAY_NUM6();
-
-                        break;
-                    default :
-                        break;
-                }
-                        setDisplay =1;
-            }
-    
-        }
-    }  
-    */
-     
-        
-   
-  
-    
-   
-    
-   
 }
 
 void RandomNum (int Number)

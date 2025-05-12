@@ -62,63 +62,62 @@ bool firstTimeSincePowerUp = true;
 bool shakenHasOccured = false;
 bool anymHasOccured = false;
 bool APP_DelayTimeIsRunning = false;
-bool _10msOccured = false;
-bool _50msOccured = false;
 uint8_t status = 0;
 static uint16_t AppDelay = 0;
 
 
-/*
-int16_t testX;
-int16_t testY;
-int16_t testz; 
-uint8_t mockShakeInterrupt=1;
- */
 int main(void) {
     // initialize the device
     SYSTEM_Initialize();
-    POWER_HOLD = 1; //assure maintien alim.
+    POWER_HOLD = 1; //maintien alim ON
     
+    //si  pas d'interrupt  
     if (!INT_SHAKE) {
-
+        //config acceleromètre
         MC3419_start();
+        // maintien alim OFF
         POWER_HOLD = 0;
     } 
+    //configure acceleromete otherwise INT always stay ON 
+    MC3419_start();
     uint16_t randomSum = 0;
     uint8_t nombreEntier = 0;
-    MC3419_start();//added cause bug afte like 10 rolls on last PCB version used
-    //to clean EXT_INT at startut otherwise it's stuck Uc OFF with EXT_INT
-    //-> need to shake longer
+    
     while (1) {
-  
+        //Lecture registre accél
         status = MC3419_ReadStatusRegister();
         shakenHasOccured = (status& SHAKE_INT);
         anymHasOccured =(status& ANYM_INT);
-
+        //si une interrupt et premier allumage 
         if ((shakenHasOccured || anymHasOccured)&& (firstTimeSincePowerUp == true)) {
             firstTimeSincePowerUp = false;
-            
+            //Somme de la valeur de chaque axe
             randomSum = ReadRegister8(addr_Xout_Ex_L);
             randomSum += ReadRegister8(addr_Xout_Ex_H);
             randomSum +=ReadRegister8(addr_Yout_Ex_L);
             randomSum +=ReadRegister8(addr_Yout_Ex_H);
             randomSum +=ReadRegister8(addr_Zout_Ex_L);
             randomSum +=ReadRegister8(addr_Zout_Ex_H);
-            //randomSum = testX+testY+testz;
+            //générateur de nombre aléatoire
             srand(randomSum);
             randomSum = rand();
 
-            
+            //pour récupérer une valeure entre 1 et 6
             nombreEntier = randomSum % 6;
             if (nombreEntier == 0) {
                 nombreEntier = 1;
             }
+            //Affichage du nombre 
             Display_Dice_PWM(nombreEntier, 10);
+            //attente de 5 secondes (temps en ms)
             APP_WaitStart(5000);
+            //clear interrupt 
             MC3419_clearRegister();
+            //test pour être sur 
             if (!INT_SHAKE) {
-
+                // maintien alim OFF
                 POWER_HOLD = 0;
+                //boucle infini pour être sur
                 while (1) {
                 };
             }
@@ -131,7 +130,11 @@ int main(void) {
 /**
  End of File
  */
-void APP_TMR1_CallBack() {
+
+/*
+ * Fct de call back du timer en fct du delay store dans AppData
+ */
+void APP_TMR1_CallBack(void) {
 
     if (AppDelay > 0) {
         AppDelay--;
@@ -142,7 +145,10 @@ void APP_TMR1_CallBack() {
     //APP_WaitStart(cnt);
 
 }
-
+/*
+ * Fct d'attente en fct du param d'entrée en ms 
+ * utilisation du timer 1 attente = 1ms
+*/
 void APP_WaitStart(uint16_t waitingTime_ms) {
 
     AppDelay = waitingTime_ms - 1;
