@@ -325,7 +325,7 @@ typedef enum
     uint8_t MC3419_ID (void);
     uint8_t ReadRegister8(uint8_t address);
     void writeRegister8 (uint8_t address, uint8_t data);
-    void delay(uint8_t Xms);
+    //void delay(uint8_t Xms);
     void MC3419_Pol_INT(MC3419_GPIO_CTRL GPIO_CTRL);
     void MC3419_INT_Enable (MC3419_INTR_CTRL INTR_CTRL);
     void MC3419_MotionCTRL (MC3419_MotionControl Motion);
@@ -336,7 +336,7 @@ typedef enum
     void MC3419_WriteShakeThresholdRegister (uint16_t Value);
     void MC3419_WriteShakeDurationAndP2PRegister (uint8_t shakeDuration, uint16_t shakeP2P);
     void MC3419_WriteAnyMotionDebounceRegister (uint8_t tresholda);
-    
+    uint8_t MC3419_clearRegister (void);
 #ifdef	__cplusplus
 }
 #endif

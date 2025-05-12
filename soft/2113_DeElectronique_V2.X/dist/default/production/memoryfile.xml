@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <project>                                  
-  <executable name="dist/default/production/2113_DeElectronique_V1.X.production.elf">                 
+  <executable name="dist/default/production/2113_DeElectronique_V2.X.production.elf">                 
     <memory name="program">                 
       <units>bytes</units>                 
       <length>66704</length>                 
-      <used>8732</used>                     
-      <free>57972</free>                     
+      <used>8720</used>                     
+      <free>57984</free>                     
     </memory>                              
     <memory name="data">              
       <units>bytes</units>                 

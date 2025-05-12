@@ -1,8 +1,10 @@
 
 #include "Accelerometre.h"
+#include "main.h"
 #include "mcc_generated_files/spi1.h"
 #include "mcc_generated_files/pin_manager.h"
 #include "Mc32Delays.h"
+#include "DeElectronique.h"
 #define DUMMY 0xA5
 
 
@@ -34,33 +36,35 @@ void MC3419_start()
 {
   //Init Reset
   MC3419_reset();
+ 
   MC3419_stop();
-  
+ 
   //Range: 2g
-  MC3419_SetRangleCtrl(Range8g);
+  MC3419_SetRangleCtrl(Range2g);
   //Sampling Rate: 50Hz by default
-  MC3419_SetSampleRate(ODR25_Hz);
+  MC3419_SetSampleRate(ODR50_Hz);
   // Set polarity for INT1
   MC3419_Pol_INT(GPIO1_INTN1_IAH | GPIO1_INTN1_IPP);
   // All interrupt on INT1
   //MC3419_FiFo_CTRL_REG(COMB_INT_EN);
   // Set active interrupt
-  MC3419_INT_Enable(SHAKE_INT_EN);
+  MC3419_INT_Enable(SHAKE_INT_EN|ANYM_INT_EN);
   // Set motion control
   MC3419_MotionCTRL(SHAKE_EN | ANYM_EN);
   // set pending
   MC3419_ReadIntStatusRegisterAndAck();
   // Set de Shake threshold
-  MC3419_WriteShakeThresholdRegister(12300);
+  MC3419_WriteShakeThresholdRegister(2000);
+  MC3419_WriteAnyMotionRegister(2000);
   // Set de AnyMotion debounce 
-  MC3419_WriteAnyMotionDebounceRegister(0);
-  //MC3419_WriteAnyMotionRegister(20);
+  MC3419_WriteAnyMotionDebounceRegister(100);
   // Set de Shake Duration and P2P
-  MC3419_WriteShakeDurationAndP2PRegister(0,6000);
+  MC3419_WriteShakeDurationAndP2PRegister(1,10);
   
   //Mode: Active
   MC3419_wake();
-  delay_ms(50);
+  APP_WaitStart(50);
+ 
 }
 
 // Set the operation mode
@@ -114,13 +118,14 @@ void MC3419_reset(void)
   // Stand by mode
   MC3419_stop();
 
-  delay_ms(10);
-
+  APP_WaitStart(10);
+ 
+  DISPLAYNONUM();
   // power-on-reset
   writeRegister8(addr_Reset, Reset);
 
-  delay_ms(50);
-
+  APP_WaitStart(50);
+  
   // Disable interrupt
   writeRegister8(addr_INTR_CTRL, 
                  INTR_Desable);
@@ -131,7 +136,8 @@ void MC3419_reset(void)
 //  // DCM disable
 //  writeRegister8(0x15, 0x00);
 
-  delay_ms(50);
+  APP_WaitStart(50);
+
 }
 
 // Read ID
@@ -205,7 +211,23 @@ void MC3419_MotionCTRL (MC3419_MotionControl Motion)
 // lecture registre bits de statuts
 uint8_t MC3419_ReadStatusRegister (void)
 {
-    return ReadRegister8(addr_INTR_STAT);
+    uint8_t stats=0;
+    //return ReadRegister8(addr_INTR_STAT);
+    //modif pour clean interrupt
+    stats  = ReadRegister8(addr_INTR_STAT);
+    //writeRegister8(addr_INTR_STAT, stats);
+    return stats;
+}
+// Status Register
+// lecture registre bits de statuts
+uint8_t MC3419_clearRegister (void)
+{
+    uint8_t stats=0;
+    //return ReadRegister8(addr_INTR_STAT);
+    //modif pour clean interrupt
+    stats  = ReadRegister8(addr_INTR_STAT);
+    writeRegister8(addr_INTR_STAT, stats);
+    return stats;
 }
 
 // Interrupt pending

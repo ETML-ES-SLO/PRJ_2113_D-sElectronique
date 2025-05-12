@@ -52,8 +52,8 @@ void CLOCK_Initialize(void)
     SYSTEM_RegUnlock();
     // TUN Center frequency; 
     OSCTUN = 0x0;
-    // PLLODIV 1:1; PLLMULT 2x; PLLICLK POSC; 
-    SPLLCON = 0x0;
+    // PLLODIV 1:1; PLLMULT 2x; PLLICLK FRC; 
+    SPLLCON = 0x80;
     // SBOREN disabled; VREGS disabled; RETEN disabled; 
     PWRCON = PWRCON | 0x0;
     // FRCDIV FRC/1; SLPEN Device will enter Idle mode when a WAIT instruction is issued; NOSC FRCDIV; SOSCEN Disable Seconday Oscillator (configure SOSCSEL=ON for GPIO operation); CLKLOCK Clock and PLL selections are not locked and may be modified; OSWEN Switch is Complete; 
@@ -65,7 +65,7 @@ void CLOCK_Initialize(void)
     SYSTEM_RegLock();
     // ON disabled; DIVSWEN disabled; RSLP disabled; ROSEL SYSCLK; OE disabled; SIDL disabled; RODIV 0; 
     REFO1CON = REFO1CON | 0x0;
-    while((!REFO1CONbits.ACTIVE) & REFO1CONbits.ON);
+    while(!REFO1CONbits.ACTIVE & REFO1CONbits.ON);
     // ROTRIM 0; 
     REFO1TRIM = REFO1TRIM | 0x0;
 }

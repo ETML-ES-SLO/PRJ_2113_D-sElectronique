@@ -14,7 +14,7 @@ void DISPLAYNONUM (void)
 void DISPLAY_NUM1 (void)
 {
     LED3 = 1;
-    LED0 = 1;
+    //LED0 = 1;
 }
 void DISPLAY_NUM2 (void)
 {
@@ -108,8 +108,8 @@ void Display_Dice_PWM (int NumberToDisplay, char dutyCycle)
 
                 break;
             default :
-                //DISPLAY_NUM6();
-                //DISPLAY_NUM1();
+                DISPLAY_NUM6();
+                DISPLAY_NUM1();
                 break;
         }
    

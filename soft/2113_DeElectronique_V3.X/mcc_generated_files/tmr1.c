@@ -49,8 +49,7 @@
 
 #include <xc.h>
 #include "tmr1.h"
-#include "../DeElectronique.h"
-#include "../Accelerometre.h"
+#include "../Main.h"
 
 /**
   Section: Data Type Definitions
@@ -91,12 +90,12 @@ void TMR1_Initialize (void)
     T1CON = 0x8020;   
     tcon_value = 0x8020;  // Temporary storage of value
     T1CONCLR = _T1CON_ON_MASK;  // disable Timer, before loading the period/counter value
-    // Period = 0.1 s; Frequency = 8000000 Hz; PR1 12500; 
-    PR1 = 0x30D4;
+    // Period = 0.001 s; Frequency = 8000000 Hz; PR1 125; 
+    PR1 = 0x7D;
 
     T1CON = tcon_value;//restore the TCON value
     IFS0CLR= 1 << _IFS0_T1IF_POSITION;
-    IEC0bits.T1IE = false;
+    IEC0bits.T1IE = true;
     tmr1_obj.timerElapsed = false;
 
 }
@@ -147,36 +146,11 @@ uint16_t TMR1_Counter16BitGet( void )
     return( TMR1 );
 }
 
-// timer 1 ttes les 100 ms
+
 void __attribute__ ((weak)) TMR1_CallBack(void)
 {
     // Add your custom callback code here
-    static uint8_t Cnt10sec = 0;
-    //PWM();
-    if (Cnt10sec < 50)
-    {
-//        NUM6();
-        Cnt10sec++;
-        
-    } else
-    {
-        DISPLAYNONUM();
-        
-        MC3419_ReadIntStatusRegisterAndAck();
-        Cnt10sec = 0;
-        TMR1_Stop();
-        
-        MC3419_start();
-        POWER_HOLD = 0;
-        DISPLAY_NUM6();
-        POWER_HOLD = 0;
-        while(1)
-        {
-            POWER_HOLD = 0;
-             //NONUM();
-        }
-    }
-    
+    APP_TMR1_CallBack();
 }
 
 void TMR1_Start( void )

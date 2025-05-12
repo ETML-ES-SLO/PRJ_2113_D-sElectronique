@@ -18,7 +18,7 @@
     The generated drivers are tested against the following:
         Compiler          :  XC16 v1.35
         MPLAB 	          :  MPLAB X v5.05
-*/
+ */
 
 /*
     (c) 2016 Microchip Technology Inc. and its subsidiaries. You may use this
@@ -40,12 +40,13 @@
 
     MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
     TERMS.
-*/
+ */
 
 /**
   Section: Included Files
-*/
-
+ */
+#include "Main.h"
+#include "Mc32Delays.h"
 #include "mcc_generated_files/system.h"
 #include "mcc_generated_files/spi1.h"
 #include "mcc_generated_files/pin_manager.h"
@@ -58,85 +59,100 @@
                          Main application
  */
 bool firstTimeSincePowerUp = true;
-bool shakenHasOccured=false;
+bool shakenHasOccured = false;
+bool anymHasOccured = false;
+bool APP_DelayTimeIsRunning = false;
+bool _10msOccured = false;
+bool _50msOccured = false;
+uint8_t status = 0;
+static uint16_t AppDelay = 0;
+
+
 /*
 int16_t testX;
 int16_t testY;
 int16_t testz; 
-*/
-int main(void)
-{    
+uint8_t mockShakeInterrupt=1;
+ */
+int main(void) {
     // initialize the device
     SYSTEM_Initialize();
-    POWER_HOLD = 1;   //assure maintien alim.
+    POWER_HOLD = 1; //assure maintien alim.
     
-    if(firstTimeSincePowerUp)
-    {
+    if (!INT_SHAKE) {
+
         MC3419_start();
-    }
-    
-    shakenHasOccured = (MC3419_ReadStatusRegister()& SHAKE_INT);
-    if (!INT_SHAKE)
-    {
         POWER_HOLD = 0;
-    }
-    
-    
-    
-    
-    
-    //uint8_t test;
+    } 
+    uint16_t randomSum = 0;
+    uint8_t nombreEntier = 0;
+    MC3419_start();//added cause bug afte like 10 rolls on last PCB version used
+    //to clean EXT_INT at startut otherwise it's stuck Uc OFF with EXT_INT
+    //-> need to shake longer
+    while (1) {
   
-    int randomSum=0;
-    uint8_t nombreEntier=0; 
-   // char dutyCycle = 50; //50%
-    //char number;
-    while (1)
-    {
-        
-        shakenHasOccured = (MC3419_ReadStatusRegister()& SHAKE_INT);
-      
-        if ( shakenHasOccured && (firstTimeSincePowerUp == 1))
-        {
+        status = MC3419_ReadStatusRegister();
+        shakenHasOccured = (status& SHAKE_INT);
+        anymHasOccured =(status& ANYM_INT);
+
+        if ((shakenHasOccured || anymHasOccured)&& (firstTimeSincePowerUp == true)) {
             firstTimeSincePowerUp = false;
+            
             randomSum = ReadRegister8(addr_Xout_Ex_L);
             randomSum += ReadRegister8(addr_Xout_Ex_H);
             randomSum +=ReadRegister8(addr_Yout_Ex_L);
             randomSum +=ReadRegister8(addr_Yout_Ex_H);
             randomSum +=ReadRegister8(addr_Zout_Ex_L);
             randomSum +=ReadRegister8(addr_Zout_Ex_H);
-            srand (randomSum);
+            //randomSum = testX+testY+testz;
+            srand(randomSum);
             randomSum = rand();
-            //number=RandomNum (seed);
-            nombreEntier = randomSum %6;
-            //pointeurfct(seed);
-            TMR1_Start();
-             // MC3419_start();
-            //Display_Dice_PWM(nombreEntier,dutyCycle);
-        }    
-        /*
-        testX= testX|(ReadRegister8(addr_Xout_Ex_H)<<8);
-        testX= testX|ReadRegister8(addr_Xout_Ex_L); 
-        testY= testY|(ReadRegister8(addr_Yout_Ex_H)<<8);
-        testY= testY|ReadRegister8(addr_Yout_Ex_L);   
-        testz= testz|(ReadRegister8(addr_Zout_Ex_H)<<8);
-        testz= testz|ReadRegister8(addr_Zout_Ex_L); 
-        testz=0;
-        testY=0;
-        testX=0;
-        */
-       //dutyCycle=fade(dutyCycle);
-        if(!(firstTimeSincePowerUp))
-        {
-            Display_Dice_PWM(nombreEntier,15);
-        }
-        
-               
+
             
-        
+            nombreEntier = randomSum % 6;
+            if (nombreEntier == 0) {
+                nombreEntier = 1;
+            }
+            Display_Dice_PWM(nombreEntier, 10);
+            APP_WaitStart(5000);
+            MC3419_clearRegister();
+            if (!INT_SHAKE) {
+
+                POWER_HOLD = 0;
+                while (1) {
+                };
+            }
+
+        }
     }
-    return 1; 
+    return 1;
 }
+
 /**
  End of File
-*/
+ */
+void APP_TMR1_CallBack() {
+
+    if (AppDelay > 0) {
+        AppDelay--;
+    } else {
+        APP_DelayTimeIsRunning = 0;
+    }
+
+    //APP_WaitStart(cnt);
+
+}
+
+void APP_WaitStart(uint16_t waitingTime_ms) {
+
+    AppDelay = waitingTime_ms - 1;
+    TMR1_Start();
+    APP_DelayTimeIsRunning = 1;
+    while (APP_DelayTimeIsRunning) {
+    }
+    TMR1_Stop();
+}
+
+
+
+

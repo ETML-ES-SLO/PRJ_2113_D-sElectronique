@@ -77,6 +77,68 @@
     </code>
 
 */
+#define SS1_SetHigh()          ( LATBSET = (1 << 15) )
+/**
+  @Summary
+    Sets the GPIO pin, RB15, low using LATBbits.LATB15.
+
+  @Description
+    Sets the GPIO pin, RB15, low using LATBbits.LATB15.
+
+  @Preconditions
+    The RB15 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RB15 low (0)
+    SS1_SetLow();
+    </code>
+
+*/
+#define SS1_SetLow()           ( LATBCLR = (1 << 15) )
+
+/**
+  @Summary
+    Sets a value to the GPIO pin.
+
+  @Description
+    Sets or Resets the GPIO pin, RB15, low or high using LATBbits.LATB15.
+
+  @Preconditions
+    The RB15 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    bool value; : value to be set to the GPIO pin.
+
+  @Example
+    <code>
+    // Set RB15 to low.
+    SS1_SetValue(false);
+    </code>
+
+*/
+
+inline static void SS1_SetValue(bool value)
+{
+  if(value)
+  {
+    SS1_SetHigh();
+  }
+  else
+  {
+    SS1_SetLow();
+  }
+}
+
 #define IO_RA0_SetHigh()          ( LATASET = (1 << 0) )
 /**
   @Summary
@@ -1330,370 +1392,6 @@ inline static void IO_RB13_SetValue(bool value)
 #define IO_RB13_SetDigitalOutput()   ( TRISBCLR = (1 << 13) )
 /**
   @Summary
-    Sets the GPIO pin, RB14, high using LATBbits.LATB14.
-
-  @Description
-    Sets the GPIO pin, RB14, high using LATBbits.LATB14.
-
-  @Preconditions
-    The RB14 must be set to an output.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Set RB14 high (1)
-    SDI1_SetHigh();
-    </code>
-
-*/
-#define SDI1_SetHigh()          ( LATBSET = (1 << 14) )
-/**
-  @Summary
-    Sets the GPIO pin, RB14, low using LATBbits.LATB14.
-
-  @Description
-    Sets the GPIO pin, RB14, low using LATBbits.LATB14.
-
-  @Preconditions
-    The RB14 must be set to an output.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Set RB14 low (0)
-    SDI1_SetLow();
-    </code>
-
-*/
-#define SDI1_SetLow()           ( LATBCLR = (1 << 14) )
-
-/**
-  @Summary
-    Sets a value to the GPIO pin.
-
-  @Description
-    Sets or Resets the GPIO pin, RB14, low or high using LATBbits.LATB14.
-
-  @Preconditions
-    The RB14 must be set to an output.
-
-  @Returns
-    None.
-
-  @Param
-    bool value; : value to be set to the GPIO pin.
-
-  @Example
-    <code>
-    // Set RB14 to low.
-    SDI1_SetValue(false);
-    </code>
-
-*/
-inline static void SDI1_SetValue(bool value)
-{
-  if(value)
-  {
-    SDI1_SetHigh();
-  }
-  else
-  {
-    SDI1_SetLow();
-  }
-}
-
-/**
-  @Summary
-    Toggles the GPIO pin, RB14, using LATBbits.LATB14.
-
-  @Description
-    Toggles the GPIO pin, RB14, using LATBbits.LATB14.
-
-  @Preconditions
-    The RB14 must be set to an output.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Toggle RB14
-    SDI1_Toggle();
-    </code>
-
-*/
-#define SDI1_Toggle()           ( LATBINV = (1 << 14) )
-/**
-  @Summary
-    Reads the value of the GPIO pin, RB14.
-
-  @Description
-    Reads the value of the GPIO pin, RB14.
-
-  @Preconditions
-    None.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    uint16_t portValue;
-
-    // Read RB14
-    postValue = SDI1_GetValue();
-    </code>
-
-*/
-#define SDI1_GetValue()         PORTBbits.RB14
-/**
-  @Summary
-    Configures the GPIO pin, RB14, as an input.
-
-  @Description
-    Configures the GPIO pin, RB14, as an input.
-
-  @Preconditions
-    None.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Sets the RB14 as an input
-    SDI1_SetDigitalInput();
-    </code>
-
-*/
-#define SDI1_SetDigitalInput()   ( TRISBSET = (1 << 14) )
-/**
-  @Summary
-    Configures the GPIO pin, RB14, as an output.
-
-  @Description
-    Configures the GPIO pin, RB14, as an output.
-
-  @Preconditions
-    None.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Sets the RB14 as an output
-    SDI1_SetDigitalOutput();
-    </code>
-
-*/
-#define SDI1_SetDigitalOutput()   ( TRISBCLR = (1 << 14) )
-/**
-  @Summary
-    Sets the GPIO pin, RB15, high using LATBbits.LATB15.
-
-  @Description
-    Sets the GPIO pin, RB15, high using LATBbits.LATB15.
-
-  @Preconditions
-    The RB15 must be set to an output.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Set RB15 high (1)
-    SS1_SetHigh();
-    </code>
-
-*/
-#define SS1_SetHigh()          ( LATBSET = (1 << 15) )
-/**
-  @Summary
-    Sets the GPIO pin, RB15, low using LATBbits.LATB15.
-
-  @Description
-    Sets the GPIO pin, RB15, low using LATBbits.LATB15.
-
-  @Preconditions
-    The RB15 must be set to an output.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Set RB15 low (0)
-    SS1_SetLow();
-    </code>
-
-*/
-#define SS1_SetLow()           ( LATBCLR = (1 << 15) )
-
-/**
-  @Summary
-    Sets a value to the GPIO pin.
-
-  @Description
-    Sets or Resets the GPIO pin, RB15, low or high using LATBbits.LATB15.
-
-  @Preconditions
-    The RB15 must be set to an output.
-
-  @Returns
-    None.
-
-  @Param
-    bool value; : value to be set to the GPIO pin.
-
-  @Example
-    <code>
-    // Set RB15 to low.
-    SS1_SetValue(false);
-    </code>
-
-*/
-inline static void SS1_SetValue(bool value)
-{
-  if(value)
-  {
-    SS1_SetHigh();
-  }
-  else
-  {
-    SS1_SetLow();
-  }
-}
-
-/**
-  @Summary
-    Toggles the GPIO pin, RB15, using LATBbits.LATB15.
-
-  @Description
-    Toggles the GPIO pin, RB15, using LATBbits.LATB15.
-
-  @Preconditions
-    The RB15 must be set to an output.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Toggle RB15
-    SS1_Toggle();
-    </code>
-
-*/
-#define SS1_Toggle()           ( LATBINV = (1 << 15) )
-/**
-  @Summary
-    Reads the value of the GPIO pin, RB15.
-
-  @Description
-    Reads the value of the GPIO pin, RB15.
-
-  @Preconditions
-    None.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    uint16_t portValue;
-
-    // Read RB15
-    postValue = SS1_GetValue();
-    </code>
-
-*/
-#define SS1_GetValue()         PORTBbits.RB15
-/**
-  @Summary
-    Configures the GPIO pin, RB15, as an input.
-
-  @Description
-    Configures the GPIO pin, RB15, as an input.
-
-  @Preconditions
-    None.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Sets the RB15 as an input
-    SS1_SetDigitalInput();
-    </code>
-
-*/
-#define SS1_SetDigitalInput()   ( TRISBSET = (1 << 15) )
-/**
-  @Summary
-    Configures the GPIO pin, RB15, as an output.
-
-  @Description
-    Configures the GPIO pin, RB15, as an output.
-
-  @Preconditions
-    None.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Sets the RB15 as an output
-    SS1_SetDigitalOutput();
-    </code>
-
-*/
-#define SS1_SetDigitalOutput()   ( TRISBCLR = (1 << 15) )
-/**
-  @Summary
     Sets the GPIO pin, RB2, high using LATBbits.LATB2.
 
   @Description
@@ -2056,370 +1754,6 @@ inline static void IO_RB4_SetValue(bool value)
 
 */
 #define IO_RB4_SetDigitalOutput()   ( TRISBCLR = (1 << 4) )
-/**
-  @Summary
-    Sets the GPIO pin, RB8, high using LATBbits.LATB8.
-
-  @Description
-    Sets the GPIO pin, RB8, high using LATBbits.LATB8.
-
-  @Preconditions
-    The RB8 must be set to an output.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Set RB8 high (1)
-    SCK1_SetHigh();
-    </code>
-
-*/
-#define SCK1_SetHigh()          ( LATBSET = (1 << 8) )
-/**
-  @Summary
-    Sets the GPIO pin, RB8, low using LATBbits.LATB8.
-
-  @Description
-    Sets the GPIO pin, RB8, low using LATBbits.LATB8.
-
-  @Preconditions
-    The RB8 must be set to an output.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Set RB8 low (0)
-    SCK1_SetLow();
-    </code>
-
-*/
-#define SCK1_SetLow()           ( LATBCLR = (1 << 8) )
-
-/**
-  @Summary
-    Sets a value to the GPIO pin.
-
-  @Description
-    Sets or Resets the GPIO pin, RB8, low or high using LATBbits.LATB8.
-
-  @Preconditions
-    The RB8 must be set to an output.
-
-  @Returns
-    None.
-
-  @Param
-    bool value; : value to be set to the GPIO pin.
-
-  @Example
-    <code>
-    // Set RB8 to low.
-    SCK1_SetValue(false);
-    </code>
-
-*/
-inline static void SCK1_SetValue(bool value)
-{
-  if(value)
-  {
-    SCK1_SetHigh();
-  }
-  else
-  {
-    SCK1_SetLow();
-  }
-}
-
-/**
-  @Summary
-    Toggles the GPIO pin, RB8, using LATBbits.LATB8.
-
-  @Description
-    Toggles the GPIO pin, RB8, using LATBbits.LATB8.
-
-  @Preconditions
-    The RB8 must be set to an output.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Toggle RB8
-    SCK1_Toggle();
-    </code>
-
-*/
-#define SCK1_Toggle()           ( LATBINV = (1 << 8) )
-/**
-  @Summary
-    Reads the value of the GPIO pin, RB8.
-
-  @Description
-    Reads the value of the GPIO pin, RB8.
-
-  @Preconditions
-    None.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    uint16_t portValue;
-
-    // Read RB8
-    postValue = SCK1_GetValue();
-    </code>
-
-*/
-#define SCK1_GetValue()         PORTBbits.RB8
-/**
-  @Summary
-    Configures the GPIO pin, RB8, as an input.
-
-  @Description
-    Configures the GPIO pin, RB8, as an input.
-
-  @Preconditions
-    None.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Sets the RB8 as an input
-    SCK1_SetDigitalInput();
-    </code>
-
-*/
-#define SCK1_SetDigitalInput()   ( TRISBSET = (1 << 8) )
-/**
-  @Summary
-    Configures the GPIO pin, RB8, as an output.
-
-  @Description
-    Configures the GPIO pin, RB8, as an output.
-
-  @Preconditions
-    None.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Sets the RB8 as an output
-    SCK1_SetDigitalOutput();
-    </code>
-
-*/
-#define SCK1_SetDigitalOutput()   ( TRISBCLR = (1 << 8) )
-/**
-  @Summary
-    Sets the GPIO pin, RB9, high using LATBbits.LATB9.
-
-  @Description
-    Sets the GPIO pin, RB9, high using LATBbits.LATB9.
-
-  @Preconditions
-    The RB9 must be set to an output.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Set RB9 high (1)
-    SDO1_SetHigh();
-    </code>
-
-*/
-#define SDO1_SetHigh()          ( LATBSET = (1 << 9) )
-/**
-  @Summary
-    Sets the GPIO pin, RB9, low using LATBbits.LATB9.
-
-  @Description
-    Sets the GPIO pin, RB9, low using LATBbits.LATB9.
-
-  @Preconditions
-    The RB9 must be set to an output.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Set RB9 low (0)
-    SDO1_SetLow();
-    </code>
-
-*/
-#define SDO1_SetLow()           ( LATBCLR = (1 << 9) )
-
-/**
-  @Summary
-    Sets a value to the GPIO pin.
-
-  @Description
-    Sets or Resets the GPIO pin, RB9, low or high using LATBbits.LATB9.
-
-  @Preconditions
-    The RB9 must be set to an output.
-
-  @Returns
-    None.
-
-  @Param
-    bool value; : value to be set to the GPIO pin.
-
-  @Example
-    <code>
-    // Set RB9 to low.
-    SDO1_SetValue(false);
-    </code>
-
-*/
-inline static void SDO1_SetValue(bool value)
-{
-  if(value)
-  {
-    SDO1_SetHigh();
-  }
-  else
-  {
-    SDO1_SetLow();
-  }
-}
-
-/**
-  @Summary
-    Toggles the GPIO pin, RB9, using LATBbits.LATB9.
-
-  @Description
-    Toggles the GPIO pin, RB9, using LATBbits.LATB9.
-
-  @Preconditions
-    The RB9 must be set to an output.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Toggle RB9
-    SDO1_Toggle();
-    </code>
-
-*/
-#define SDO1_Toggle()           ( LATBINV = (1 << 9) )
-/**
-  @Summary
-    Reads the value of the GPIO pin, RB9.
-
-  @Description
-    Reads the value of the GPIO pin, RB9.
-
-  @Preconditions
-    None.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    uint16_t portValue;
-
-    // Read RB9
-    postValue = SDO1_GetValue();
-    </code>
-
-*/
-#define SDO1_GetValue()         PORTBbits.RB9
-/**
-  @Summary
-    Configures the GPIO pin, RB9, as an input.
-
-  @Description
-    Configures the GPIO pin, RB9, as an input.
-
-  @Preconditions
-    None.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Sets the RB9 as an input
-    SDO1_SetDigitalInput();
-    </code>
-
-*/
-#define SDO1_SetDigitalInput()   ( TRISBSET = (1 << 9) )
-/**
-  @Summary
-    Configures the GPIO pin, RB9, as an output.
-
-  @Description
-    Configures the GPIO pin, RB9, as an output.
-
-  @Preconditions
-    None.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Sets the RB9 as an output
-    SDO1_SetDigitalOutput();
-    </code>
-
-*/
-#define SDO1_SetDigitalOutput()   ( TRISBCLR = (1 << 9) )
 
 /**
     Section: Function Prototypes

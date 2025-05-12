@@ -21,6 +21,9 @@
 //#include "Mc32CoreTimer.h"
 #include <xc.h> //pour les fonctions d'accès au Core Timer
 #include <stdint.h>
+#include "Main.h"
+#include "mcc_generated_files/tmr1.h"
+
 
 /*--------------------------------------------------------*/
 // Fonction delay500ns
@@ -72,7 +75,7 @@ void delay_us(unsigned int us)
 /*--------------------------------------------------------*/
 void delay_ms(unsigned int ms)
 {
-
+    /*
 	unsigned int i;
 
 	for(i=1;i<=ms;i++)
@@ -80,6 +83,10 @@ void delay_ms(unsigned int ms)
 		// 1ms = 1000us
 		delay_us(1000);
 	}
+     */
+    //TMR1_Start();
+    
+    //delayGLOB = ms;
 }
 
 /*--------------------------------------------------------*/
