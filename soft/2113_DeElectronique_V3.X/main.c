@@ -55,72 +55,109 @@
 #include "mcc_generated_files/tmr1.h"
 #include <stdbool.h>
 #include <stdlib.h>
+
 /*
                          Main application
  */
-bool firstTimeSincePowerUp = true;
-bool shakenHasOccured = false;
-bool anymHasOccured = false;
-bool APP_DelayTimeIsRunning = false;
-uint8_t status = 0;
-static uint16_t AppDelay = 0;
-
+appData appdata;
 
 int main(void) {
-    // initialize the device
-    SYSTEM_Initialize();
-    POWER_HOLD = 1; //maintien alim ON
-    
-    //si  pas d'interrupt  
-    if (!INT_SHAKE) {
-        //config acceleromètre
-        MC3419_start();
-        // maintien alim OFF
-        POWER_HOLD = 0;
-    } 
-    //configure acceleromete otherwise INT always stay ON 
-    MC3419_start();
-    uint16_t randomSum = 0;
-    uint8_t nombreEntier = 0;
-    
+    appdata.state=APP_INIT;
     while (1) {
-        //Lecture registre accél
-        status = MC3419_ReadStatusRegister();
-        shakenHasOccured = (status& SHAKE_INT);
-        anymHasOccured =(status& ANYM_INT);
-        //si une interrupt et premier allumage 
-        if ((shakenHasOccured || anymHasOccured)&& (firstTimeSincePowerUp == true)) {
-            firstTimeSincePowerUp = false;
-            //Somme de la valeur de chaque axe
-            randomSum = ReadRegister8(addr_Xout_Ex_L);
-            randomSum += ReadRegister8(addr_Xout_Ex_H);
-            randomSum +=ReadRegister8(addr_Yout_Ex_L);
-            randomSum +=ReadRegister8(addr_Yout_Ex_H);
-            randomSum +=ReadRegister8(addr_Zout_Ex_L);
-            randomSum +=ReadRegister8(addr_Zout_Ex_H);
-            //générateur de nombre aléatoire
-            srand(randomSum);
-            randomSum = rand();
+        switch (appdata.state) {
+            case APP_INIT:
+                SYSTEM_Initialize();
+                appdata.status = 0;
+                appdata.firstTimeSincePowerUp = true;
+                appdata.shakenHasOccured = false;
+                appdata.anymHasOccured = false;
+                appdata.APP_DelayTimeIsRunning = false;
+                appdata.AppDelay = 5000;
+                appdata.disp=0;
+                uint16_t randomSum = 0;
+                appdata.nombreEntier = 0;
+                //static int8_t sens = 1;
+                //static uint8_t ret = 0;
+                //int8_t i = 0;
+                // initialize the device
+               
+                POWER_HOLD = 1; //maintien alim ON
 
-            //pour récupérer une valeure entre 1 et 6
-            nombreEntier = randomSum % 6;
-            if (nombreEntier == 0) {
-                nombreEntier = 1;
-            }
-            //Affichage du nombre 
-            Display_Dice_PWM(nombreEntier, 10);
-            //attente de 5 secondes (temps en ms)
-            APP_WaitStart(5000);
-            //clear interrupt 
-            MC3419_clearRegister();
-            //test pour être sur 
-            if (!INT_SHAKE) {
-                // maintien alim OFF
-                POWER_HOLD = 0;
-                //boucle infini pour être sur
-                while (1) {
-                };
-            }
+                //si  pas d'interrupt  
+                if (!INT_SHAKE) {
+                    //config acceleromètre
+                    MC3419_start();
+                    //maintien alim OFF
+                    //POWER_HOLD = 0;
+                }
+                SetStates(APP_WAIT_FOR_INT);
+                break;
+
+
+            case APP_WAIT_FOR_INT:
+                
+                //Lecture registre accél
+                appdata.status = MC3419_ReadStatusRegister();
+                appdata.shakenHasOccured = (appdata.status & SHAKE_INT);
+                appdata.anymHasOccured = (appdata.status & ANYM_INT);
+                if ((appdata.shakenHasOccured || appdata.anymHasOccured)&& (appdata.firstTimeSincePowerUp == true)) {
+                    appdata.firstTimeSincePowerUp = false;
+                    SetStates(APP_CALC);
+                }
+                break;
+            case APP_CALC:
+                //Somme de la valeur de chaque axe
+                randomSum = ReadRegister8(addr_Xout_Ex_L);
+                randomSum += ReadRegister8(addr_Xout_Ex_H);
+                randomSum += ReadRegister8(addr_Yout_Ex_L);
+                randomSum += ReadRegister8(addr_Yout_Ex_H);
+                randomSum += ReadRegister8(addr_Zout_Ex_L);
+                randomSum += ReadRegister8(addr_Zout_Ex_H);
+                //générateur de nombre aléatoire
+                srand(randomSum);
+                randomSum = rand();
+
+                //pour récupérer une valeure entre 1 et 6
+                appdata.nombreEntier = randomSum % 6;
+                if (appdata.nombreEntier == 0) {
+                    appdata.nombreEntier = 1;
+                }
+                
+                SetStates(APP_DISPLAY);
+                break;
+            case APP_DISPLAY:
+                
+                
+                appdata.disp=1;
+                SetStates(APP_DELAY);
+                break; 
+                
+            case APP_DELAY:
+                
+                APP_WaitStart(5000);
+                SetStates(APP_KILL);
+                
+                
+                break;
+            case APP_KILL:
+                MC3419_clearRegister();
+                //test pour être sur 
+                //POWER_HOLD = 0;
+                if (!INT_SHAKE) {
+                    // maintien alim OFF
+                    POWER_HOLD = 0;
+                    //boucle infini pour être sur
+                    while (1) {
+                    };
+                    break;
+
+                }
+
+
+
+
+
+
 
         }
     }
@@ -136,27 +173,34 @@ int main(void) {
  */
 void APP_TMR1_CallBack(void) {
 
-    if (AppDelay > 0) {
-        AppDelay--;
+    if (appdata.AppDelay > 0) {
+        appdata.AppDelay--;
     } else {
-        APP_DelayTimeIsRunning = 0;
+        appdata.APP_DelayTimeIsRunning = 0;
     }
 
     //APP_WaitStart(cnt);
 
 }
+
 /*
  * Fct d'attente en fct du param d'entrée en ms 
  * utilisation du timer 1 attente = 1ms
-*/
+ * attente bloquante
+ */
 void APP_WaitStart(uint16_t waitingTime_ms) {
-
-    AppDelay = waitingTime_ms - 1;
+    appdata.AppDelay = waitingTime_ms - 1;
     TMR1_Start();
-    APP_DelayTimeIsRunning = 1;
-    while (APP_DelayTimeIsRunning) {
+    appdata.APP_DelayTimeIsRunning = 1;
+    while (appdata.APP_DelayTimeIsRunning) {
+        //Display_Dice_PWM
+        Display_Dice_PWM(appdata.nombreEntier, 10);
     }
     TMR1_Stop();
+}
+
+void SetStates(states newstate) {
+    appdata.state = newstate;
 }
 
 

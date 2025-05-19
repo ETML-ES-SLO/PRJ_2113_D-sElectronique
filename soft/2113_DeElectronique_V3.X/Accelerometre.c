@@ -225,7 +225,7 @@ uint8_t MC3419_clearRegister (void)
     uint8_t stats=0;
     //return ReadRegister8(addr_INTR_STAT);
     //modif pour clean interrupt
-    stats  = ReadRegister8(addr_INTR_STAT);
+    //stats  = ReadRegister8(addr_INTR_STAT);
     writeRegister8(addr_INTR_STAT, stats);
     return stats;
 }

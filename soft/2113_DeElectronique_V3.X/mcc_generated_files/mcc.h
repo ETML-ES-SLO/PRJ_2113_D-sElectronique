@@ -51,11 +51,11 @@
 #include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
-#include "watchdog.h"
+#include "tmr1.h"
 #include "spi1.h"
+#include "watchdog.h"
 #include "interrupt_manager.h"
 #include "exceptions.h"
-#include "tmr1.h"
 
 #define _XTAL_FREQ  8000000UL
 

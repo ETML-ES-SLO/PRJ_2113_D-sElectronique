@@ -55,8 +55,9 @@ void DISPLAY_NUM6 (void)
 void Display_Dice_PWM (int NumberToDisplay, char dutyCycle)
 {
    static char compteurPWM=0;
-   
+   static char sens =1;
    compteurPWM++;
+   //dutyCycle=sens;
    if (compteurPWM <dutyCycle)
    {
        switch (NumberToDisplay)
@@ -96,6 +97,15 @@ void Display_Dice_PWM (int NumberToDisplay, char dutyCycle)
         if (compteurPWM >= 100)
         {
             compteurPWM =0;
+            if(sens == 1)
+            {
+                sens =-1;
+            }
+            else
+            {
+                sens=1;
+            }
+           // compteurPWM =0;
         }
    }
 }
