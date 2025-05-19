@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/interrupt_manager.c mcc_generated_files/exceptions.c mcc_generated_files/mcc.c mcc_generated_files/clock.c mcc_generated_files/system.c mcc_generated_files/tmr1.c mcc_generated_files/pin_manager.c mcc_generated_files/spi1.c Accelerometre.c DeElectronique.c Mc32Delays.c main.c
+SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/interrupt_manager.c mcc_generated_files/exceptions.c mcc_generated_files/mcc.c mcc_generated_files/clock.c mcc_generated_files/system.c mcc_generated_files/tmr1.c mcc_generated_files/pin_manager.c mcc_generated_files/spi1.c Accelerometre.c DeElectronique.c Mc32Delays.c main.c mcc_generated_files/coretimer.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/exceptions.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/tmr1.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/spi1.o ${OBJECTDIR}/Accelerometre.o ${OBJECTDIR}/DeElectronique.o ${OBJECTDIR}/Mc32Delays.o ${OBJECTDIR}/main.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/interrupt_manager.o.d ${OBJECTDIR}/mcc_generated_files/exceptions.o.d ${OBJECTDIR}/mcc_generated_files/mcc.o.d ${OBJECTDIR}/mcc_generated_files/clock.o.d ${OBJECTDIR}/mcc_generated_files/system.o.d ${OBJECTDIR}/mcc_generated_files/tmr1.o.d ${OBJECTDIR}/mcc_generated_files/pin_manager.o.d ${OBJECTDIR}/mcc_generated_files/spi1.o.d ${OBJECTDIR}/Accelerometre.o.d ${OBJECTDIR}/DeElectronique.o.d ${OBJECTDIR}/Mc32Delays.o.d ${OBJECTDIR}/main.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/exceptions.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/tmr1.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/spi1.o ${OBJECTDIR}/Accelerometre.o ${OBJECTDIR}/DeElectronique.o ${OBJECTDIR}/Mc32Delays.o ${OBJECTDIR}/main.o ${OBJECTDIR}/mcc_generated_files/coretimer.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/interrupt_manager.o.d ${OBJECTDIR}/mcc_generated_files/exceptions.o.d ${OBJECTDIR}/mcc_generated_files/mcc.o.d ${OBJECTDIR}/mcc_generated_files/clock.o.d ${OBJECTDIR}/mcc_generated_files/system.o.d ${OBJECTDIR}/mcc_generated_files/tmr1.o.d ${OBJECTDIR}/mcc_generated_files/pin_manager.o.d ${OBJECTDIR}/mcc_generated_files/spi1.o.d ${OBJECTDIR}/Accelerometre.o.d ${OBJECTDIR}/DeElectronique.o.d ${OBJECTDIR}/Mc32Delays.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/mcc_generated_files/coretimer.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/exceptions.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/tmr1.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/spi1.o ${OBJECTDIR}/Accelerometre.o ${OBJECTDIR}/DeElectronique.o ${OBJECTDIR}/Mc32Delays.o ${OBJECTDIR}/main.o
+OBJECTFILES=${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/exceptions.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/tmr1.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/spi1.o ${OBJECTDIR}/Accelerometre.o ${OBJECTDIR}/DeElectronique.o ${OBJECTDIR}/Mc32Delays.o ${OBJECTDIR}/main.o ${OBJECTDIR}/mcc_generated_files/coretimer.o
 
 # Source Files
-SOURCEFILES=mcc_generated_files/interrupt_manager.c mcc_generated_files/exceptions.c mcc_generated_files/mcc.c mcc_generated_files/clock.c mcc_generated_files/system.c mcc_generated_files/tmr1.c mcc_generated_files/pin_manager.c mcc_generated_files/spi1.c Accelerometre.c DeElectronique.c Mc32Delays.c main.c
+SOURCEFILES=mcc_generated_files/interrupt_manager.c mcc_generated_files/exceptions.c mcc_generated_files/mcc.c mcc_generated_files/clock.c mcc_generated_files/system.c mcc_generated_files/tmr1.c mcc_generated_files/pin_manager.c mcc_generated_files/spi1.c Accelerometre.c DeElectronique.c Mc32Delays.c main.c mcc_generated_files/coretimer.c
 
 
 
@@ -179,6 +179,12 @@ ${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/5d52c2cd2fbcad417162
 	@${RM} ${OBJECTDIR}/main.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -Wall -MP -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
+${OBJECTDIR}/mcc_generated_files/coretimer.o: mcc_generated_files/coretimer.c  .generated_files/flags/default/d0a3a69eafcbbe0bdad828de980b499be9fdb8e8 .generated_files/flags/default/ef8f25625e5dbdbe6a527bf1b94ff03061936050
+	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/coretimer.o.d 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/coretimer.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -Wall -MP -MMD -MF "${OBJECTDIR}/mcc_generated_files/coretimer.o.d" -o ${OBJECTDIR}/mcc_generated_files/coretimer.o mcc_generated_files/coretimer.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
 else
 ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o: mcc_generated_files/interrupt_manager.c  .generated_files/flags/default/dcfb55fd4fe3ac1eeed86a3c740adb6b53f38c96 .generated_files/flags/default/ef8f25625e5dbdbe6a527bf1b94ff03061936050
 	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
@@ -251,6 +257,12 @@ ${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/7ff022632508f2c66a4d
 	@${RM} ${OBJECTDIR}/main.o.d 
 	@${RM} ${OBJECTDIR}/main.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -Wall -MP -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/mcc_generated_files/coretimer.o: mcc_generated_files/coretimer.c  .generated_files/flags/default/f1cc79a4535111e50eaf2251b0ce1a5e2f6d2121 .generated_files/flags/default/ef8f25625e5dbdbe6a527bf1b94ff03061936050
+	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/coretimer.o.d 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/coretimer.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -Wall -MP -MMD -MF "${OBJECTDIR}/mcc_generated_files/coretimer.o.d" -o ${OBJECTDIR}/mcc_generated_files/coretimer.o mcc_generated_files/coretimer.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
 endif
 

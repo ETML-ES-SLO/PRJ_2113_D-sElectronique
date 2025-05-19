@@ -32,7 +32,7 @@ extern "C" {
         uint16_t AppDelay;
         uint8_t status;
         uint8_t nombreEntier;
-        
+        uint8_t RC;
     } appData;
 
     
@@ -40,7 +40,7 @@ void APP_WaitStart(uint16_t waitingTime);
 void APP_TMR1_CallBack();
 bool APP_WaitStart_noBlocking();
 void SetStates(states newstate);
-
+void APP_CORETIMER_CALLBACK(void);
 
 #ifdef	__cplusplus
 }

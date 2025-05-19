@@ -51,6 +51,7 @@
 #include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
+#include "coretimer.h"
 #include "tmr1.h"
 #include "spi1.h"
 #include "watchdog.h"

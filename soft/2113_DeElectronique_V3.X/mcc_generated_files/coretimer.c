@@ -1,20 +1,22 @@
-/**
-  @Generated PIC24 / dsPIC33 / PIC32MM MCUs Source File
 
-  @Company:
+/**
+  CORETIMER Generated Driver File
+
+  @Company
     Microchip Technology Inc.
 
-  @File Name:
-    system.h
+  @File Name
+   coretimer.c
 
-  @Summary:
-    This is the sysetm.h file generated using PIC24 / dsPIC33 / PIC32MM MCUs
+  @Summary
+    This is the generated driver implementation file for the CORETIMER driver using PIC24 / dsPIC33 / PIC32MM MCUs
 
-  @Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
+  @Description
+    This source file provides implementations for driver APIs for CORETIMER.
     Generation Information :
         Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - pic24-dspic-pic32mm : 1.75.1
         Device            :  PIC32MM0064GPL020
+        Driver Version    :  2.00
     The generated drivers are tested against the following:
         Compiler          :  XC32 v2.10
         MPLAB             :  MPLAB X v5.05
@@ -42,25 +44,56 @@
     TERMS.
 */
 
-#include "pin_manager.h"
-#include "clock.h"
-#include "system.h"
-#include "stdint.h"
-#include "coretimer.h"
-#include "tmr1.h"
-#include "spi1.h"
-#include "interrupt_manager.h"
-#include "exceptions.h"
+/**
+  Section: Included Files
+*/
 
-void SYSTEM_Initialize(void)
+#include <xc.h>
+#include "coretimer.h"
+#include "../Main.h"
+
+/**
+  Section: Core Timer Module APIs
+*/
+
+void CORETIMER_Initialize()
 {
-    PIN_MANAGER_Initialize();
-    CLOCK_Initialize();
-    INTERRUPT_Initialize();
-    CORETIMER_Initialize();
-    SPI1_Initialize();
-    TMR1_Initialize();
-    INTERRUPT_GlobalEnable();
+   // Set the count value
+   _CP0_SET_COUNT(0x0); 
+   // Set the compare value
+   _CP0_SET_COMPARE(0x3D0900); 
+    // Enable the interrupt
+   IEC0bits.CTIE = 1;
+
+}
+
+void CORETIMER_EnableInterrupt()
+{
+    IEC0bits.CTIE = 1;
+}
+
+void CORETIMER_DisableInterrupt()
+{
+    IEC0bits.CTIE = 0;
+}
+
+uint32_t CORETIMER_CountGet()
+{
+   return _CP0_GET_COUNT();
+}
+
+void __attribute__ ((vector(_CORE_TIMER_VECTOR), interrupt(IPL1SOFT))) _CORE_TIMER_ISR(void)
+{
+   uint32_t static compare = 0x3D0900;
+
+   // Update the compare value
+   compare = compare + 0x3D0900;
+
+   _CP0_SET_COMPARE(compare);
+
+   IFS0CLR= 1 << _IFS0_CTIF_POSITION;
+   // Add your custom code here
+   APP_CORETIMER_CALLBACK();
 }
 
 /**

@@ -1,20 +1,21 @@
 /**
-  @Generated PIC24 / dsPIC33 / PIC32MM MCUs Source File
+  CORETIMER Generated Driver API Header File
 
-  @Company:
+  @Company
     Microchip Technology Inc.
 
-  @File Name:
-    system.h
+  @File Name
+    coretimer.h
 
-  @Summary:
-    This is the sysetm.h file generated using PIC24 / dsPIC33 / PIC32MM MCUs
+  @Summary
+    This is the generated header file for the CORETIMER driver using PIC24 / dsPIC33 / PIC32MM MCUs
 
-  @Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
+  @Description
+    This header file provides APIs for driver for CORETIMER.
     Generation Information :
         Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - pic24-dspic-pic32mm : 1.75.1
         Device            :  PIC32MM0064GPL020
+        Driver Version    :  2.00
     The generated drivers are tested against the following:
         Compiler          :  XC32 v2.10
         MPLAB             :  MPLAB X v5.05
@@ -42,27 +43,70 @@
     TERMS.
 */
 
-#include "pin_manager.h"
-#include "clock.h"
-#include "system.h"
-#include "stdint.h"
-#include "coretimer.h"
-#include "tmr1.h"
-#include "spi1.h"
-#include "interrupt_manager.h"
-#include "exceptions.h"
+#ifndef _CORETIMER_H
+#define _CORETIMER_H
 
-void SYSTEM_Initialize(void)
-{
-    PIN_MANAGER_Initialize();
-    CLOCK_Initialize();
-    INTERRUPT_Initialize();
-    CORETIMER_Initialize();
-    SPI1_Initialize();
-    TMR1_Initialize();
-    INTERRUPT_GlobalEnable();
+/**
+  Section: Included Files
+*/
+
+#include <xc.h>
+#include <stdint.h>
+#include <stdbool.h>
+
+#ifdef __cplusplus  // Provide C++ Compatibility
+    extern "C" {
+#endif
+
+/**
+  @Summary
+    Initializes the Core Timer peripheral
+
+  @Description
+    This function sets the initial count and compare
+    value of the core timer
+
+  @Preconditions
+    None
+
+  @Param
+    None
+
+  @Returns
+    None
+*/
+void CORETIMER_Initialize();
+
+void CORETIMER_EnableInterrupt();
+
+void CORETIMER_DisableInterrupt();
+
+/**
+  @Summary
+    Returns the count value
+
+  @Description
+    This function returns the core timer's 
+    count value
+ 
+  @Preconditions
+    None
+
+  @Param
+    None
+
+  @Returns
+    Returns the count value of the core 
+    timer module
+*/
+uint32_t CORETIMER_CountGet();
+
+#ifdef __cplusplus  // Provide C++ Compatibility
 }
+#endif
 
+#endif	//_CORETIMER_H
 /**
  End of File
 */
+

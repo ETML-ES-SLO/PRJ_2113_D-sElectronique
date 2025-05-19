@@ -74,6 +74,7 @@ int main(void) {
                 appdata.APP_DelayTimeIsRunning = false;
                 appdata.AppDelay = 5000;
                 appdata.disp=0;
+                appdata.RC =10;
                 uint16_t randomSum = 0;
                 appdata.nombreEntier = 0;
                 //static int8_t sens = 1;
@@ -88,7 +89,7 @@ int main(void) {
                     //config acceleromètre
                     MC3419_start();
                     //maintien alim OFF
-                    //POWER_HOLD = 0;
+                    POWER_HOLD = 0;
                 }
                 SetStates(APP_WAIT_FOR_INT);
                 break;
@@ -134,17 +135,20 @@ int main(void) {
                 
             case APP_DELAY:
                 
-                APP_WaitStart(5000);
+                APP_WaitStart(10000);
                 SetStates(APP_KILL);
                 
                 
                 break;
             case APP_KILL:
+                DISPLAYNONUM();
                 MC3419_clearRegister();
                 //test pour être sur 
                 //POWER_HOLD = 0;
+                
                 if (!INT_SHAKE) {
                     // maintien alim OFF
+                    
                     POWER_HOLD = 0;
                     //boucle infini pour être sur
                     while (1) {
@@ -194,7 +198,7 @@ void APP_WaitStart(uint16_t waitingTime_ms) {
     appdata.APP_DelayTimeIsRunning = 1;
     while (appdata.APP_DelayTimeIsRunning) {
         //Display_Dice_PWM
-        Display_Dice_PWM(appdata.nombreEntier, 10);
+        Display_Dice_PWM(appdata.nombreEntier,appdata.RC);
     }
     TMR1_Stop();
 }
@@ -203,6 +207,17 @@ void SetStates(states newstate) {
     appdata.state = newstate;
 }
 
-
+void APP_CORETIMER_CALLBACK(void)
+{
+    static uint8_t sens=10;
+    appdata.RC+= sens;
+    if (appdata.RC>=80)
+    {
+        appdata.RC=10;
+    }
+    
+    
+    
+}
 
 
