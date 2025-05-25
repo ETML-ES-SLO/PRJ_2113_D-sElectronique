@@ -51,7 +51,6 @@
 #include <xc.h>
 #include "coretimer.h"
 #include "../Main.h"
-
 /**
   Section: Core Timer Module APIs
 */
@@ -61,7 +60,7 @@ void CORETIMER_Initialize()
    // Set the count value
    _CP0_SET_COUNT(0x0); 
    // Set the compare value
-   _CP0_SET_COMPARE(0x3D0900); 
+   _CP0_SET_COMPARE(0x1E8480); 
     // Enable the interrupt
    IEC0bits.CTIE = 1;
 
@@ -84,16 +83,17 @@ uint32_t CORETIMER_CountGet()
 
 void __attribute__ ((vector(_CORE_TIMER_VECTOR), interrupt(IPL1SOFT))) _CORE_TIMER_ISR(void)
 {
-   uint32_t static compare = 0x3D0900;
+   uint32_t static compare = 0x1E8480;
 
    // Update the compare value
-   compare = compare + 0x3D0900;
+   compare = compare + 0x1E8480;
 
    _CP0_SET_COMPARE(compare);
 
    IFS0CLR= 1 << _IFS0_CTIF_POSITION;
    // Add your custom code here
    APP_CORETIMER_CALLBACK();
+
 }
 
 /**

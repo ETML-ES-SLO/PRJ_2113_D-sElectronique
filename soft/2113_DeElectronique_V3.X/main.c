@@ -207,16 +207,37 @@ void SetStates(states newstate) {
     appdata.state = newstate;
 }
 
+
+//add comms
 void APP_CORETIMER_CALLBACK(void)
 {
-    static uint8_t sens=10;
+   
+    static int8_t sens=1;
+    /*
     appdata.RC+= sens;
     if (appdata.RC>=100)
     {
         appdata.RC=10;
     }
     
-    
+    */
+    int8_t step = 10; 
+    if (sens == 1) {
+        appdata.RC += step;
+        if (appdata.RC >= 100) {
+            appdata.RC = 100; 
+            sens = -1;        
+        }
+    } else if (sens == -1) {
+        appdata.RC -= step;
+        if (appdata.RC < 10) {
+            appdata.RC = 10; 
+            sens = 1;        
+        }
+    } else {
+        sens = 1;
+        appdata.RC = 10; // start at minimum
+    }
     
 }
 

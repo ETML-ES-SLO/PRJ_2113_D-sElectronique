@@ -46,17 +46,17 @@
 #include "clock.h"
 #include "system.h"
 #include "stdint.h"
-#include "coretimer.h"
-#include "tmr1.h"
-#include "spi1.h"
 #include "interrupt_manager.h"
 #include "exceptions.h"
+#include "tmr1.h"
+#include "spi1.h"
+#include "coretimer.h"
 
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
-    CLOCK_Initialize();
     INTERRUPT_Initialize();
+    CLOCK_Initialize();
     CORETIMER_Initialize();
     SPI1_Initialize();
     TMR1_Initialize();
