@@ -145,10 +145,10 @@ int main(void) {
                 MC3419_clearRegister();
                 //test pour être sur 
                 //POWER_HOLD = 0;
-                
+                APP_WaitStart(1);
                 if (!INT_SHAKE) {
                     // maintien alim OFF
-                    
+                   
                     POWER_HOLD = 0;
                     //boucle infini pour être sur
                     while (1) {
@@ -211,7 +211,7 @@ void APP_CORETIMER_CALLBACK(void)
 {
     static uint8_t sens=10;
     appdata.RC+= sens;
-    if (appdata.RC>=80)
+    if (appdata.RC>=100)
     {
         appdata.RC=10;
     }
