@@ -92,7 +92,8 @@ void __attribute__ ((vector(_CORE_TIMER_VECTOR), interrupt(IPL1SOFT))) _CORE_TIM
 
    IFS0CLR= 1 << _IFS0_CTIF_POSITION;
    // Add your custom code here
-   APP_CORETIMER_CALLBACK();
+   //set at 0.5s
+   //APP_CORETIMER_CALLBACK();
 
 }
 

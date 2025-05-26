@@ -66,15 +66,19 @@ int main(void) {
     while (1) {
         switch (appdata.state) {
             case APP_INIT:
+               
                 SYSTEM_Initialize();
+                DISPLAY_NUM6();
                 appdata.status = 0;
                 appdata.firstTimeSincePowerUp = true;
                 appdata.shakenHasOccured = false;
                 appdata.anymHasOccured = false;
                 appdata.APP_DelayTimeIsRunning = false;
-                appdata.AppDelay = 5000;
+                appdata.AppDelay = DISPLAYTIME;
                 appdata.disp=0;
                 appdata.RC =10;
+                //set PWM timing at displayTime/3 
+                appdata.cntPwmWaiting = (DISPLAYTIME/(STEPON*10));
                 uint16_t randomSum = 0;
                 appdata.nombreEntier = 0;
                 //static int8_t sens = 1;
@@ -89,7 +93,7 @@ int main(void) {
                     //config acceleromètre
                     MC3419_start();
                     //maintien alim OFF
-                    POWER_HOLD = 0;
+                   POWER_HOLD = 0;
                 }
                 SetStates(APP_WAIT_FOR_INT);
                 break;
@@ -135,7 +139,7 @@ int main(void) {
                 
             case APP_DELAY:
                 
-                APP_WaitStart(10000);
+                APP_WaitStart(DISPLAYTIME);
                 SetStates(APP_KILL);
                 
                 
@@ -182,7 +186,7 @@ void APP_TMR1_CallBack(void) {
     } else {
         appdata.APP_DelayTimeIsRunning = 0;
     }
-
+    appdata.cntPwmWaiting--;
     //APP_WaitStart(cnt);
 
 }
@@ -193,14 +197,66 @@ void APP_TMR1_CallBack(void) {
  * attente bloquante
  */
 void APP_WaitStart(uint16_t waitingTime_ms) {
+    
+    int8_t step = 10;
+    static int8_t sens = RAMPUP;
     appdata.AppDelay = waitingTime_ms - 1;
+    static uint16_t cntFullON = 0;
     TMR1_Start();
     appdata.APP_DelayTimeIsRunning = 1;
     while (appdata.APP_DelayTimeIsRunning) {
-        //Display_Dice_PWM
-        Display_Dice_PWM(appdata.nombreEntier,appdata.RC);
-    }
+        //Display_Dice_PWM with 10% RC 
+        Display_Dice_PWM(appdata.nombreEntier, appdata.RC);
+        //if time set = 0 
+
+        if (appdata.cntPwmWaiting == 0) {
+            //resest the "timer" 
+            appdata.cntPwmWaiting = (DISPLAYTIME / (STEPON * STEPPWM));
+        
+            switch (sens) {
+                case RAMPDOWN:
+                    appdata.RC -= step;
+                    if (appdata.RC < 10) {
+                        appdata.RC = 10;
+                        sens = RAMPSTATIC;
+                    }
+
+
+                    break;
+                case RAMPUP:
+                    appdata.RC += step;
+                    cntFullON++;
+                    if (appdata.RC >= 100) {
+                        appdata.RC = 100;
+                        sens =RAMPSTATIC;
+                    }
+
+                    break;
+                case RAMPSTATIC:
+                    
+                    if (cntFullON == 0)
+                    {
+                        sens =RAMPDOWN;
+                    }
+                    else
+                    {
+                        cntFullON--;
+                    }
+                    break;
+
+                default:
+                    sens = 1;
+                    appdata.RC = 10; // start at minimum
+
+                    break;
+            }
+
+            }
+        }
+    
     TMR1_Stop();
+    
+    
 }
 
 void SetStates(states newstate) {
