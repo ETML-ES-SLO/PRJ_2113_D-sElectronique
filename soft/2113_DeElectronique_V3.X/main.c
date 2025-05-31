@@ -68,7 +68,6 @@ int main(void) {
             case APP_INIT:
                
                 SYSTEM_Initialize();
-                DISPLAY_NUM6();
                 appdata.status = 0;
                 appdata.firstTimeSincePowerUp = true;
                 appdata.shakenHasOccured = false;
@@ -76,14 +75,12 @@ int main(void) {
                 appdata.APP_DelayTimeIsRunning = false;
                 appdata.AppDelay = DISPLAYTIME;
                 appdata.disp=0;
-                appdata.RC =10;
+                appdata.RC =0;
                 //set PWM timing at displayTime/3 
                 appdata.cntPwmWaiting = (DISPLAYTIME/(STEPON*10));
                 uint16_t randomSum = 0;
                 appdata.nombreEntier = 0;
-                //static int8_t sens = 1;
-                //static uint8_t ret = 0;
-                //int8_t i = 0;
+                
                 // initialize the device
                
                 POWER_HOLD = 1; //maintien alim ON
@@ -132,7 +129,7 @@ int main(void) {
                 break;
             case APP_DISPLAY:
                 
-                
+                appdata.RC =10;
                 appdata.disp=1;
                 SetStates(APP_DELAY);
                 break; 
@@ -147,12 +144,9 @@ int main(void) {
             case APP_KILL:
                 DISPLAYNONUM();
                 MC3419_clearRegister();
-                //test pour être sur 
-                //POWER_HOLD = 0;
-                APP_WaitStart(1);
                 if (!INT_SHAKE) {
                     // maintien alim OFF
-                   
+                    MC3419_clearRegister();
                     POWER_HOLD = 0;
                     //boucle infini pour être sur
                     while (1) {
@@ -206,8 +200,10 @@ void APP_WaitStart(uint16_t waitingTime_ms) {
     appdata.APP_DelayTimeIsRunning = 1;
     while (appdata.APP_DelayTimeIsRunning) {
         //Display_Dice_PWM with 10% RC 
+        if(appdata.disp)
+        {
         Display_Dice_PWM(appdata.nombreEntier, appdata.RC);
-        //if time set = 0 
+        
 
         if (appdata.cntPwmWaiting == 0) {
             //resest the "timer" 
@@ -225,7 +221,7 @@ void APP_WaitStart(uint16_t waitingTime_ms) {
                     break;
                 case RAMPUP:
                     appdata.RC += step;
-                    cntFullON++;
+                    
                     if (appdata.RC >= 100) {
                         appdata.RC = 100;
                         sens =RAMPSTATIC;
@@ -233,14 +229,14 @@ void APP_WaitStart(uint16_t waitingTime_ms) {
 
                     break;
                 case RAMPSTATIC:
-                    
-                    if (cntFullON == 0)
+                   
+                    if (cntFullON >= (STEPPWM-1))
                     {
                         sens =RAMPDOWN;
                     }
                     else
                     {
-                        cntFullON--;
+                        cntFullON++;
                     }
                     break;
 
@@ -253,7 +249,7 @@ void APP_WaitStart(uint16_t waitingTime_ms) {
 
             }
         }
-    
+    }
     TMR1_Stop();
     
     
@@ -267,16 +263,7 @@ void SetStates(states newstate) {
 //add comms
 void APP_CORETIMER_CALLBACK(void)
 {
-   
     static int8_t sens=1;
-    /*
-    appdata.RC+= sens;
-    if (appdata.RC>=100)
-    {
-        appdata.RC=10;
-    }
-    
-    */
     int8_t step = 10; 
     if (sens == 1) {
         appdata.RC += step;
