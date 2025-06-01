@@ -73,11 +73,11 @@ La documentation complète du code est disponible dans le dossier [html/](html/)
 
 ## Diagrammes
 
-# Précédente version (V2)
+Précédente version (V2)
 
 <img src="https://github.com/user-attachments/assets/d62e0037-c5a4-41ff-92a0-f798ec1ad384" alt="drawing" width="200"/>
 
-# Nouvelle version (V3) 
+Nouvelle version (V3) 
 
 
 <img src="https://github.com/user-attachments/assets/a95f4c19-43bc-4cc1-a6d3-e24368b579b0" alt="drawing" width="700"/>
