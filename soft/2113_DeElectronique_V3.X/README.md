@@ -50,7 +50,7 @@ La version 3 de cette application est conçue et testée avec :
 
 ## Utilisation
 
-- Chargez le firmware sur la carte cible (2113E_DeElectronique) via MPLAB X (la carte doit être alientée).
+- Chargez le firmware sur la carte cible (2113E_DeElectronique) via MPLAB X (la carte doit être alimentée en +1,5V).
 - Retirer la sonde de programation (snap/icd4) appuyer sur le switch environs 1s.
 - secouer
 - pour éteindre: retirer la pile 
