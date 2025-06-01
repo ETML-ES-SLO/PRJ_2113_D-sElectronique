@@ -50,7 +50,7 @@ La version 3 de cette application est conçue et testée avec :
 
 ## Utilisation
 
-- Chargez le firmware sur la carte cible (2113E_DeElectronique) via MPLAB X (la carte doit être alientée).
+- Chargez le firmware sur la carte cible (2113E_DeElectronique) via MPLAB X (la carte doit être alimentée en +1,5V).
 - Retirer la sonde de programation (snap/icd4) appuyer sur le switch environs 1s.
 - secouer
 - pour éteindre: retirer la pile 
@@ -70,9 +70,9 @@ La documentation complète du code est disponible dans le dossier [html/](html/)
 
 ## Diagrammes
 
-
+# Précédente version (V2)
 ![sof_v2](https://github.com/user-attachments/assets/d62e0037-c5a4-41ff-92a0-f798ec1ad384)
-
+# Nouvelle version (V3) 
 ![soft_v3](https://github.com/user-attachments/assets/a95f4c19-43bc-4cc1-a6d3-e24368b579b0)
 
 les autres diagrammes sont disponibles sous "C:\microchip\harmony\v2_06\apps\PROJ\PRJ_2113_D-sElectronique\soft\2113_DeElectronique_V3.X\code2flow"
