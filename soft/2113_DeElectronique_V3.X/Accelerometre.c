@@ -1,4 +1,3 @@
-
 #include "Accelerometre.h"
 #include "main.h"
 #include "mcc_generated_files/spi1.h"
@@ -9,20 +8,28 @@
 
 
 
+/**
+ * @brief Écrit la valeur du seuil AnyMotion dans le registre du capteur.
+ * @param treshold Seuil AnyMotion (16 bits)
+ */
 void MC3419_WriteAnyMotionRegister (uint16_t treshold)
 {
     uint8_t Value_8Bits;
   
     
-    //�criture LSBs
+    //�criture LSBs
     Value_8Bits = treshold & 0x00FF;
     writeRegister8(addr_AM_LSB, Value_8Bits);
 
-    //�criture MSBs
+    //�criture MSBs
     Value_8Bits = treshold >> 8;
     writeRegister8(addr_AM_MSB, Value_8Bits);
 }
 
+/**
+ * @brief Écrit la valeur de debounce AnyMotion dans le registre du capteur.
+ * @param tresholda Valeur de debounce
+ */
 void MC3419_WriteAnyMotionDebounceRegister (uint8_t tresholda)
 {
    
@@ -31,7 +38,11 @@ void MC3419_WriteAnyMotionDebounceRegister (uint8_t tresholda)
 
    
 }
-//Initialize the MC34X9 sensor and set as the default configuration
+
+/**
+ * @brief Initialise le capteur MC34X9 avec la configuration par défaut.
+ * @details Effectue un reset, configure la plage, la fréquence, les interruptions et met le capteur en mode actif.
+ */
 void MC3419_start()
 {
   //Init Reset
@@ -67,7 +78,10 @@ void MC3419_start()
  
 }
 
-// Set the operation mode
+/**
+ * @brief Définit le mode de fonctionnement du capteur.
+ * @param Mode Mode à appliquer
+ */
 void MC3419_SetMode (MC3419_Mode Mode)
 {
     uint8_t value;
@@ -79,7 +93,10 @@ void MC3419_SetMode (MC3419_Mode Mode)
     writeRegister8(addr_MODE, value);
 }
 
-// Set the range control
+/**
+ * @brief Définit la plage de mesure du capteur.
+ * @param Range Plage à appliquer
+ */
 void MC3419_SetRangleCtrl (MC3419_Range Range)
 {
     uint8_t value;
@@ -90,7 +107,10 @@ void MC3419_SetRangleCtrl (MC3419_Range Range)
     writeRegister8(addr_Range, value);
 }
 
-// Set the sampling rate
+/**
+ * @brief Définit la fréquence d'échantillonnage du capteur.
+ * @param SampleRate Fréquence à appliquer
+ */
 void MC3419_SetSampleRate(MC3419_SamplRate SampleRate)
 {
     uint8_t value;
@@ -100,19 +120,29 @@ void MC3419_SetSampleRate(MC3419_SamplRate SampleRate)
     value |= SampleRate;
     writeRegister8(addr_SR, value);
 }
-// Set mode wake
+
+/**
+ * @brief Met le capteur en mode wake (actif).
+ */
 void MC3419_wake(void)
 {
   //Set mode as wake
   MC3419_SetMode(WAKE);
 }
-// Set mode Standby
+
+/**
+ * @brief Met le capteur en mode standby (veille).
+ */
 void MC3419_stop(void)
 {
   //Set mode as Sleep
   MC3419_SetMode(STANDBY);
 }
-//Initial reset
+
+/**
+ * @brief Effectue un reset initial du capteur.
+ * @details Met le capteur en veille, attend, effectue un power-on-reset, désactive les interruptions.
+ */
 void MC3419_reset(void)
 {
   // Stand by mode
@@ -140,25 +170,38 @@ void MC3419_reset(void)
 
 }
 
-// Read ID
+/**
+ * @brief Lit l'identifiant du capteur.
+ * @return Valeur de l'ID
+ */
 uint8_t MC3419_ID (void)
 {
     return ReadRegister8(addr_Chip_ID);
 }
-// Read Register
+
+/**
+ * @brief Lit un registre 8 bits du capteur.
+ * @param address Adresse du registre
+ * @return Valeur lue
+ */
 uint8_t ReadRegister8(uint8_t address)
 {
     uint8_t readVal;
     
     SS1_SetValue(false);
-    SPI1_Exchange8bit(0x80 | address);  //lecture (0=> premier bit � '1')
+    SPI1_Exchange8bit(0x80 | address);  //lecture (0=> premier bit � '1')
     SPI1_Exchange8bit(0x00);
     readVal = SPI1_Exchange8bit(DUMMY);
     SS1_SetValue(true);
     
     return (readVal);
 }
-// write register
+
+/**
+ * @brief Écrit une valeur 8 bits dans un registre du capteur.
+ * @param address Adresse du registre
+ * @param data Donnée à écrire
+ */
 void writeRegister8 (uint8_t address, uint8_t data)
 {
     SS1_SetValue(false);
@@ -166,19 +209,11 @@ void writeRegister8 (uint8_t address, uint8_t data)
     SPI1_Exchange8bit(data);
     SS1_SetValue(true);
 }
-/*
-// delay Xms
-void delay(uint8_t Xms)
-{
-    uint32_t i;
-    while (Xms--)
-    {
-        i = 8000;
-        while (i--);
-    }
-}
-*/
-// Set the interrupts polarity
+
+/**
+ * @brief Définit la polarité des interruptions du capteur.
+ * @param GPIO_CTRL Configuration GPIO
+ */
 void MC3419_Pol_INT(MC3419_GPIO_CTRL GPIO_CTRL)
 {
     uint8_t value;
@@ -189,7 +224,10 @@ void MC3419_Pol_INT(MC3419_GPIO_CTRL GPIO_CTRL)
     writeRegister8(addr_GPIO_CTRL, value);
 }
 
-// Set interrupt enable
+/**
+ * @brief Active les interruptions du capteur.
+ * @param INTR_CTRL Masque d'interruptions à activer
+ */
 void MC3419_INT_Enable (MC3419_INTR_CTRL INTR_CTRL)
 {
     uint8_t value;
@@ -200,15 +238,20 @@ void MC3419_INT_Enable (MC3419_INTR_CTRL INTR_CTRL)
     writeRegister8(addr_INTR_CTRL, value);
 }
 
-// Set motion control
+/**
+ * @brief Configure le contrôle de mouvement du capteur.
+ * @param Motion Masque de configuration
+ */
 void MC3419_MotionCTRL (MC3419_MotionControl Motion)
 {
     MC3419_SetMode(STANDBY);
     writeRegister8(addr_MOTION_CTRL, Motion);
 }
 
-// Status Register
-// lecture registre bits de statuts
+/**
+ * @brief Lit le registre de statut des interruptions du capteur.
+ * @return Statut des interruptions
+ */
 uint8_t MC3419_ReadStatusRegister (void)
 {
     uint8_t stats=0;
@@ -218,20 +261,11 @@ uint8_t MC3419_ReadStatusRegister (void)
     //writeRegister8(addr_INTR_STAT, stats);
     return stats;
 }
-// Status Register
-// lecture registre bits de statuts
-uint8_t MC3419_clearRegister (void)
-{
-    uint8_t stats=0;
-    //return ReadRegister8(addr_INTR_STAT);
-    //modif pour clean interrupt
-    //stats  = ReadRegister8(addr_INTR_STAT);
-    writeRegister8(addr_INTR_STAT, stats);
-    return stats;
-}
 
-// Interrupt pending
-// lit le interrupt status register et quittance tous les bits
+/**
+ * @brief Lit et acquitte le registre de statut des interruptions du capteur.
+ * @return Valeur lue
+ */
 uint8_t MC3419_ReadIntStatusRegisterAndAck (void)
 {
     uint8_t valueRead;
@@ -241,7 +275,11 @@ uint8_t MC3419_ReadIntStatusRegisterAndAck (void)
     return valueRead;
 }
 
-// Set FIFO control
+/**
+ * @brief Configure le registre de contrôle FIFO du capteur.
+ * @param ValCTRL Valeur de configuration
+ * @return Valeur précédente lue
+ */
 uint8_t MC3419_FiFo_CTRL_REG (MC3419_FIFO_CTRL ValCTRL)
 {
     uint8_t value;
@@ -254,6 +292,10 @@ uint8_t MC3419_FiFo_CTRL_REG (MC3419_FIFO_CTRL ValCTRL)
     return valueRead;
 }
 
+/**
+ * @brief Définit le seuil FIFO du capteur.
+ * @param Fifo_Tresh Seuil FIFO
+ */
 void MC3419_FIFO_TRESHOLD (uint8_t Fifo_Tresh)
 {
     uint8_t value;
@@ -266,6 +308,10 @@ void MC3419_FIFO_TRESHOLD (uint8_t Fifo_Tresh)
     writeRegister8(addr_FIFO_CTRL_TR, value);
 }
 
+/**
+ * @brief Écrit le seuil de détection de secousse (Shake) dans le capteur.
+ * @param Value Seuil Shake
+ */
 void MC3419_WriteShakeThresholdRegister (uint16_t Value)
 {
     uint8_t Value_8Bit;
@@ -276,20 +322,39 @@ void MC3419_WriteShakeThresholdRegister (uint16_t Value)
     writeRegister8(addr_SHK_MSB, Value_8Bit);
 }
 
+/**
+ * @brief Écrit la durée et la valeur P2P de secousse dans le capteur.
+ * @param shakeDuration Durée de secousse
+ * @param shakeP2P Valeur P2P
+ */
 void MC3419_WriteShakeDurationAndP2PRegister (uint8_t shakeDuration, uint16_t shakeP2P)
 {
     uint16_t value16Bits;
     uint8_t Value_8Bits;
     
-    //concat�nation en une valeur 16 bits
+    //concat�nation en une valeur 16 bits
     value16Bits = (((uint16_t)shakeDuration)<<12 | shakeP2P ) & 0x7FFF;
     
-    //�criture LSBs
+    //�criture LSBs
     Value_8Bits = value16Bits & 0x00FF;
     writeRegister8(addr_PK_P2P_DUR_LSB, Value_8Bits);
 
-    //�criture MSBs
+    //�criture MSBs
     Value_8Bits = value16Bits >> 8;
     writeRegister8(addr_PK_P2P_DUR_MSB, Value_8Bits);
+}
+
+/**
+ * @brief Efface le registre de statut des interruptions du capteur.
+ * @return Statut effacé
+ */
+uint8_t MC3419_clearRegister (void)
+{
+    uint8_t stats=0;
+    //return ReadRegister8(addr_INTR_STAT);
+    //modif pour clean interrupt
+    //stats  = ReadRegister8(addr_INTR_STAT);
+    writeRegister8(addr_INTR_STAT, stats);
+    return stats;
 }
 

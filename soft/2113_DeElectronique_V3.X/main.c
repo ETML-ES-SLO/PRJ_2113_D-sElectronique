@@ -61,12 +61,23 @@
  */
 appData appdata;
 
+/**
+ * @brief Point d'entrée principal de l'application.
+ * @return 1 en cas de fin de programme
+ */
 int main(void) {
     appdata.state=APP_INIT;
     while (1) {
         switch (appdata.state) {
             case APP_INIT:
-               
+                /**
+                 * @brief Initialisation de l'application.
+                 *
+                 * - Configure le système et les périphériques.
+                 * - Définit les valeurs par défaut des variables d'état.
+                 * - Vérifie l'absence d'interruption pour configurer l'accéléromètre.
+                 * - Passe à l'état d'attente d'interruption.
+                 */
                 SYSTEM_Initialize();
                 appdata.status = 0;
                 appdata.firstTimeSincePowerUp = true;
@@ -87,7 +98,7 @@ int main(void) {
 
                 //si  pas d'interrupt  
                 if (!INT_SHAKE) {
-                    //config accelerom�tre
+                    //config accelerom�tre
                     MC3419_start();
                     //maintien alim OFF
                    POWER_HOLD = 0;
@@ -97,8 +108,16 @@ int main(void) {
 
 
             case APP_WAIT_FOR_INT:
+                /**
+                 * @brief Attente d'une interruption de l'accéléromètre.
+                 *
+                 * - Lit le registre d'état de l'accéléromètre.
+                 * - Vérifie les interruptions de type "shake" et "any motion".
+                 * - Si une interruption est détectée et que c'est la première fois depuis la mise sous tension,
+                 *   passe à l'état de calcul.
+                 */
                 
-                //Lecture registre acc�l
+                //Lecture registre accéle
                 appdata.status = MC3419_ReadStatusRegister();
                 appdata.shakenHasOccured = (appdata.status & SHAKE_INT);
                 appdata.anymHasOccured = (appdata.status & ANYM_INT);
@@ -108,51 +127,69 @@ int main(void) {
                 }
                 break;
             case APP_CALC:
-                //Somme de la valeur de chaque axe
+                /**
+                 * @brief Calcule la valeur pseudo-aléatoire du dé à partir des registres de l'accéléromètre.
+                 *
+                 * - Additionne les valeurs des axes X, Y, Z pour obtenir une graine.
+                 * - Utilise srand/rand pour générer un nombre pseudo-aléatoire.
+                 * - Garantit que le résultat est compris entre 1 et 6 (jamais 0).
+                 * - Passe à l'état d'affichage.
+                 */
                 randomSum = ReadRegister8(addr_Xout_Ex_L);
                 randomSum += ReadRegister8(addr_Xout_Ex_H);
                 randomSum += ReadRegister8(addr_Yout_Ex_L);
                 randomSum += ReadRegister8(addr_Yout_Ex_H);
                 randomSum += ReadRegister8(addr_Zout_Ex_L);
                 randomSum += ReadRegister8(addr_Zout_Ex_H);
-                //g�n�rateur de nombre al�atoire
                 srand(randomSum);
                 randomSum = rand();
-
-                //pour r�cup�rer une valeure entre 1 et 6
+                //pour récupérer une valeur entre 1 et 6
                 appdata.nombreEntier = randomSum % 6;
                 if (appdata.nombreEntier == 0) {
                     appdata.nombreEntier = 1;
                 }
-                
                 SetStates(APP_DISPLAY);
                 break;
             case APP_DISPLAY:
-                
+                /**
+                 * @brief Prépare l'affichage du résultat sur les LEDs.
+                 *
+                 * - Initialise le rapport cyclique PWM (RC) à 10.
+                 * - Active l'affichage (disp=1).
+                 * - Passe à l'état d'attente d'affichage.
+                 */
                 appdata.RC =10;
                 appdata.disp=1;
                 SetStates(APP_DELAY);
                 break; 
-                
             case APP_DELAY:
-                
+                /**
+                 * @brief Lance l'attente d'affichage du résultat.
+                 *
+                 * - Démarre l'attente bloquante (affichage du dé).
+                 * - Passe à l'état d'extinction.
+                 */
                 APP_WaitStart(DISPLAYTIME);
                 SetStates(APP_KILL);
-                
-                
                 break;
             case APP_KILL:
+                /**
+                 * @brief Éteint les LEDs et met le système en veille si aucune interruption n'est détectée.
+                 *
+                 * - Éteint l'affichage.
+                 * - Efface les interruptions de l'accéléromètre.
+                 * - Si aucune interruption, coupe l'alimentation et boucle infinie pour arrêt total.
+                 */
                 DISPLAYNONUM();
                 MC3419_clearRegister();
                 if (!INT_SHAKE) {
                     // maintien alim OFF
                     MC3419_clearRegister();
                     POWER_HOLD = 0;
-                    //boucle infini pour �tre sur
+                    //boucle infini pour être sur
                     while (1) {
                     };
                     break;
-
                 }
 
 
@@ -185,10 +222,9 @@ void APP_TMR1_CallBack(void) {
 
 }
 
-/*
- * Fct d'attente en fct du param d'entr�e en ms 
- * utilisation du timer 1 attente = 1ms
- * attente bloquante
+/**
+ * @brief Attente bloquante pendant un temps donné en ms (utilise le timer 1).
+ * @param waitingTime_ms Durée d'attente en millisecondes
  */
 void APP_WaitStart(uint16_t waitingTime_ms) {
     
@@ -255,12 +291,17 @@ void APP_WaitStart(uint16_t waitingTime_ms) {
     
 }
 
+/**
+ * @brief Change l'état courant de l'application.
+ * @param newstate Nouvel état à appliquer
+ */
 void SetStates(states newstate) {
     appdata.state = newstate;
 }
 
-
-//add comms
+/**
+ * @brief Callback du core timer pour gérer la variation de RC.
+ */
 void APP_CORETIMER_CALLBACK(void)
 {
     static int8_t sens=1;

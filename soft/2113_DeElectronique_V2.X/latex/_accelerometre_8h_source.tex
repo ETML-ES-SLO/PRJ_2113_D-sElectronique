@@ -1,0 +1,348 @@
+\doxysection{Accelerometre.\+h}
+\hypertarget{_accelerometre_8h_source}{}\label{_accelerometre_8h_source}\mbox{\hyperlink{_accelerometre_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ Accelerometre.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ maxcolloud}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ October\ 20,\ 2021,\ 10:06\ AM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ ACCELEROMETRE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ ACCELEROMETRE\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ addr\_GPIO\_CTRL\ \ \ \ \ \ \ \ \ \ 0x33\ \ \ \ \ \ }\textcolor{comment}{//\ Configuration\ Interupt}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ addr\_DEV\_STAT\ \ \ \ \ \ \ \ \ \ \ 0x05}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ addr\_INTR\_CTRL\ \ \ \ \ \ \ \ \ \ 0x06}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ addr\_MODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x07}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ addr\_SR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x08}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ addr\_MOTION\_CTRL\ \ \ \ \ \ \ \ 0x09}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ addr\_FIFO\_STAT\ \ \ \ \ \ \ \ \ \ 0x0A}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ addr\_FIFO\_R\_P\ \ \ \ \ \ \ \ \ \ \ 0x0B}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ addr\_FIFO\_W\_P\ \ \ \ \ \ \ \ \ \ \ 0x0C}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ addr\_Xout\_Ex\_L\ \ \ \ \ \ \ \ \ \ 0x0D}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ addr\_Xout\_Ex\_H\ \ \ \ \ \ \ \ \ \ 0x0E}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ addr\_Yout\_Ex\_L\ \ \ \ \ \ \ \ \ \ 0x0F}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ addr\_Yout\_Ex\_H\ \ \ \ \ \ \ \ \ \ 0x10}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ addr\_Zout\_Ex\_L\ \ \ \ \ \ \ \ \ \ 0x11}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ addr\_Zout\_Ex\_H\ \ \ \ \ \ \ \ \ \ 0x12}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ addr\_Status\ \ \ \ \ \ \ \ \ \ \ \ \ 0x13}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ addr\_INTR\_STAT\ \ \ \ \ \ \ \ \ \ 0x14}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ addr\_Chip\_ID\ \ \ \ \ \ \ \ \ \ \ \ 0x18}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ addr\_Reset\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1C}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ addr\_Range\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x20}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ addr\_XOFFL\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x21}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ addr\_XOFFH\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x22}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ addr\_XGAIN8\ \ \ \ \ \ \ \ \ \ \ \ \ 0x22}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ addr\_XGAIN\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x27}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ addr\_YOFFL\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x23}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ addr\_YOFFH\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x24}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ addr\_YGAIN8\ \ \ \ \ \ \ \ \ \ \ \ \ 0x24}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ addr\_YGAIN\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x28}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ addr\_ZOFFL\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x25}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ addr\_ZOFFH\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x26}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ addr\_ZGAIN8\ \ \ \ \ \ \ \ \ \ \ \ \ 0x26}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ addr\_ZGAIN\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x29}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ addr\_FIFO\_CTRL\ \ \ \ \ \ \ \ \ \ 0x2D}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ addr\_FIFO\_CTRL\_TR\ \ \ \ \ \ \ 0x2E}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ addr\_FIFO\_INTR\ \ \ \ \ \ \ \ \ \ 0x2F}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ addr\_FIFO\_CTRL2\_SR2\ \ \ \ \ 0x30}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ addr\_COMM\_CTRL\ \ \ \ \ \ \ \ \ \ 0x31}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ addr\_TF\_LSB\ \ \ \ \ \ \ \ \ \ \ \ \ 0x40}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ addr\_TF\_MSB\ \ \ \ \ \ \ \ \ \ \ \ \ 0x41}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ addr\_TF\_SB\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x42}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ addr\_AM\_LSB\ \ \ \ \ \ \ \ \ \ \ \ \ 0x43}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ addr\_AM\_MSB\ \ \ \ \ \ \ \ \ \ \ \ \ 0x44}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ addr\_AM\_DB\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x45}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ addr\_SHK\_LSB\ \ \ \ \ \ \ \ \ \ \ \ 0x46}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ addr\_SHK\_MSB\ \ \ \ \ \ \ \ \ \ \ \ 0x47}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ addr\_PK\_P2P\_DUR\_LSB\ \ \ \ \ 0x48}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ addr\_PK\_P2P\_DUR\_MSB\ \ \ \ \ 0x49}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ addr\_TIMER\_CTRL\ \ \ \ \ \ \ \ \ 0x4A}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ addr\_RD\_CNT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x4B}}
+\DoxyCodeLine{00065\ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ GPIO\ Control\ Register\ (Read\ /\ Write)}}
+\DoxyCodeLine{00067\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a620926c3f995817e2771c94edf7d8d86aa0fd1f87078e9b245e8d8621dc0abb99}{GPIO1\_INTN1\_IAH}}\ \ \ =\ 0x04,\ \ \ \ \ \ \textcolor{comment}{//\ 1\ =\ acitf\ haut}}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a620926c3f995817e2771c94edf7d8d86aedf5d374418f10a99c0c99de8b51ebd2}{GPIO1\_INTN1\_IPP}}\ \ \ =\ 0x08,\ \ \ \ \ \ \textcolor{comment}{//\ 0\ =\ open-\/drain,\ 1\ =\ push-\/pull}}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a620926c3f995817e2771c94edf7d8d86a40980384ec1b26ce9013bd95b299931e}{GPIO2\_INT2\_IAH}}\ \ \ \ =\ 0x40,}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a620926c3f995817e2771c94edf7d8d86aec8e3f56356b8e656d6b891cd250912d}{GPIO2\_INTN2\_IPP}}\ \ \ =\ 0x80,}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a620926c3f995817e2771c94edf7d8d86a8a2a1ea0d0be31c6e64af045770652a2}{Mask\_GPIO\_CTRL}}\ \ \ \ =\ 0x33,}
+\DoxyCodeLine{00074\ \}\ \mbox{\hyperlink{_accelerometre_8h_a620926c3f995817e2771c94edf7d8d86}{MC3419\_GPIO\_CTRL}};}
+\DoxyCodeLine{00075\ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//\ Device\ Status\ Register\ (Read)}}
+\DoxyCodeLine{00077\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00078\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a7ea376352ea8945701246e705e499523a3bcc5b0a7971e793255e6ed6649695e8}{STANDBY\_STAT}}\ \ \ \ =\ 0x00,}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a7ea376352ea8945701246e705e499523aaed736edf1cba0a0afa71641b28d5191}{WAKE\_STAT}}\ \ \ \ \ \ \ =\ 0x01,}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a7ea376352ea8945701246e705e499523ac8dd93daaa89ab15cd5d51b162bbd568}{RES\_MODE}}\ \ \ \ \ \ \ \ =\ 0x04,}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a7ea376352ea8945701246e705e499523a2d511f97a594906ea7972c550219604b}{I2C\_WDT}}\ \ \ \ \ \ \ \ \ =\ 0x10,}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a7ea376352ea8945701246e705e499523a5c9d82f66f5eb0f03ec07d5d3e70fd90}{OTP\_BUSY}}\ \ \ \ \ \ \ \ =\ 0x80,}
+\DoxyCodeLine{00084\ \}\ \mbox{\hyperlink{_accelerometre_8h_a7ea376352ea8945701246e705e499523}{MC3419\_DeviceStat}};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ Interrupt\ enable\ register\ (Write)}}
+\DoxyCodeLine{00087\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00088\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_afcafa840f77217dec873ff5b87f35106a8594299d11509cd5d9071c9bae5fd207}{INTR\_Desable}}\ \ \ \ =\ 0x00,}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_afcafa840f77217dec873ff5b87f35106a293b147158983eb10cc301f83b6c463f}{TILT\_INT\_EN}}\ \ \ \ \ =\ 0x01,}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_afcafa840f77217dec873ff5b87f35106a0b3cabf0a8f59fb63bb23128f78af17d}{FLIP\_INT\_EN}}\ \ \ \ \ =\ 0x02,}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_afcafa840f77217dec873ff5b87f35106aaad31d855af4635a6bd7b8ada747973d}{ANYM\_INT\_EN}}\ \ \ \ \ =\ 0x04,}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_afcafa840f77217dec873ff5b87f35106a90e7b656503d111dc0f018500efab00f}{SHAKE\_INT\_EN}}\ \ \ \ =\ 0x08,}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_afcafa840f77217dec873ff5b87f35106a413ac4cb32fabf69fb8ad067b5c69c47}{TILT\_35\_INT\_EN}}\ \ =\ 0x10,}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_afcafa840f77217dec873ff5b87f35106a569ecd36796f5859a695981ba7e8d4ec}{AUTO\_CLR\_EN}}\ \ \ \ \ =\ 0x40,}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_afcafa840f77217dec873ff5b87f35106a12923e67cd87b39a2b9bb373580ffd43}{ACQ\_INT\_EN}}\ \ \ \ \ \ =\ 0x80,}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_afcafa840f77217dec873ff5b87f35106af2db741de1adff4b97e1ec58ae409eb5}{Mask\_INT\_CTRL}}\ \ \ =\ 0x20,}
+\DoxyCodeLine{00098\ \}\ \mbox{\hyperlink{_accelerometre_8h_afcafa840f77217dec873ff5b87f35106}{MC3419\_INTR\_CTRL}};}
+\DoxyCodeLine{00099\ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{comment}{//\ Mode\ Register\ (Write\ Only)}}
+\DoxyCodeLine{00101\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00102\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a1bcf1455c237d009bb5dccbee830bc1aad6137abebe4fdc59e2f0f2c84bdbe3fa}{SLEEP}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x00,}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a1bcf1455c237d009bb5dccbee830bc1aae4634ae4352b512b38c5da9dc1610ca6}{STANDBY}}\ \ \ \ \ \ \ \ \ =\ 0x03,}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a1bcf1455c237d009bb5dccbee830bc1aa669539d1110f789cf3e282be447c3e77}{WAKE}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0x01,}
+\DoxyCodeLine{00106\ \textcolor{comment}{//\ \ \ \ I2C\_WDT\_NEG\ \ \ \ \ =\ 0x10,}}
+\DoxyCodeLine{00107\ \textcolor{comment}{//\ \ \ \ I2C\_WDT\_POS\ \ \ \ \ =\ 0x20,}}
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a1bcf1455c237d009bb5dccbee830bc1aaf051d73bcb8c22fe308414152a533583}{Mask\_Mode}}\ \ \ \ \ \ \ =\ 0xF0,}
+\DoxyCodeLine{00109\ \}\ \mbox{\hyperlink{_accelerometre_8h_a1bcf1455c237d009bb5dccbee830bc1a}{MC3419\_Mode}};}
+\DoxyCodeLine{00110\ \ \ \ \ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{comment}{//\ Sample\ Rate\ Register\ (For\ SPI\ <=\ 4MHz)\ (Read\ /\ Write)}}
+\DoxyCodeLine{00112\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00113\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_aab254000632699510f54fe8756d92252acb3adb3fd44d8cbc2e9fae3ee1d23670}{ODR25}}\ \ \ \ \ \ \ =\ 0x10,}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_aab254000632699510f54fe8756d92252a4ccdcc75db6f39d88c1ac4e396d1bc8d}{ODR50}}\ \ \ \ \ \ \ =\ 0x11,}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_aab254000632699510f54fe8756d92252a699425ab68101b068f26249db0a4a514}{ODR62\_5}}\ \ \ \ \ =\ 0x12,}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_aab254000632699510f54fe8756d92252a4fac00be31f3df678fb31783138321b0}{ODR100}}\ \ \ \ \ \ =\ 0x13,}
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_aab254000632699510f54fe8756d92252a0715f6c75cf1ab9a4ce55f2d4be4c447}{ODR125}}\ \ \ \ \ \ =\ 0x14,}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_aab254000632699510f54fe8756d92252ad0764165170ef71f9141d5bbe2eaf35c}{ODR250}}\ \ \ \ \ \ =\ 0x15,}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_aab254000632699510f54fe8756d92252a1e129b252c1eb9c10409a2aaaa274167}{ODR500}}\ \ \ \ \ \ =\ 0x16,}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_aab254000632699510f54fe8756d92252a1f39031033374166e6d6e8260779aa97}{ODR1000}}\ \ \ \ \ =\ 0x17,}
+\DoxyCodeLine{00122\ \}\ \mbox{\hyperlink{_accelerometre_8h_aab254000632699510f54fe8756d92252}{MC3419\_SamplRate}};}
+\DoxyCodeLine{00123\ \ \ \ \ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{comment}{//\ Motion\ Control\ Register}}
+\DoxyCodeLine{00125\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00126\ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a509f068133649aadfd1b9dea6b6179ffa80299286d2573cd031a68e834880231a}{TF\_ENABLE}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x01,}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a509f068133649aadfd1b9dea6b6179ffaa811ca23adebf2aff13cb42e88501f32}{MOTION\_LATCH}}\ \ \ \ \ \ \ \ =\ 0x02,}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a509f068133649aadfd1b9dea6b6179ffae8664f8c9d81bc7ab1c21f74470734cb}{ANYM\_EN}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x04,}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a509f068133649aadfd1b9dea6b6179ffa06f38876d474ecac63fb560cbb552bf4}{SHAKE\_EN}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0x08,}
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a509f068133649aadfd1b9dea6b6179ffa94813bc094276486854ef88c6b78aaf7}{TILT\_35\_EN}}\ \ \ \ \ \ \ \ \ \ =\ 0x10,}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a509f068133649aadfd1b9dea6b6179ffa1d60c656bff01e399a9b85c11974e605}{Z\_AXIS\_ORT}}\ \ \ \ \ \ \ \ \ \ =\ 0x20,}
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a509f068133649aadfd1b9dea6b6179ffaa52d5d2fcbe3cc642802b35787f601ac}{RAW\_PROC\_STAT}}\ \ \ \ \ \ \ =\ 0x40,}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a509f068133649aadfd1b9dea6b6179ffab5e8ac1da9db34a8d2dfd2578363b2fb}{MOTION\_RESET}}\ \ \ \ \ \ \ \ =\ 0x80,}
+\DoxyCodeLine{00135\ \}\ \mbox{\hyperlink{_accelerometre_8h_a509f068133649aadfd1b9dea6b6179ff}{MC3419\_MotionControl}};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{comment}{//\ FIFO\ Status\ Register\ (Read\ Only)}}
+\DoxyCodeLine{00139\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00140\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_aa5f28314eb25f44cb0ef5db6aee05369a2f0d18fc0d0fa4a6cd92dc328501874d}{EMPTY}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x01,}
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_aa5f28314eb25f44cb0ef5db6aee05369ad08f8ac0aa8dfb59589824359772459e}{FULL}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0x02,}
+\DoxyCodeLine{00143\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_aa5f28314eb25f44cb0ef5db6aee05369a15b5065004af4692a2aa69f3f34062cd}{TRESH}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x04,}
+\DoxyCodeLine{00144\ \}\ \mbox{\hyperlink{_accelerometre_8h_aa5f28314eb25f44cb0ef5db6aee05369}{MC3419\_FIFO\_Stat}};}
+\DoxyCodeLine{00145\ \ \ \ \ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{comment}{//\ FIFO\ Read\ Pointer\ Register\ (Read\ Only)}}
+\DoxyCodeLine{00147\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00148\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_af2b2f337b2e54e475e66e26d0679279fa76f7278a804dd6e2c0869a208aab4557}{FIFO\_RD\_PTR}}\ \ \ \ \ =\ 0x1F,}
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_af2b2f337b2e54e475e66e26d0679279fa7fe41cd666ce2e39c5235b9c90c25f36}{FIFO\_RD\_PTR5}}\ \ \ \ =\ 0x20,}
+\DoxyCodeLine{00151\ \}\ \mbox{\hyperlink{_accelerometre_8h_af2b2f337b2e54e475e66e26d0679279f}{MC3419\_FIFO\_ReadPointer}};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{comment}{//\ FIFO\ Write\ Pointer\ Register\ (Read\ Only)}}
+\DoxyCodeLine{00155\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00156\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_ab48d6eb6ff6601150208a15d1c2a79c5a778df7a9671ffae3b7c750195f18f7ed}{FIFO\_WR\_PTR}}\ \ \ \ \ =\ 0x1F,}
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_ab48d6eb6ff6601150208a15d1c2a79c5a2ee7686c8f5bddc8c40b0e374b8a0b01}{FIFO\_WR\_PTR5}}\ \ \ \ =\ 0x20,}
+\DoxyCodeLine{00159\ \}\ \mbox{\hyperlink{_accelerometre_8h_ab48d6eb6ff6601150208a15d1c2a79c5}{MC3419\_FIFO\_WPointer}};}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{comment}{//\ Status\ Register\ (Read)}}
+\DoxyCodeLine{00162\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00163\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a14dadfb47f052ec9ba62ddd894e8fb18a4acd0da5f73c748568f1cd5ef90d5419}{TILT\_FLAG}}\ \ \ \ \ \ \ =\ 0x01,}
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a14dadfb47f052ec9ba62ddd894e8fb18a9a68297f7957740bb20703cae94d40dd}{FLIP\_FLAG}}\ \ \ \ \ \ \ =\ 0x02,}
+\DoxyCodeLine{00166\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a14dadfb47f052ec9ba62ddd894e8fb18a2a59f6e0bdbf1fe031cb1b1563b0ade4}{ANYM\_FLAG}}\ \ \ \ \ \ \ =\ 0x04,}
+\DoxyCodeLine{00167\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a14dadfb47f052ec9ba62ddd894e8fb18a68c6f4dd46b705aa36c2530571664544}{SHAKE\_FLAG}}\ \ \ \ \ \ =\ 0x08,}
+\DoxyCodeLine{00168\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a14dadfb47f052ec9ba62ddd894e8fb18a3e7579a0958ff502f85e4832d44867d4}{TILT\_35\_FLAG}}\ \ \ \ =\ 0x10,}
+\DoxyCodeLine{00169\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a14dadfb47f052ec9ba62ddd894e8fb18a7f9e434de7a4b3d1345a2257525f4c8c}{FIFO\_FLAG}}\ \ \ \ \ \ \ =\ 0x20,}
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a14dadfb47f052ec9ba62ddd894e8fb18ad2334a03756e7765d8b6e528721d2cb5}{NEW\_DATA}}\ \ \ \ \ \ \ \ =\ 0x80,}
+\DoxyCodeLine{00171\ \}\ \mbox{\hyperlink{_accelerometre_8h_a14dadfb47f052ec9ba62ddd894e8fb18}{MC3419\_Status}};}
+\DoxyCodeLine{00172\ \ \ \ \ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{comment}{//\ Interrupt\ Satus\ Register\ (Read\ /\ Write)}}
+\DoxyCodeLine{00174\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00175\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_ade8bab936253d77b475435e52dd38ce3a30e45ccb92585ceb177cd1f62fa552cc}{TILT\_INT}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0x01,}
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_ade8bab936253d77b475435e52dd38ce3a232602c8e668655a7925ff3b44d21c52}{FLIP\_INT}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0x02,}
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_ade8bab936253d77b475435e52dd38ce3aab7a4dfc730224a566cd1d7305a77ca7}{ANYM\_INT}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0x04,}
+\DoxyCodeLine{00179\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_ade8bab936253d77b475435e52dd38ce3ab872f688a9f9cfc5207d861e0fceefeb}{SHAKE\_INT}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x08,}
+\DoxyCodeLine{00180\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_ade8bab936253d77b475435e52dd38ce3a03d4c9df5d9568f92eaee80088b9f8ab}{TILT\_35\_INT}}\ \ \ \ \ \ \ \ \ =\ 0x10,}
+\DoxyCodeLine{00181\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_ade8bab936253d77b475435e52dd38ce3a39f356ff90d52ee0b9fac6d8cdf27ef6}{FIFO\_INT}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0x20,}
+\DoxyCodeLine{00182\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_ade8bab936253d77b475435e52dd38ce3a9044ec5841991ffcbaa37bbbcf29470c}{ACQ\_INT}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x80,}
+\DoxyCodeLine{00183\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_ade8bab936253d77b475435e52dd38ce3af77cc806b5bf32df4c1c548d643a56c4}{Mask\_INTR\_STATUS}}\ \ \ \ =\ 0x60,}
+\DoxyCodeLine{00184\ \}\ \mbox{\hyperlink{_accelerometre_8h_ade8bab936253d77b475435e52dd38ce3}{MC3419\_INTR\_Status}};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{comment}{//\ Reset\ Control\ (Read\ /\ Write)}}
+\DoxyCodeLine{00187\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00188\ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_aad146650a55ab729ca6436c187dff2cda92793663441ced378f4676b8a6524385}{Reset}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x40,\ \textcolor{comment}{//\ 0\ =\ normal\ operation\ 1\ =\ force\ reset}}
+\DoxyCodeLine{00190\ \}\ \mbox{\hyperlink{_accelerometre_8h_aad146650a55ab729ca6436c187dff2cd}{MC3419\_Reset\_CTRL}};}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{comment}{//\ Range\ And\ Scale\ Control\ Register\ (Write)}}
+\DoxyCodeLine{00193\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00194\ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a52b55d45128b335a672fb9ad0452f4cda0a98b334a2715062b00753a64752c176}{Range2g}}\ \ \ \ \ =\ 0x00,}
+\DoxyCodeLine{00196\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a52b55d45128b335a672fb9ad0452f4cda5f36cc26b6b75bf2b474c78c282446e8}{Range4g}}\ \ \ \ \ =\ 0x10,}
+\DoxyCodeLine{00197\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a52b55d45128b335a672fb9ad0452f4cda7f57b9b71f0e635452aae6b3914dfa62}{Range8g}}\ \ \ \ \ =\ 0x20,}
+\DoxyCodeLine{00198\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a52b55d45128b335a672fb9ad0452f4cda7153ea3c90e62bb28392c08fa28ef01d}{Range16g}}\ \ \ \ =\ 0x30,}
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a52b55d45128b335a672fb9ad0452f4cda31ae70421b4ef2d0610c9dbe516451ba}{Range12g}}\ \ \ \ =\ 0x40,}
+\DoxyCodeLine{00200\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a52b55d45128b335a672fb9ad0452f4cda30859143463d05c6fd35331dcd823c4d}{Mask\_Range}}\ \ =\ 0x07,}
+\DoxyCodeLine{00201\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a52b55d45128b335a672fb9ad0452f4cda3f15ba0b662047955ed6b1f0c646d149}{Range}}\ \ \ \ \ \ \ =\ 0x70,}
+\DoxyCodeLine{00202\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a52b55d45128b335a672fb9ad0452f4cdafc86557bb41d926fb8c718d40e9c6269}{LPF\_EN}}\ \ \ \ \ \ =\ 0x08,}
+\DoxyCodeLine{00203\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a52b55d45128b335a672fb9ad0452f4cdacf24f469b012a868467bbc134bf4f577}{LPF}}\ \ \ \ \ \ \ \ \ =\ 0x07,}
+\DoxyCodeLine{00204\ \}\ \mbox{\hyperlink{_accelerometre_8h_a52b55d45128b335a672fb9ad0452f4cd}{MC3419\_Range}};}
+\DoxyCodeLine{00205\ \ \ \ \ }
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{comment}{//\ X-\/AXIS\ Digital\ Offset\ Register\ (Write)}}
+\DoxyCodeLine{00207\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00208\ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a433f3c2e85df6436e5db8e98792cebf3a37e3d932a2afd73f4551b29d4660277d}{MASK\_XOFFH\_DOR}}\ \ =\ 0x80,}
+\DoxyCodeLine{00210\ \}\ \mbox{\hyperlink{_accelerometre_8h_a433f3c2e85df6436e5db8e98792cebf3}{MC3419\_XOFF}};}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{comment}{//\ X-\/AXIS\ Digital\ Gain\ Register\ (Write)}}
+\DoxyCodeLine{00213\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00214\ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a0510ec08fdc8ef46d3561ee9ad91d1c0a73cb97c2d37aa4fe79d5f691c6c05d43}{MASK\_XOFFH8}}\ \ \ \ \ =\ 0x80,}
+\DoxyCodeLine{00216\ \}\ \mbox{\hyperlink{_accelerometre_8h_a0510ec08fdc8ef46d3561ee9ad91d1c0}{MC3419\_XGAIN}};}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{comment}{//\ Y-\/AXIS\ Digital\ Offset\ Register\ (Write)}}
+\DoxyCodeLine{00219\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00220\ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a1e3c10bad77f6ec85417428a2fcfe3a2ae66b1775494ae115336ca86ffbfe1364}{MASK\_YOFFH\_DOR}}\ \ =\ 0x80,}
+\DoxyCodeLine{00222\ \}\ \mbox{\hyperlink{_accelerometre_8h_a1e3c10bad77f6ec85417428a2fcfe3a2}{MC3419\_YOFF}};}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{comment}{//\ Y-\/AXIS\ Digital\ Gain\ Register\ (Write)}}
+\DoxyCodeLine{00225\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00226\ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a64dd2ed810d49bb0c0b9413dbcff264daa047e31003451e210e81972c73c5e341}{MASK\_YOFFH8}}\ \ \ \ \ =\ 0x80,}
+\DoxyCodeLine{00228\ \}\ \mbox{\hyperlink{_accelerometre_8h_a64dd2ed810d49bb0c0b9413dbcff264d}{MC3419\_YGAIN}};}
+\DoxyCodeLine{00229\ \ \ \ \ }
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{comment}{//\ Z-\/AXIS\ Digital\ Offset\ Register\ (Write)}}
+\DoxyCodeLine{00231\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00232\ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a2a75dc0e619b93b97e652ca3088bbf05a9450d38dc10355d3644093b2f261c880}{MASK\_ZOFFH\_DOR}}\ \ =\ 0x80,}
+\DoxyCodeLine{00234\ \}\ \mbox{\hyperlink{_accelerometre_8h_a2a75dc0e619b93b97e652ca3088bbf05}{MC3419\_ZOFF}};}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{comment}{//\ Z-\/AXIS\ Digital\ Gain\ Register\ (Write)}}
+\DoxyCodeLine{00237\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00238\ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a4233418525c38d709bf2a9caa5111b77aaff479eab73416fc91be497b6bf4bd81}{MASK\_ZOFFH8}}\ \ \ \ \ =\ 0x80,}
+\DoxyCodeLine{00240\ \}\ \mbox{\hyperlink{_accelerometre_8h_a4233418525c38d709bf2a9caa5111b77}{MC3419\_ZGAIN}};}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \ \ }
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{comment}{//\ FIFO\ Control\ Register\ (Read\ /\ Write)}}
+\DoxyCodeLine{00244\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00245\ \{}
+\DoxyCodeLine{00246\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a9785e3876466c336ec45c5c9a4d3ce6aad079d98a23457e3312a29eb702b04732}{ALL\_FIFO\_CTRL\_DIS}}\ \ \ =\ 0x00,}
+\DoxyCodeLine{00247\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a9785e3876466c336ec45c5c9a4d3ce6aa8fb013383a364b428671587aa79e4e58}{FIFO\_EMPTY\_INT\_EN}}\ \ \ =\ 0x01,}
+\DoxyCodeLine{00248\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a9785e3876466c336ec45c5c9a4d3ce6aa25448ecff1037c72ee3ee6802bce4795}{FIFO\_FULL\_INT\_EN}}\ \ \ \ =\ 0x02,}
+\DoxyCodeLine{00249\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a9785e3876466c336ec45c5c9a4d3ce6aa0cee815f1de28e529640d7c098a25b67}{FIFO\_TH\_INT\_EN}}\ \ \ \ \ \ =\ 0x04,}
+\DoxyCodeLine{00250\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a9785e3876466c336ec45c5c9a4d3ce6aa22e941930e9f3d6df50353c8f04ed8cf}{COMB\_INT\_EN}}\ \ \ \ \ \ \ \ \ =\ 0x08,}
+\DoxyCodeLine{00251\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a9785e3876466c336ec45c5c9a4d3ce6aaf9786a295ee04a151dfc992268ec92d1}{FIFO\_RESET}}\ \ \ \ \ \ \ \ \ \ =\ 0x10,}
+\DoxyCodeLine{00252\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a9785e3876466c336ec45c5c9a4d3ce6aa2d4c6720f8adc4921d224184e0468715}{FIFO\_EN}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x20,}
+\DoxyCodeLine{00253\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a9785e3876466c336ec45c5c9a4d3ce6aafe835983834df81eea00a1ac5eebe9c6}{FIFO\_MODE}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x40,}
+\DoxyCodeLine{00254\ \}\ \mbox{\hyperlink{_accelerometre_8h_a9785e3876466c336ec45c5c9a4d3ce6a}{MC3419\_FIFO\_CTRL}};}
+\DoxyCodeLine{00255\ \ \ \ \ }
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{comment}{//\ FIFO\ Threshold\ Register\ (Read\ /\ Write)}}
+\DoxyCodeLine{00257\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00258\ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a56809c9c96674c0ed5c20accf7f0d0b6a4f39c954eaf5eea4fbd519073ec674f3}{Mask\_FIFO\_TH}}\ \ \ \ \ \ \ \ =\ 0xE0,}
+\DoxyCodeLine{00260\ \}\ \mbox{\hyperlink{_accelerometre_8h_a56809c9c96674c0ed5c20accf7f0d0b6}{MC3419\_FIFO\_THRESH\_CTRL}};}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ }
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{comment}{//\ FIFO\ Interrupt\ Status\ Register\ (Read\ Only)}}
+\DoxyCodeLine{00264\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00265\ \{}
+\DoxyCodeLine{00266\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a5373ccf75d60092c558aa795f64b2494a6e92da92eb77c651f29aeeccddb5d11f}{EMPTY\_INT}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x01,}
+\DoxyCodeLine{00267\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a5373ccf75d60092c558aa795f64b2494ad3aa7e82908aac3c5eea43fafdce0e42}{FULL\_INT}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0x02,}
+\DoxyCodeLine{00268\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a5373ccf75d60092c558aa795f64b2494a204446f24eddaa2e8f53aefbc536285d}{TRESH\_INT}}\ \ \ \ \ \ \ \ \ \ =\ 0x40,}
+\DoxyCodeLine{00269\ \}\ \mbox{\hyperlink{_accelerometre_8h_a5373ccf75d60092c558aa795f64b2494}{MC3419\_FIFO\_INTR}};}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ }
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{comment}{//\ FIFO\ Controle\ Register2,\ Sample\ Rate\ Register2\ (Read\ /\ Write)}}
+\DoxyCodeLine{00273\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00274\ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a64e109ff65fe4d0613f89f4790d7db6ca22be1fc82cd7dd719ed51f5a5439a640}{DEC\_MODE\_RATE}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x1F,}
+\DoxyCodeLine{00276\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a64e109ff65fe4d0613f89f4790d7db6ca4781309bc180c7bccdb6758ce2344303}{ENABLE\_WRAP\_N}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x10,}
+\DoxyCodeLine{00277\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a64e109ff65fe4d0613f89f4790d7db6cafa92615d2c709a4a3c193bd689018fe7}{SELECT\_WRAP\_ADDR}}\ \ \ \ \ \ \ \ =\ 0x20,}
+\DoxyCodeLine{00278\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a64e109ff65fe4d0613f89f4790d7db6cace4bc2853cbf141ae7c5b1cf97e61a0e}{FIFO\_BURST\_MODE}}\ \ \ \ \ \ \ \ \ =\ 0x80,}
+\DoxyCodeLine{00279\ \}\ \mbox{\hyperlink{_accelerometre_8h_a64e109ff65fe4d0613f89f4790d7db6c}{MC3419\_FIFO\_CTRL\_2}};}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ }
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{comment}{//\ Communication\ Control\ Register\ (Read\ /\ Wrtie)}}
+\DoxyCodeLine{00283\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00284\ \{}
+\DoxyCodeLine{00285\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a1f01e5e274e67d4bdac60621c0cc6309a701b2b3fc6ce7e75d12e4f41a3ec29c1}{INT1\_INT2\_REQ\_SWAP}}\ \ =\ 0x10,}
+\DoxyCodeLine{00286\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a1f01e5e274e67d4bdac60621c0cc6309a1572103eb2f863e1d34a7a7d89490854}{SPI\_3WIRE\_EN}}\ \ \ \ \ \ \ \ =\ 0x20,}
+\DoxyCodeLine{00287\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a1f01e5e274e67d4bdac60621c0cc6309a7b47efa7a5cbc424559fc7d961952c0f}{INDIV\_INTR\_CLR}}\ \ \ \ \ \ =\ 0x40,}
+\DoxyCodeLine{00288\ \}\ \mbox{\hyperlink{_accelerometre_8h_a1f01e5e274e67d4bdac60621c0cc6309}{MC3419\_COMM\_CTRL}};}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ \ \ }
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{comment}{//\ TILP/FLIP\ Threshold\ register\ (Write)}}
+\DoxyCodeLine{00292\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00293\ \{}
+\DoxyCodeLine{00294\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_addd2e6ba6562c7a8c6c97d66e0c301c3a3fae14e26f4cbb4345090a7ce8808383}{Mask\_THRESH\_TF\_MSB}}\ \ =\ 0x80,}
+\DoxyCodeLine{00295\ \}\ \mbox{\hyperlink{_accelerometre_8h_addd2e6ba6562c7a8c6c97d66e0c301c3}{MC3419\_TF\_THRESH}};}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{comment}{//\ Anymotion\ Threshold\ Register\ (Write)}}
+\DoxyCodeLine{00298\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00299\ \{}
+\DoxyCodeLine{00300\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a62d56e0d67d21dfae6924b2380272856aea42c824015bf2e35172fb82c094c52c}{Mask\_THRESH\_AM\_MSB}}\ \ =\ 0x80,}
+\DoxyCodeLine{00301\ \}\ \mbox{\hyperlink{_accelerometre_8h_a62d56e0d67d21dfae6924b2380272856}{MC3419\_AM\_THRESH}};}
+\DoxyCodeLine{00302\ \ \ \ \ }
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{comment}{//\ Shake\ Duration,\ Peak-\/To\_Peak\ Register\ (Write)}}
+\DoxyCodeLine{00304\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00305\ \{}
+\DoxyCodeLine{00306\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_a24daabe2a9c0091589c0e2f93b5f6015afb52f3a8a33a9ca9806cb089a5cc11ac}{Mask\_PK\_P2P\_DUR\_MSB}}\ \ \ \ \ \ =\ 0x80,}
+\DoxyCodeLine{00307\ \}\ \mbox{\hyperlink{_accelerometre_8h_a24daabe2a9c0091589c0e2f93b5f6015}{MC3419\_PK\_TRESH}};}
+\DoxyCodeLine{00308\ \ \ \ \ }
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{comment}{//\ Timer\ Control\ register\ (Write)}}
+\DoxyCodeLine{00310\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00311\ \{}
+\DoxyCodeLine{00312\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_adac8da36493b9278f19a33eac7d7aa6ea02ac7fe6273b18c9170e6c19b2b4eada}{TILT\_35}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x07,}
+\DoxyCodeLine{00313\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_adac8da36493b9278f19a33eac7d7aa6eaac0596ff7ae060282a5cf9932bc5ca00}{TEMP\_PERIOD}}\ \ \ \ \ \ \ \ \ =\ 0x70,}
+\DoxyCodeLine{00314\ \ \ \ \ \mbox{\hyperlink{_accelerometre_8h_adac8da36493b9278f19a33eac7d7aa6ea4f257c8cbe94f14ea3bf91739eecff79}{TEMP\_PER\_INT\_EN}}\ \ \ \ \ =\ 0x80,}
+\DoxyCodeLine{00315\ \}\ \mbox{\hyperlink{_accelerometre_8h_adac8da36493b9278f19a33eac7d7aa6e}{MC3419\_TIMER\_CTRL}};}
+\DoxyCodeLine{00316\ \ \ \ \ }
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{comment}{//\ Fonctions}}
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_accelerometre_8h_a9ae57db275809bc093fb879e023b3c5e}{MC3419\_SetMode}}\ (\mbox{\hyperlink{_accelerometre_8h_a1bcf1455c237d009bb5dccbee830bc1a}{MC3419\_Mode}}\ Mode);}
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_accelerometre_8h_a62f3cae572e3dbb5e9c5543c135ab40a}{MC3419\_SetRangleCtrl}}\ (\mbox{\hyperlink{_accelerometre_8h_a52b55d45128b335a672fb9ad0452f4cd}{MC3419\_Range}}\ \mbox{\hyperlink{_accelerometre_8h_a52b55d45128b335a672fb9ad0452f4cda3f15ba0b662047955ed6b1f0c646d149}{Range}});}
+\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_accelerometre_8h_ade2d67869fb287b6fce417a7c7345db5}{MC3419\_SetSampleRate}}(\mbox{\hyperlink{_accelerometre_8h_aab254000632699510f54fe8756d92252}{MC3419\_SamplRate}}\ SampleRate);}
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_accelerometre_8h_ab015f0c9af2205780b56a76cacc4c51b}{MC3419\_wake}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_accelerometre_8h_ae3823d6c06bbb5bf70eaaac1ce81553c}{MC3419\_stop}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_accelerometre_8h_a85c42d11f42919bc5139bb178d08827a}{MC3419\_reset}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_accelerometre_8h_a4ddd54028cd3a20032912758fdd72cc3}{MC3419\_start}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00325\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{_accelerometre_8h_a2bd4c1299cf6f9e6428ff7f673d2f93c}{MC3419\_ID}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00326\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{_accelerometre_8h_a45a6c20144b882f4067231cc340b942c}{ReadRegister8}}(uint8\_t\ address);}
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_accelerometre_8h_a43618e36fd841e9db9fc0463f6c5d129}{writeRegister8}}\ (uint8\_t\ address,\ uint8\_t\ data);}
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_accelerometre_8h_a72d71331159c9324e0ea54e7c8679d43}{delay}}(uint8\_t\ Xms);}
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_accelerometre_8h_a400d64d562188710fb88ed74c78c3b5e}{MC3419\_Pol\_INT}}(\mbox{\hyperlink{_accelerometre_8h_a620926c3f995817e2771c94edf7d8d86}{MC3419\_GPIO\_CTRL}}\ GPIO\_CTRL);}
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_accelerometre_8h_aef9e9192376cba0f970489c16b859d34}{MC3419\_INT\_Enable}}\ (\mbox{\hyperlink{_accelerometre_8h_afcafa840f77217dec873ff5b87f35106}{MC3419\_INTR\_CTRL}}\ INTR\_CTRL);}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_accelerometre_8h_a1d456db336854318ada175c9dff045cc}{MC3419\_MotionCTRL}}\ (\mbox{\hyperlink{_accelerometre_8h_a509f068133649aadfd1b9dea6b6179ff}{MC3419\_MotionControl}}\ Motion);}
+\DoxyCodeLine{00332\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{_accelerometre_8h_af397831feaa9e0d72ba45e015ada2f45}{MC3419\_ReadStatusRegister}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00333\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{_accelerometre_8h_a75f1ecb0b258afe70e52c4e36dcc92cf}{MC3419\_ReadIntStatusRegisterAndAck}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00334\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{_accelerometre_8h_aaafb26a88f3f595d3777156bb382fd4d}{MC3419\_FiFo\_CTRL\_REG}}\ (\mbox{\hyperlink{_accelerometre_8h_a9785e3876466c336ec45c5c9a4d3ce6a}{MC3419\_FIFO\_CTRL}}\ ValCTRL);}
+\DoxyCodeLine{00335\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_accelerometre_8h_a56de8318574314b7a4dccdaed9ae50a9}{MC3419\_FIFO\_TRESHOLD}}\ (uint8\_t\ Fifo\_Tresh);}
+\DoxyCodeLine{00336\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_accelerometre_8h_a49dceec14f9d0b58dc84479135961ce5}{MC3419\_WriteShakeThresholdRegister}}\ (uint16\_t\ Value);}
+\DoxyCodeLine{00337\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_accelerometre_8h_a70eedb9d2a233fac909f9461310be1b2}{MC3419\_WriteShakeDurationAndP2PRegister}}\ (uint8\_t\ shakeDuration,\ uint16\_t\ shakeP2P);}
+\DoxyCodeLine{00338\ \ \ \ \ }
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00340\ \}}
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ ACCELEROMETRE\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

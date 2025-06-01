@@ -1,0 +1,97 @@
+\doxysection{Mc32\+Delays.\+c File Reference}
+\hypertarget{_mc32_delays_8c}{}\label{_mc32_delays_8c}\index{Mc32Delays.c@{Mc32Delays.c}}
+{\ttfamily \#include "{}Mc32\+Delays.\+h"{}}\newline
+{\ttfamily \#include $<$xc.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}Main.\+h"{}}\newline
+{\ttfamily \#include "{}mcc\+\_\+generated\+\_\+files/tmr1.\+h"{}}\newline
+Include dependency graph for Mc32\+Delays.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_mc32_delays_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_mc32_delays_8c_a7d5ce7b79462bbfb630ee53075540b65}{SYS\+\_\+\+FREQ}}~(80000000L)
+\item 
+\#define \mbox{\hyperlink{_mc32_delays_8c_aad7e9b5288ef8996ad1a433d573faa97}{TICK\+\_\+\+CT\+\_\+\+MS}}~(\mbox{\hyperlink{_mc32_delays_8c_a7d5ce7b79462bbfb630ee53075540b65}{SYS\+\_\+\+FREQ}} / 2000L)
+\item 
+\#define \mbox{\hyperlink{_mc32_delays_8c_a5aefed65da1165727f9e452f53f46bd4}{TICK\+\_\+\+CT\+\_\+\+US}}~(\mbox{\hyperlink{_mc32_delays_8c_a7d5ce7b79462bbfb630ee53075540b65}{SYS\+\_\+\+FREQ}} / 2000000L)
+\item 
+\#define \mbox{\hyperlink{_mc32_delays_8c_aa1a52d499f7345add9f2ca23dfa5078b}{TICK\+\_\+\+OVERHEAD}}~15
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_mc32_delays_8c_aaa907d48fa4b5f8613988b6aee0c4d1b}{delay500ns}} (void)
+\item 
+void \mbox{\hyperlink{_mc32_delays_8c_a84f652539f41e435c3b08e023d3ba0dd}{delay\+\_\+us}} (unsigned int us)
+\item 
+void \mbox{\hyperlink{_mc32_delays_8c_af29c4657f62375d42c6ee104b6bf4491}{delay\+\_\+ms}} (unsigned int ms)
+\item 
+void \mbox{\hyperlink{_mc32_delays_8c_a5f24437989f804360afe905f635898c6}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((optimize("{}-\/O0"{})))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_mc32_delays_8c_a7d5ce7b79462bbfb630ee53075540b65}\index{Mc32Delays.c@{Mc32Delays.c}!SYS\_FREQ@{SYS\_FREQ}}
+\index{SYS\_FREQ@{SYS\_FREQ}!Mc32Delays.c@{Mc32Delays.c}}
+\doxysubsubsection{\texorpdfstring{SYS\_FREQ}{SYS\_FREQ}}
+{\footnotesize\ttfamily \label{_mc32_delays_8c_a7d5ce7b79462bbfb630ee53075540b65} 
+\#define SYS\+\_\+\+FREQ~(80000000L)}
+
+\Hypertarget{_mc32_delays_8c_aad7e9b5288ef8996ad1a433d573faa97}\index{Mc32Delays.c@{Mc32Delays.c}!TICK\_CT\_MS@{TICK\_CT\_MS}}
+\index{TICK\_CT\_MS@{TICK\_CT\_MS}!Mc32Delays.c@{Mc32Delays.c}}
+\doxysubsubsection{\texorpdfstring{TICK\_CT\_MS}{TICK\_CT\_MS}}
+{\footnotesize\ttfamily \label{_mc32_delays_8c_aad7e9b5288ef8996ad1a433d573faa97} 
+\#define TICK\+\_\+\+CT\+\_\+\+MS~(\mbox{\hyperlink{_mc32_delays_8c_a7d5ce7b79462bbfb630ee53075540b65}{SYS\+\_\+\+FREQ}} / 2000L)}
+
+\Hypertarget{_mc32_delays_8c_a5aefed65da1165727f9e452f53f46bd4}\index{Mc32Delays.c@{Mc32Delays.c}!TICK\_CT\_US@{TICK\_CT\_US}}
+\index{TICK\_CT\_US@{TICK\_CT\_US}!Mc32Delays.c@{Mc32Delays.c}}
+\doxysubsubsection{\texorpdfstring{TICK\_CT\_US}{TICK\_CT\_US}}
+{\footnotesize\ttfamily \label{_mc32_delays_8c_a5aefed65da1165727f9e452f53f46bd4} 
+\#define TICK\+\_\+\+CT\+\_\+\+US~(\mbox{\hyperlink{_mc32_delays_8c_a7d5ce7b79462bbfb630ee53075540b65}{SYS\+\_\+\+FREQ}} / 2000000L)}
+
+\Hypertarget{_mc32_delays_8c_aa1a52d499f7345add9f2ca23dfa5078b}\index{Mc32Delays.c@{Mc32Delays.c}!TICK\_OVERHEAD@{TICK\_OVERHEAD}}
+\index{TICK\_OVERHEAD@{TICK\_OVERHEAD}!Mc32Delays.c@{Mc32Delays.c}}
+\doxysubsubsection{\texorpdfstring{TICK\_OVERHEAD}{TICK\_OVERHEAD}}
+{\footnotesize\ttfamily \label{_mc32_delays_8c_aa1a52d499f7345add9f2ca23dfa5078b} 
+\#define TICK\+\_\+\+OVERHEAD~15}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_mc32_delays_8c_a5f24437989f804360afe905f635898c6}\index{Mc32Delays.c@{Mc32Delays.c}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!Mc32Delays.c@{Mc32Delays.c}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}}
+{\footnotesize\ttfamily \label{_mc32_delays_8c_a5f24437989f804360afe905f635898c6} 
+void \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(optimize("{}-\/O0"{}))}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{_mc32_delays_8c_a5f24437989f804360afe905f635898c6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_mc32_delays_8c_aaa907d48fa4b5f8613988b6aee0c4d1b}\index{Mc32Delays.c@{Mc32Delays.c}!delay500ns@{delay500ns}}
+\index{delay500ns@{delay500ns}!Mc32Delays.c@{Mc32Delays.c}}
+\doxysubsubsection{\texorpdfstring{delay500ns()}{delay500ns()}}
+{\footnotesize\ttfamily \label{_mc32_delays_8c_aaa907d48fa4b5f8613988b6aee0c4d1b} 
+void delay500ns (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_mc32_delays_8c_af29c4657f62375d42c6ee104b6bf4491}\index{Mc32Delays.c@{Mc32Delays.c}!delay\_ms@{delay\_ms}}
+\index{delay\_ms@{delay\_ms}!Mc32Delays.c@{Mc32Delays.c}}
+\doxysubsubsection{\texorpdfstring{delay\_ms()}{delay\_ms()}}
+{\footnotesize\ttfamily \label{_mc32_delays_8c_af29c4657f62375d42c6ee104b6bf4491} 
+void delay\+\_\+ms (\begin{DoxyParamCaption}\item[{unsigned int}]{ms}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_mc32_delays_8c_a84f652539f41e435c3b08e023d3ba0dd}\index{Mc32Delays.c@{Mc32Delays.c}!delay\_us@{delay\_us}}
+\index{delay\_us@{delay\_us}!Mc32Delays.c@{Mc32Delays.c}}
+\doxysubsubsection{\texorpdfstring{delay\_us()}{delay\_us()}}
+{\footnotesize\ttfamily \label{_mc32_delays_8c_a84f652539f41e435c3b08e023d3ba0dd} 
+void delay\+\_\+us (\begin{DoxyParamCaption}\item[{unsigned int}]{us}{}\end{DoxyParamCaption})}
+

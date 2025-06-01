@@ -185,7 +185,7 @@ typedef enum
 
     // Reset Control (Read / Write)
 typedef enum
-{
+    {
     Reset           = 0x40, // 0 = normal operation 1 = force reset
 } MC3419_Reset_CTRL;
 
@@ -315,27 +315,110 @@ typedef enum
 } MC3419_TIMER_CTRL;
     
     // Fonctions
+    /**
+     * @brief Définit le mode de fonctionnement du capteur.
+     * @param Mode Mode à appliquer.
+     */
     void MC3419_SetMode (MC3419_Mode Mode);
+    /**
+     * @brief Définit la plage de mesure du capteur.
+     * @param Range Plage à appliquer.
+     */
     void MC3419_SetRangleCtrl (MC3419_Range Range);
+    /**
+     * @brief Définit la fréquence d'échantillonnage du capteur.
+     * @param SampleRate Fréquence à appliquer.
+     */
     void MC3419_SetSampleRate(MC3419_SamplRate SampleRate);
+    /**
+     * @brief Met le capteur en mode réveil.
+     */
     void MC3419_wake(void);
+    /**
+     * @brief Met le capteur en mode veille.
+     */
     void MC3419_stop(void);
+    /**
+     * @brief Réinitialise le capteur.
+     */
     void MC3419_reset(void);
+    /**
+     * @brief Initialise le capteur avec la configuration par défaut.
+     */
     void MC3419_start(void);
+    /**
+     * @brief Lit l'identifiant du capteur.
+     * @return Identifiant du capteur.
+     */
     uint8_t MC3419_ID (void);
+    /**
+     * @brief Lit un registre 8 bits du capteur.
+     * @param address Adresse du registre.
+     * @return Valeur lue.
+     */
     uint8_t ReadRegister8(uint8_t address);
+    /**
+     * @brief Écrit une valeur 8 bits dans un registre du capteur.
+     * @param address Adresse du registre.
+     * @param data Donnée à écrire.
+     */
     void writeRegister8 (uint8_t address, uint8_t data);
-    //void delay(uint8_t Xms);
+    /**
+     * @brief Définit la polarité des interruptions du capteur.
+     * @param GPIO_CTRL Configuration GPIO.
+     */
     void MC3419_Pol_INT(MC3419_GPIO_CTRL GPIO_CTRL);
+    /**
+     * @brief Active les interruptions du capteur.
+     * @param INTR_CTRL Masque d'interruptions à activer.
+     */
     void MC3419_INT_Enable (MC3419_INTR_CTRL INTR_CTRL);
+    /**
+     * @brief Configure le contrôle de mouvement du capteur.
+     * @param Motion Masque de configuration.
+     */
     void MC3419_MotionCTRL (MC3419_MotionControl Motion);
+    /**
+     * @brief Lit le registre de statut des interruptions du capteur.
+     * @return Statut des interruptions.
+     */
     uint8_t MC3419_ReadStatusRegister (void);
+    /**
+     * @brief Lit et acquitte le registre de statut des interruptions du capteur.
+     * @return Valeur lue.
+     */
     uint8_t MC3419_ReadIntStatusRegisterAndAck (void);
+    /**
+     * @brief Configure le registre de contrôle FIFO du capteur.
+     * @param ValCTRL Valeur de configuration.
+     * @return Valeur précédente lue.
+     */
     uint8_t MC3419_FiFo_CTRL_REG (MC3419_FIFO_CTRL ValCTRL);
+    /**
+     * @brief Définit le seuil FIFO du capteur.
+     * @param Fifo_Tresh Seuil FIFO.
+     */
     void MC3419_FIFO_TRESHOLD (uint8_t Fifo_Tresh);
+    /**
+     * @brief Écrit le seuil de détection de secousse (Shake) dans le capteur.
+     * @param Value Seuil Shake.
+     */
     void MC3419_WriteShakeThresholdRegister (uint16_t Value);
+    /**
+     * @brief Écrit la durée et la valeur P2P de secousse dans le capteur.
+     * @param shakeDuration Durée de secousse.
+     * @param shakeP2P Valeur P2P.
+     */
     void MC3419_WriteShakeDurationAndP2PRegister (uint8_t shakeDuration, uint16_t shakeP2P);
+    /**
+     * @brief Écrit la valeur de debounce AnyMotion dans le registre du capteur.
+     * @param tresholda Valeur de debounce.
+     */
     void MC3419_WriteAnyMotionDebounceRegister (uint8_t tresholda);
+    /**
+     * @brief Efface le registre de statut des interruptions du capteur.
+     * @return Statut effacé.
+     */
     uint8_t MC3419_clearRegister (void);
 #ifdef	__cplusplus
 }

@@ -54,10 +54,28 @@ extern "C" {
     } appData;
 
 
+    /**
+     * @brief Lance une attente bloquante pendant un temps donné (ms).
+     * @param waitingTime Durée d'attente en millisecondes
+     */
     void APP_WaitStart(uint16_t waitingTime);
+    /**
+     * @brief Callback du timer 1, décrémente le délai stocké dans AppData.
+     */
     void APP_TMR1_CallBack();
+    /**
+     * @brief Lance une attente non bloquante (fonction expérimentale).
+     * @return true si attente terminée, false sinon
+     */
     bool APP_WaitStart_noBlocking();
+    /**
+     * @brief Change l'état courant de l'application.
+     * @param newstate Nouvel état à appliquer
+     */
     void SetStates(states newstate);
+    /**
+     * @brief Callback du core timer pour gérer la variation de RC.
+     */
     void APP_CORETIMER_CALLBACK(void);
 
 #ifdef	__cplusplus

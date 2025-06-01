@@ -1,0 +1,8 @@
+  Total kseg0_program_mem used  :      0x29b4       10676  16.3% of 0x10000
+
+  Total kseg1_boot_mem used  :       0x170         368  31.5% of 0x490
+        --------------------------------------------------------------------------
+         Total Program Memory used  :      0x2b24       11044  16.6% of 0x10490
+    Total kseg0_data_mem used  :        0xb0         176  2.1% of 0x2000
+        --------------------------------------------------------------------------
+            Total Data Memory used  :        0xb0         176  2.1% of 0x2000

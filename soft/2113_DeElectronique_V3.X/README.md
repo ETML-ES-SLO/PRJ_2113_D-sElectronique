@@ -1,19 +1,86 @@
-pending...
+# 2113_DeElectronique_V3
+
+Ce projet implémente une application pour microcontrôleur PIC32MM0064GPL020, développée avec MPLAB X et XC32.
+
+## Sommaire
+
+- [Présentation](#présentation)
+- [Informations de génération](#informations-de-génération)
+- [Compilation](#compilation)
+- [Utilisation](#utilisation)
+- [Documentation Doxygen](#documentation-doxygen)
+- [Diagrammes](#diagrammes)
+- [Ressources](#ressources)
+
+## Présentation
+
+Ce dépôt contient le code source et la configuration pour le projet électronique basé sur le PIC32MM.  
+La documentation technique est générée avec Doxygen.
+
+## Modifications apportées entre V2 et V3
+
+- Modification de la fonction d'attente avec utilisation du timer (précision accrue et meilleure gestion du temps).
+- Ajout de la possibilité de modifier le changement de la consigne PWM avec le CoreTimer (meilleure flexibilité et contrôle).
+- Ajout du réglage d'intensité automatique avec les "rampes" (transition douce de l'intensité).
+- Refactorisation et amélioration des commentaires pour une meilleure génération de documentation Doxygen.
+- Refactorisation de la structure principale du main.
+
+## Informations de génération
+
+```
+Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.75.1
+Device            :  PIC32MM0064GPL020
+
+Les drivers générés sont testés avec :
+    Compiler      :  XC16 v1.35
+    MPLAB         :  MPLAB X v5.05
+
+La version 3 de cette application est conçue et testée avec :
+    Compiler      :  XC32 v2.5 
+    MPLAB         :  MPLAB X v5.50
+```
+
+## Compilation
+
+1. crée un dossier "PROJ" sous" C:\microchip\harmony\v2_06\apps\"
+2. Cloner ce dépôt à l'intérieur  le chemin devrais être : "C:\microchip\harmony\v2_06\apps\PROJ\PRJ_2113_D-sElectronique"
+4. Ouvrez le projet dans MPLAB X.
+5. Sélectionnez le compilateur XC32 v2.5.
+6. Compilez le projet (`Build Project`).
+
+## Utilisation
+
+- Chargez le firmware sur la carte cible (2113E_DeElectronique) via MPLAB X (la carte doit être alientée).
+- Retirer la sonde de programation (snap/icd4) appuyer sur le switch environs 1s.
+- secouer
+- pour éteindre: retirer la pile 
+
+## Etat actuel 
+- Possibilité d'apparition de l'interruption sans que le microcontroleur ne soit totalement éteind/allumé à déterminer. 
+- Après quelques rolls de dé puis laisser ~2h un roll était toujour possible aucun problème... (n'empêche pas le point précédent)
+## Documentation Doxygen
+
+La documentation complète du code est disponible dans le dossier [html/](html/).  
+[Consulter la documentation Doxygen](./html/index.html)
 
 
- Generation Information :
- 
-    Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.75.1
-        Device            :  PIC32MM0064GPL020
-        
-    The generated drivers are tested against the following:
-        Compiler          :  XC16 v1.35
-        MPLAB 	          :  MPLAB X v5.05
 
-    The v3 of this app is designed and tested with :
-        Compiler         :  XC32 v2.5 
-        MPLAB 	          :  MPLAB X v5.50
+## Diagrammes
 
 
-<a href='https://www.gitclear.com/github_profile_dynamic_readme_free?expand_widget=1' target='_blank'><img src='https://www.gitclear.com/chart_glimpses/e69bce52-4408-443d-a017-090adb21f92d.png' /></a>
-<a href='https://app.code2flow.com/4KzdjTEuBLGw.png' target='_blank'><img src='https://app.code2flow.com/4KzdjTEuBLGw.png' /></a>
+
+
+
+## Ressources
+
+- [Diagramme de flux (Code2Flow)](https://app.code2flow.com/)
+- [VS Code](https://code.visualstudio.com/)
+- [GitHub Copilot](https://github.com/features/copilot)
+- [MPLAB X IDE](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide)
+- [Graphviz](https://graphviz.gitlab.io/)
+- [Doxygen](https://www.doxygen.nl/index.html)
+- [MCC Standalone (MPLAB Code Configurator)](https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator)
+- [Documentation Microchip PIC32MM](https://www.microchip.com/wwwproducts/en/PIC32MM0064GPL020)
+
+---
+

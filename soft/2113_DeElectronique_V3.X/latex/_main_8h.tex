@@ -1,0 +1,273 @@
+\doxysection{Main.\+h File Reference}
+\hypertarget{_main_8h}{}\label{_main_8h}\index{Main.h@{Main.h}}
+{\ttfamily \#include "{}stdint.\+h"{}}\newline
+{\ttfamily \#include "{}stdbool.\+h"{}}\newline
+Include dependency graph for Main.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{_main_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{_main_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structapp_data}{app\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_main_8h_ad77e70ab7a28d01a64516df7ed5389a5}{DISPLAYTIME}}~3000
+\item 
+\#define \mbox{\hyperlink{_main_8h_acdbfc2fbaea9c3417070abcb65914887}{STEPON}}~3
+\item 
+\#define \mbox{\hyperlink{_main_8h_a91b69a35ca3a47af0dd7a2698b93ee64}{DISPLAY\+\_\+\+UP}}~1000
+\item 
+\#define \mbox{\hyperlink{_main_8h_a5ae6b05b3e1559c97f0d1b2daaaa0ee4}{DISPLAY\+\_\+\+ON}}~1000
+\item 
+\#define \mbox{\hyperlink{_main_8h_aa82666e5200c9a3d9f5166f420c97d0d}{DISPLAY\+\_\+\+DODW}}~1000
+\item 
+\#define \mbox{\hyperlink{_main_8h_ac79e9f9ab38ff8746aa1fe704ab4a53c}{STEPPWM}}~10
+\item 
+\#define \mbox{\hyperlink{_main_8h_a024a1cbbbfeb382caa2f271f4d0e397e}{STEPWMSEC}}~(\mbox{\hyperlink{_main_8h_a5ae6b05b3e1559c97f0d1b2daaaa0ee4}{DISPLAY\+\_\+\+ON}}/\mbox{\hyperlink{_main_8h_ac79e9f9ab38ff8746aa1fe704ab4a53c}{STEPPWM}})
+\item 
+\#define \mbox{\hyperlink{_main_8h_ac9b9f4f8d3363c56011acd6f2a3b0eab}{TIMERATIO}}~1000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_main_8h_aa65e3b592c27609a542733310b34f5d9}{sens}} \{ \mbox{\hyperlink{_main_8h_aa65e3b592c27609a542733310b34f5d9ab5575ced64a85a80c2a5291874b2260e}{RAMPUP}}
+, \mbox{\hyperlink{_main_8h_aa65e3b592c27609a542733310b34f5d9a2a89782e8e8f6c0c05b2d210691785ba}{RAMPSTATIC}}
+, \mbox{\hyperlink{_main_8h_aa65e3b592c27609a542733310b34f5d9a7d6a07aa33f1af3a304e45232fc6024a}{RAMPDOWN}}
+ \}
+\item 
+enum \mbox{\hyperlink{_main_8h_aa19be6305a5a4485e1e70de70ed7d677}{states}} \{ \newline
+\mbox{\hyperlink{_main_8h_aa19be6305a5a4485e1e70de70ed7d677af38a4894f599027defe062e4f1577048}{APP\+\_\+\+INIT}}
+, \mbox{\hyperlink{_main_8h_aa19be6305a5a4485e1e70de70ed7d677a3190183ccf4ade1010f5e3dae417b3f0}{APP\+\_\+\+WAIT\+\_\+\+FOR\+\_\+\+INT}}
+, \mbox{\hyperlink{_main_8h_aa19be6305a5a4485e1e70de70ed7d677aaf877a9f996db43dc8938b1336d9ff74}{APP\+\_\+\+CALC}}
+, \mbox{\hyperlink{_main_8h_aa19be6305a5a4485e1e70de70ed7d677a7d5eb351e5f8c0253242f8f710ce15e9}{APP\+\_\+\+DISPLAY}}
+, \newline
+\mbox{\hyperlink{_main_8h_aa19be6305a5a4485e1e70de70ed7d677a87ea3abd92e38c30fe6e683fbe9f5238}{APP\+\_\+\+DELAY}}
+, \mbox{\hyperlink{_main_8h_aa19be6305a5a4485e1e70de70ed7d677aaf1a97b54c86f50867979727be16f3a9}{APP\+\_\+\+KILL}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_main_8h_af17135b0b2caa21b1a63311721256716}{APP\+\_\+\+Wait\+Start}} (uint16\+\_\+t waiting\+Time)
+\begin{DoxyCompactList}\small\item\em Lance une attente bloquante pendant un temps donné (ms). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_main_8h_a752c081d384b751671e688f2ddfc6a1e}{APP\+\_\+\+TMR1\+\_\+\+Call\+Back}} ()
+\begin{DoxyCompactList}\small\item\em Callback du timer 1, décrémente le délai stocké dans App\+Data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_main_8h_a7271e512a31b59dc88d9d9e17f5d4b16}{APP\+\_\+\+Wait\+Start\+\_\+no\+Blocking}} ()
+\begin{DoxyCompactList}\small\item\em Lance une attente non bloquante (fonction expérimentale). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_main_8h_a4fa8fbe773cf61081a19c1a85c05ff51}{Set\+States}} (\mbox{\hyperlink{_main_8h_aa19be6305a5a4485e1e70de70ed7d677}{states}} newstate)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}état courant de l\textquotesingle{}application. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_main_8h_a096c0676aeef0819a2515076d21a363e}{APP\+\_\+\+CORETIMER\+\_\+\+CALLBACK}} (void)
+\begin{DoxyCompactList}\small\item\em Callback du core timer pour gérer la variation de RC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_main_8h_aa82666e5200c9a3d9f5166f420c97d0d}\index{Main.h@{Main.h}!DISPLAY\_DODW@{DISPLAY\_DODW}}
+\index{DISPLAY\_DODW@{DISPLAY\_DODW}!Main.h@{Main.h}}
+\doxysubsubsection{\texorpdfstring{DISPLAY\_DODW}{DISPLAY\_DODW}}
+{\footnotesize\ttfamily \label{_main_8h_aa82666e5200c9a3d9f5166f420c97d0d} 
+\#define DISPLAY\+\_\+\+DODW~1000}
+
+\Hypertarget{_main_8h_a5ae6b05b3e1559c97f0d1b2daaaa0ee4}\index{Main.h@{Main.h}!DISPLAY\_ON@{DISPLAY\_ON}}
+\index{DISPLAY\_ON@{DISPLAY\_ON}!Main.h@{Main.h}}
+\doxysubsubsection{\texorpdfstring{DISPLAY\_ON}{DISPLAY\_ON}}
+{\footnotesize\ttfamily \label{_main_8h_a5ae6b05b3e1559c97f0d1b2daaaa0ee4} 
+\#define DISPLAY\+\_\+\+ON~1000}
+
+\Hypertarget{_main_8h_a91b69a35ca3a47af0dd7a2698b93ee64}\index{Main.h@{Main.h}!DISPLAY\_UP@{DISPLAY\_UP}}
+\index{DISPLAY\_UP@{DISPLAY\_UP}!Main.h@{Main.h}}
+\doxysubsubsection{\texorpdfstring{DISPLAY\_UP}{DISPLAY\_UP}}
+{\footnotesize\ttfamily \label{_main_8h_a91b69a35ca3a47af0dd7a2698b93ee64} 
+\#define DISPLAY\+\_\+\+UP~1000}
+
+\Hypertarget{_main_8h_ad77e70ab7a28d01a64516df7ed5389a5}\index{Main.h@{Main.h}!DISPLAYTIME@{DISPLAYTIME}}
+\index{DISPLAYTIME@{DISPLAYTIME}!Main.h@{Main.h}}
+\doxysubsubsection{\texorpdfstring{DISPLAYTIME}{DISPLAYTIME}}
+{\footnotesize\ttfamily \label{_main_8h_ad77e70ab7a28d01a64516df7ed5389a5} 
+\#define DISPLAYTIME~3000}
+
+\Hypertarget{_main_8h_acdbfc2fbaea9c3417070abcb65914887}\index{Main.h@{Main.h}!STEPON@{STEPON}}
+\index{STEPON@{STEPON}!Main.h@{Main.h}}
+\doxysubsubsection{\texorpdfstring{STEPON}{STEPON}}
+{\footnotesize\ttfamily \label{_main_8h_acdbfc2fbaea9c3417070abcb65914887} 
+\#define STEPON~3}
+
+\Hypertarget{_main_8h_ac79e9f9ab38ff8746aa1fe704ab4a53c}\index{Main.h@{Main.h}!STEPPWM@{STEPPWM}}
+\index{STEPPWM@{STEPPWM}!Main.h@{Main.h}}
+\doxysubsubsection{\texorpdfstring{STEPPWM}{STEPPWM}}
+{\footnotesize\ttfamily \label{_main_8h_ac79e9f9ab38ff8746aa1fe704ab4a53c} 
+\#define STEPPWM~10}
+
+\Hypertarget{_main_8h_a024a1cbbbfeb382caa2f271f4d0e397e}\index{Main.h@{Main.h}!STEPWMSEC@{STEPWMSEC}}
+\index{STEPWMSEC@{STEPWMSEC}!Main.h@{Main.h}}
+\doxysubsubsection{\texorpdfstring{STEPWMSEC}{STEPWMSEC}}
+{\footnotesize\ttfamily \label{_main_8h_a024a1cbbbfeb382caa2f271f4d0e397e} 
+\#define STEPWMSEC~(\mbox{\hyperlink{_main_8h_a5ae6b05b3e1559c97f0d1b2daaaa0ee4}{DISPLAY\+\_\+\+ON}}/\mbox{\hyperlink{_main_8h_ac79e9f9ab38ff8746aa1fe704ab4a53c}{STEPPWM}})}
+
+\Hypertarget{_main_8h_ac9b9f4f8d3363c56011acd6f2a3b0eab}\index{Main.h@{Main.h}!TIMERATIO@{TIMERATIO}}
+\index{TIMERATIO@{TIMERATIO}!Main.h@{Main.h}}
+\doxysubsubsection{\texorpdfstring{TIMERATIO}{TIMERATIO}}
+{\footnotesize\ttfamily \label{_main_8h_ac9b9f4f8d3363c56011acd6f2a3b0eab} 
+\#define TIMERATIO~1000}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_main_8h_aa65e3b592c27609a542733310b34f5d9}\index{Main.h@{Main.h}!sens@{sens}}
+\index{sens@{sens}!Main.h@{Main.h}}
+\doxysubsubsection{\texorpdfstring{sens}{sens}}
+{\footnotesize\ttfamily \label{_main_8h_aa65e3b592c27609a542733310b34f5d9} 
+enum \mbox{\hyperlink{_main_8h_aa65e3b592c27609a542733310b34f5d9}{sens}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RAMPUP@{RAMPUP}!Main.h@{Main.h}}\index{Main.h@{Main.h}!RAMPUP@{RAMPUP}}}\Hypertarget{_main_8h_aa65e3b592c27609a542733310b34f5d9ab5575ced64a85a80c2a5291874b2260e}\label{_main_8h_aa65e3b592c27609a542733310b34f5d9ab5575ced64a85a80c2a5291874b2260e} 
+RAMPUP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RAMPSTATIC@{RAMPSTATIC}!Main.h@{Main.h}}\index{Main.h@{Main.h}!RAMPSTATIC@{RAMPSTATIC}}}\Hypertarget{_main_8h_aa65e3b592c27609a542733310b34f5d9a2a89782e8e8f6c0c05b2d210691785ba}\label{_main_8h_aa65e3b592c27609a542733310b34f5d9a2a89782e8e8f6c0c05b2d210691785ba} 
+RAMPSTATIC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RAMPDOWN@{RAMPDOWN}!Main.h@{Main.h}}\index{Main.h@{Main.h}!RAMPDOWN@{RAMPDOWN}}}\Hypertarget{_main_8h_aa65e3b592c27609a542733310b34f5d9a7d6a07aa33f1af3a304e45232fc6024a}\label{_main_8h_aa65e3b592c27609a542733310b34f5d9a7d6a07aa33f1af3a304e45232fc6024a} 
+RAMPDOWN&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_main_8h_aa19be6305a5a4485e1e70de70ed7d677}\index{Main.h@{Main.h}!states@{states}}
+\index{states@{states}!Main.h@{Main.h}}
+\doxysubsubsection{\texorpdfstring{states}{states}}
+{\footnotesize\ttfamily \label{_main_8h_aa19be6305a5a4485e1e70de70ed7d677} 
+enum \mbox{\hyperlink{_main_8h_aa19be6305a5a4485e1e70de70ed7d677}{states}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_INIT@{APP\_INIT}!Main.h@{Main.h}}\index{Main.h@{Main.h}!APP\_INIT@{APP\_INIT}}}\Hypertarget{_main_8h_aa19be6305a5a4485e1e70de70ed7d677af38a4894f599027defe062e4f1577048}\label{_main_8h_aa19be6305a5a4485e1e70de70ed7d677af38a4894f599027defe062e4f1577048} 
+APP\+\_\+\+INIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_WAIT\_FOR\_INT@{APP\_WAIT\_FOR\_INT}!Main.h@{Main.h}}\index{Main.h@{Main.h}!APP\_WAIT\_FOR\_INT@{APP\_WAIT\_FOR\_INT}}}\Hypertarget{_main_8h_aa19be6305a5a4485e1e70de70ed7d677a3190183ccf4ade1010f5e3dae417b3f0}\label{_main_8h_aa19be6305a5a4485e1e70de70ed7d677a3190183ccf4ade1010f5e3dae417b3f0} 
+APP\+\_\+\+WAIT\+\_\+\+FOR\+\_\+\+INT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_CALC@{APP\_CALC}!Main.h@{Main.h}}\index{Main.h@{Main.h}!APP\_CALC@{APP\_CALC}}}\Hypertarget{_main_8h_aa19be6305a5a4485e1e70de70ed7d677aaf877a9f996db43dc8938b1336d9ff74}\label{_main_8h_aa19be6305a5a4485e1e70de70ed7d677aaf877a9f996db43dc8938b1336d9ff74} 
+APP\+\_\+\+CALC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_DISPLAY@{APP\_DISPLAY}!Main.h@{Main.h}}\index{Main.h@{Main.h}!APP\_DISPLAY@{APP\_DISPLAY}}}\Hypertarget{_main_8h_aa19be6305a5a4485e1e70de70ed7d677a7d5eb351e5f8c0253242f8f710ce15e9}\label{_main_8h_aa19be6305a5a4485e1e70de70ed7d677a7d5eb351e5f8c0253242f8f710ce15e9} 
+APP\+\_\+\+DISPLAY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_DELAY@{APP\_DELAY}!Main.h@{Main.h}}\index{Main.h@{Main.h}!APP\_DELAY@{APP\_DELAY}}}\Hypertarget{_main_8h_aa19be6305a5a4485e1e70de70ed7d677a87ea3abd92e38c30fe6e683fbe9f5238}\label{_main_8h_aa19be6305a5a4485e1e70de70ed7d677a87ea3abd92e38c30fe6e683fbe9f5238} 
+APP\+\_\+\+DELAY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_KILL@{APP\_KILL}!Main.h@{Main.h}}\index{Main.h@{Main.h}!APP\_KILL@{APP\_KILL}}}\Hypertarget{_main_8h_aa19be6305a5a4485e1e70de70ed7d677aaf1a97b54c86f50867979727be16f3a9}\label{_main_8h_aa19be6305a5a4485e1e70de70ed7d677aaf1a97b54c86f50867979727be16f3a9} 
+APP\+\_\+\+KILL&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_main_8h_a096c0676aeef0819a2515076d21a363e}\index{Main.h@{Main.h}!APP\_CORETIMER\_CALLBACK@{APP\_CORETIMER\_CALLBACK}}
+\index{APP\_CORETIMER\_CALLBACK@{APP\_CORETIMER\_CALLBACK}!Main.h@{Main.h}}
+\doxysubsubsection{\texorpdfstring{APP\_CORETIMER\_CALLBACK()}{APP\_CORETIMER\_CALLBACK()}}
+{\footnotesize\ttfamily \label{_main_8h_a096c0676aeef0819a2515076d21a363e} 
+void APP\+\_\+\+CORETIMER\+\_\+\+CALLBACK (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Callback du core timer pour gérer la variation de RC. 
+
+\Hypertarget{_main_8h_a752c081d384b751671e688f2ddfc6a1e}\index{Main.h@{Main.h}!APP\_TMR1\_CallBack@{APP\_TMR1\_CallBack}}
+\index{APP\_TMR1\_CallBack@{APP\_TMR1\_CallBack}!Main.h@{Main.h}}
+\doxysubsubsection{\texorpdfstring{APP\_TMR1\_CallBack()}{APP\_TMR1\_CallBack()}}
+{\footnotesize\ttfamily \label{_main_8h_a752c081d384b751671e688f2ddfc6a1e} 
+void APP\+\_\+\+TMR1\+\_\+\+Call\+Back (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Callback du timer 1, décrémente le délai stocké dans App\+Data. 
+
+End of File \Hypertarget{_main_8h_af17135b0b2caa21b1a63311721256716}\index{Main.h@{Main.h}!APP\_WaitStart@{APP\_WaitStart}}
+\index{APP\_WaitStart@{APP\_WaitStart}!Main.h@{Main.h}}
+\doxysubsubsection{\texorpdfstring{APP\_WaitStart()}{APP\_WaitStart()}}
+{\footnotesize\ttfamily \label{_main_8h_af17135b0b2caa21b1a63311721256716} 
+void APP\+\_\+\+Wait\+Start (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{waiting\+Time\+\_\+ms}{}\end{DoxyParamCaption})}
+
+
+
+Lance une attente bloquante pendant un temps donné (ms). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em waiting\+Time} & Durée d\textquotesingle{}attente en millisecondes\\
+\hline
+\end{DoxyParams}
+Lance une attente bloquante pendant un temps donné (ms).
+
+
+\begin{DoxyParams}{Parameters}
+{\em waiting\+Time\+\_\+ms} & Durée d\textquotesingle{}attente en millisecondes \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_main_8h_af17135b0b2caa21b1a63311721256716_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_main_8h_af17135b0b2caa21b1a63311721256716_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_main_8h_a7271e512a31b59dc88d9d9e17f5d4b16}\index{Main.h@{Main.h}!APP\_WaitStart\_noBlocking@{APP\_WaitStart\_noBlocking}}
+\index{APP\_WaitStart\_noBlocking@{APP\_WaitStart\_noBlocking}!Main.h@{Main.h}}
+\doxysubsubsection{\texorpdfstring{APP\_WaitStart\_noBlocking()}{APP\_WaitStart\_noBlocking()}}
+{\footnotesize\ttfamily \label{_main_8h_a7271e512a31b59dc88d9d9e17f5d4b16} 
+bool APP\+\_\+\+Wait\+Start\+\_\+no\+Blocking (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Lance une attente non bloquante (fonction expérimentale). 
+
+\begin{DoxyReturn}{Returns}
+true si attente terminée, false sinon 
+\end{DoxyReturn}
+\Hypertarget{_main_8h_a4fa8fbe773cf61081a19c1a85c05ff51}\index{Main.h@{Main.h}!SetStates@{SetStates}}
+\index{SetStates@{SetStates}!Main.h@{Main.h}}
+\doxysubsubsection{\texorpdfstring{SetStates()}{SetStates()}}
+{\footnotesize\ttfamily \label{_main_8h_a4fa8fbe773cf61081a19c1a85c05ff51} 
+void Set\+States (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_main_8h_aa19be6305a5a4485e1e70de70ed7d677}{states}}}]{newstate}{}\end{DoxyParamCaption})}
+
+
+
+Change l\textquotesingle{}état courant de l\textquotesingle{}application. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em newstate} & Nouvel état à appliquer \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{_main_8h_a4fa8fbe773cf61081a19c1a85c05ff51_icgraph}
+\end{center}
+\end{figure}
