@@ -1,0 +1,9 @@
+var files_dup =
+[
+    [ "Accelerometre.c", "_accelerometre_8c.html", "_accelerometre_8c" ],
+    [ "Accelerometre.h", "_accelerometre_8h.html", "_accelerometre_8h" ],
+    [ "DeElectronique.c", "_de_electronique_8c.html", "_de_electronique_8c" ],
+    [ "DeElectronique.h", "_de_electronique_8h.html", "_de_electronique_8h" ],
+    [ "main.c", "main_8c.html", "main_8c" ],
+    [ "Main.h", "_main_8h.html", null ]
+];
