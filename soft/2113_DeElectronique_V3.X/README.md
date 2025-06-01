@@ -25,7 +25,7 @@ La documentation technique est générée avec Doxygen.
 - Refactorisation et amélioration des commentaires pour une meilleure génération de documentation Doxygen.
 - Refactorisation de la structure principale du main.
 
-## Informations de génération
+## Informations de générations
 
 ```
 Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.75.1
@@ -63,17 +63,24 @@ La version 3 de cette application est conçue et testée avec :
 La documentation complète du code est disponible dans le dossier [html/](html/).  
 [Consulter la documentation Doxygen](./html/index.html)
 (ouvrir dans un browser une fois le dépot en local) exemple du rendus : 
-![image](https://github.com/user-attachments/assets/8a3879f3-ec6a-4e69-901c-e0ea78a6e7db)
-![image](https://github.com/user-attachments/assets/bda516ce-c087-4f1c-b8d6-f7e2d5f6061d)
+
+<img src="https://github.com/user-attachments/assets/8a3879f3-ec6a-4e69-901c-e0ea78a6e7db" alt="drawing" width="500"/>
+
+
+<img src="https://github.com/user-attachments/assets/bda516ce-c087-4f1c-b8d6-f7e2d5f6061d" alt="drawing" width="500"/>
 
 
 
 ## Diagrammes
 
 # Précédente version (V2)
-![sof_v2](https://github.com/user-attachments/assets/d62e0037-c5a4-41ff-92a0-f798ec1ad384)
+
+<img src="https://github.com/user-attachments/assets/d62e0037-c5a4-41ff-92a0-f798ec1ad384" alt="drawing" width="200"/>
+
 # Nouvelle version (V3) 
-![soft_v3](https://github.com/user-attachments/assets/a95f4c19-43bc-4cc1-a6d3-e24368b579b0)
+
+
+<img src="https://github.com/user-attachments/assets/a95f4c19-43bc-4cc1-a6d3-e24368b579b0" alt="drawing" width="700"/>
 
 les autres diagrammes sont disponibles sous "C:\microchip\harmony\v2_06\apps\PROJ\PRJ_2113_D-sElectronique\soft\2113_DeElectronique_V3.X\code2flow"
 
@@ -89,4 +96,5 @@ les autres diagrammes sont disponibles sous "C:\microchip\harmony\v2_06\apps\PRO
 - [Documentation Microchip PIC32MM](https://www.microchip.com/wwwproducts/en/PIC32MM0064GPL020)
 
 ---
+
 
