@@ -62,7 +62,7 @@ La version 3 de cette application est conçue et testée avec :
 
 La documentation complète du code est disponible dans le dossier [html/](html/).  
 [Consulter la documentation Doxygen](./html/index.html)
-
+(ouvrir dans un browser une fois le dépot en local)
 
 
 ## Diagrammes
