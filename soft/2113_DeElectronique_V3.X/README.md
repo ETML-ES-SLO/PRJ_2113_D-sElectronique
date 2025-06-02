@@ -56,10 +56,14 @@ La version 3 de cette application est conçue et testée avec :
 - pour éteindre: retirer la pile 
 
 ## Etat actuel 
+
 - Possibilité d'apparition de l'interruption sans que le microcontroleur ne soit totalement éteind/allumé à déterminer. 
+
 - Après quelques rolls de dé puis laisser ~2h un roll était toujour possible aucun problème... (n'empêche pas le point précédent)
+
 ### Résultat des tirrages 
-sur 130 tirrages: 
+- sur 130 tirrages: 
+
 <img src="https://github.com/user-attachments/assets/80f78ce2-e4ff-41b6-9405-6ea307c8bbcf" alt="drawing" width="500"/>
 
 Le N°1 sort le plus souvent
