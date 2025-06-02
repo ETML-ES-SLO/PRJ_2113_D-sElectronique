@@ -145,9 +145,6 @@ int main(void) {
                 randomSum = rand();
                 //pour récupérer une valeur entre 1 et 6
                 appdata.nombreEntier = randomSum % 6;
-                if (appdata.nombreEntier == 0) {
-                    appdata.nombreEntier = 1;
-                }
                 SetStates(APP_DISPLAY);
                 break;
             case APP_DISPLAY:
