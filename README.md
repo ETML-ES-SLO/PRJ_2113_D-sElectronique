@@ -14,8 +14,30 @@ Ce projet implémente une application pour microcontrôleur PIC32MM0064GPL020, d
 
 ## Présentation
 
-Ce dépôt contient le code source et la configuration pour le projet électronique basé sur le PIC32MM.  
+Ce dépôt contient le code source et la configuration pour le projet électronique basé sur le PIC32MM.
+Il s’agit de réaliser un dé électronique qui puisse être produit en petite série à l’ETML et distribué aux visiteurs de l’ES, par exemple lors des portes ouvertes. S’agissant d’un cadeau, une attention particulière sera portée à la minimalisation des coûts. Le fonctionnement sera le suivant :
+
+Lorsque le montage est secoué puis reposé à l’horizontale, un nombre aléatoire entre 1 et 6 sera affiché à l’aide de 7 LEDs. Il ne doit y avoir aucun bouton. Les LED seront disposées à la manière d’un dé à lancer. Les LED restent allumées 10 secondes, puis le montage s’éteint (coupure d’alimentation totale, sauf pour l’élément de détection du secouement). Ce dernier est le seul sous tension en permanence et réveille le montage à chaque nouveau secouement.
+
+""" Actuellement un bouttons est nécéssaire lors du premier allumage pour configurer accéléromètre, aussi la demande à été modifier pour passer à 3s d'affichage """
+
+Utilisation de l'accéléromètre MC3419 avec une configuration nécéssitant ~0,5g pour déclenchement. 
+La résolution du capteur MC3419 est typiquement de 14 bits (0 à 16383 pour ±2g).
+1 LSB = 4g (de -2g à +2g)/ 16384 = 0,000244 g ≈ 0,244 mg
+
+Seuil (g) = Valeur_seuil * (Plage_en_g / 2^résolution)
+          = 2000 * (4 / 16384 )
+          = 2000 * 0,000244
+          = 0,488 g
+
+
+
+
+
 La documentation technique est générée avec Doxygen.
+
+
+
 
 ## Modifications apportées entre V2 et V3
 
