@@ -61,7 +61,7 @@ La version 3 de cette application est conçue et testée avec :
 ## Documentation Doxygen
 
 La documentation complète du code est disponible dans le dossier [html/](html/).  
-[Consulter la documentation Doxygen](./html/index.html)
+[Consulter la documentation Doxygen](https://docdees.neocities.org/)
 (ouvrir dans un browser une fois le dépot en local) exemple du rendus : 
 
 <img src="https://github.com/user-attachments/assets/8a3879f3-ec6a-4e69-901c-e0ea78a6e7db" alt="drawing" width="500"/>
@@ -80,7 +80,7 @@ Précédente version (V2)
 Nouvelle version (V3) 
 
 
-<img src="https://github.com/user-attachments/assets/a95f4c19-43bc-4cc1-a6d3-e24368b579b0" alt="drawing" width="700"/>
+<img src="" alt="drawing" width="700"/>
 
 les autres diagrammes sont disponibles sous "C:\microchip\harmony\v2_06\apps\PROJ\PRJ_2113_D-sElectronique\soft\2113_DeElectronique_V3.X\code2flow"
 
