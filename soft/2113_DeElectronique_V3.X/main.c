@@ -77,6 +77,8 @@ int main(void) {
                  * - Définit les valeurs par défaut des variables d'état.
                  * - Vérifie l'absence d'interruption pour configurer l'accéléromètre.
                  * - Passe à l'état d'attente d'interruption.
+                 * - RC is for cycle duty of PWM, initialized to  0
+                 * - disp is a flag for display, initialized to 0 (off)  
                  */
                 SYSTEM_Initialize();
                 appdata.status = 0;
@@ -132,10 +134,9 @@ int main(void) {
                  *
                  * - Additionne les valeurs des axes X, Y, Z pour obtenir une graine.
                  * - Utilise srand/rand pour générer un nombre pseudo-aléatoire.
-                 * - Garantit que le résultat est compris entre 1 et 6 (jamais 0).
                  * - Passe à l'état d'affichage.
                  */
-                randomSum = ReadRegister8(addr_Xout_Ex_L);
+                randomSum =  ReadRegister8(addr_Xout_Ex_L);
                 randomSum += ReadRegister8(addr_Xout_Ex_H);
                 randomSum += ReadRegister8(addr_Yout_Ex_L);
                 randomSum += ReadRegister8(addr_Yout_Ex_H);
