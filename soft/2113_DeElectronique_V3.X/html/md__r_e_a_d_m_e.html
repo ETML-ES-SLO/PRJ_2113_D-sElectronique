@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>De_ES: README</title>
+<title>De_ES: 2113_DeElectronique_V3</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,9 +32,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">De_ES<span id="projectnumber">&#160;2113</span>
+   <div id="projectname">De_ES
    </div>
-   <div id="projectbrief">Make a dice</div>
+   <div id="projectbrief">This soft configure the Accelerometr then turn off the  mcu, that is waken by an interrupt then display a number for 3seconds then turn off again</div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -103,16 +103,94 @@ $(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizable(true); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">README</div></div>
+  <div class="headertitle"><div class="title">2113_DeElectronique_V3</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>pending...</p>
-<p>Generation Information :</p>
-<p>Product Revision : PIC24 / dsPIC33 / PIC32MM MCUs - 1.75.1 Device : PIC32MM0064GPL020</p>
-<p>The generated drivers are tested against the following: Compiler : XC16 v1.35 MPLAB : MPLAB X v5.05</p>
-<p>The v3 of this app is designed and tested with : Compiler : XC32 v2.5 MPLAB : MPLAB X v5.50</p>
-<p><a href="https://www.gitclear.com/github_profile_dynamic_readme_free?expand_widget=1" target="_blank"><img src="https://www.gitclear.com/chart_glimpses/e69bce52-4408-443d-a017-090adb21f92d.png" alt="" class="inline"/></a> <a href="https://app.code2flow.com/4KzdjTEuBLGw.png" target="_blank"><img src="https://app.code2flow.com/4KzdjTEuBLGw.png" alt="" class="inline"/></a> </p>
-</div></div><!-- contents -->
+<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
+<p>Ce projet implémente une application pour microcontrôleur PIC32MM0064GPL020, développée avec MPLAB X et XC32.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Sommaire</h1>
+<ul>
+<li>Présentation</li>
+<li>Informations de génération</li>
+<li>Compilation</li>
+<li>Utilisation</li>
+<li>Documentation Doxygen</li>
+<li>Diagrammes</li>
+<li>Ressources</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Présentation</h1>
+<p>Ce dépôt contient le code source et la configuration pour le projet électronique basé sur le PIC32MM. <br  />
+ La documentation technique est générée avec Doxygen.</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Modifications apportées entre V2 et V3</h1>
+<ul>
+<li>Modification de la fonction d'attente avec utilisation du timer (précision accrue et meilleure gestion du temps).</li>
+<li>Ajout de la possibilité de modifier le changement de la consigne PWM avec le CoreTimer (meilleure flexibilité et contrôle).</li>
+<li>Ajout du réglage d'intensité automatique avec les "rampes" (transition douce de l'intensité).</li>
+<li>Refactorisation et amélioration des commentaires pour une meilleure génération de documentation Doxygen.</li>
+<li>Refactorisation de la structure principale du main.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Informations de générations</h1>
+<div class="fragment"><div class="line">Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.75.1</div>
+<div class="line">Device            :  PIC32MM0064GPL020</div>
+<div class="line"> </div>
+<div class="line">Les drivers générés sont testés avec :</div>
+<div class="line">    Compiler      :  XC16 v1.35</div>
+<div class="line">    MPLAB         :  MPLAB X v5.05</div>
+<div class="line"> </div>
+<div class="line">La version 3 de cette application est conçue et testée avec :</div>
+<div class="line">    Compiler      :  XC32 v2.5 </div>
+<div class="line">    MPLAB         :  MPLAB X v5.50</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md5"></a>
+Compilation</h1>
+<ol type="1">
+<li>crée un dossier "PROJ" sous" C:\microchip\harmony\v2_06\apps\"
+2. Cloner ce dépôt à l'intérieur  le chemin devrais être : "C:\microchip\harmony\v2_06\apps\PROJ\PRJ_2113_D-sElectronique"
+4. Ouvrez le projet dans MPLAB X.
+5. Sélectionnez le compilateur XC32 v2.5.
+6. Compilez le projet (&lt;tt&gt;Build Project&lt;/tt&gt;).
+
+@section autotoc_md6 Utilisation
+
+- Chargez le firmware sur la carte cible (2113E_DeElectronique) via MPLAB X (la carte doit être alimentée en +1,5V).
+- Retirer la sonde de programation (snap/icd4) appuyer sur le switch environs 1s.
+- secouer
+- pour éteindre: retirer la pile 
+
+@section autotoc_md7 Etat actuel
+- Possibilité d'apparition de l'interruption sans que le microcontroleur ne soit totalement éteind/allumé à déterminer. 
+- Après quelques rolls de dé puis laisser ~2h un roll était toujour possible aucun problème... (n'empêche pas le point précédent)
+@section autotoc_md8 Documentation Doxygen
+
+La documentation complète du code est disponible dans le dossier &lt;a href="html/" &gt;html/</li>
+</ol>
+<p>. <br  />
+ <a href="./html/index.html">Consulter la documentation Doxygen</a> (ouvrir dans un browser une fois le dépot en local) exemple du rendus :</p>
+<p><img src="https://github.com/user-attachments/assets/8a3879f3-ec6a-4e69-901c-e0ea78a6e7db" alt="drawing" width="500" class="inline"/></p>
+<p><img src="https://github.com/user-attachments/assets/bda516ce-c087-4f1c-b8d6-f7e2d5f6061d" alt="drawing" width="500" class="inline"/></p>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Diagrammes</h1>
+<p>Précédente version (V2)</p>
+<p><img src="https://github.com/user-attachments/assets/d62e0037-c5a4-41ff-92a0-f798ec1ad384" alt="drawing" width="200" class="inline"/></p>
+<p>Nouvelle version (V3)</p>
+<p><img src="https://github.com/user-attachments/assets/a95f4c19-43bc-4cc1-a6d3-e24368b579b0" alt="drawing" width="700" class="inline"/></p>
+<p>les autres diagrammes sont disponibles sous "C:\microchip\harmony\v2_06\apps\PROJ\PRJ_2113_D-sElectronique\soft\2113_DeElectronique_V3.X\code2flow"</p>
+<p>## Ressources</p>
+<ul>
+<li><a href="https://app.code2flow.com/">Diagramme de flux (Code2Flow)</a></li>
+<li><a href="https://code.visualstudio.com/">VS Code</a></li>
+<li><a href="https://github.com/features/copilot">GitHub Copilot</a></li>
+<li><a href="https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide">MPLAB X IDE</a></li>
+<li><a href="https://graphviz.gitlab.io/">Graphviz</a></li>
+<li><a href="https://www.doxygen.nl/index.html">Doxygen</a></li>
+<li><a href="https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator">MCC Standalone (MPLAB Code Configurator)</a></li>
+<li><a href="https://www.microchip.com/wwwproducts/en/PIC32MM0064GPL020">Documentation Microchip PIC32MM</a></li>
+</ul>
+<hr  />
+ </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->

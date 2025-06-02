@@ -1,13 +1,77 @@
-\chapter{README}
-\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{README@{README}}
-pending...
+\chapter{2113\+\_\+\+De\+Electronique\+\_\+\+V3}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{2113\_DeElectronique\_V3@{2113\_DeElectronique\_V3}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
 
-Generation Information \+:
 
-Product Revision \+: PIC24 / ds\+PIC33 / PIC32\+MM MCUs -\/ 1.\+75.\+1 Device \+: PIC32\+MM0064\+GPL020
+Ce projet implémente une application pour microcontrôleur PIC32\+MM0064\+GPL020, développée avec MPLAB X et XC32.\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{Sommaire}{Sommaire}}\label{md__r_e_a_d_m_e_autotoc_md1}
 
-The generated drivers are tested against the following\+: Compiler \+: XC16 v1.\+35 MPLAB \+: MPLAB X v5.\+05
+\begin{DoxyItemize}
+\item Présentation
+\item Informations de génération
+\item Compilation
+\item Utilisation
+\item Documentation Doxygen
+\item Diagrammes
+\item Ressources
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{Présentation}{Présentation}}\label{md__r_e_a_d_m_e_autotoc_md2}
+Ce dépôt contient le code source et la configuration pour le projet électronique basé sur le PIC32\+MM. ~\newline
+ La documentation technique est générée avec Doxygen.\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{\texorpdfstring{Modifications apportées entre V2 et V3}{Modifications apportées entre V2 et V3}}\label{md__r_e_a_d_m_e_autotoc_md3}
 
-The v3 of this app is designed and tested with \+: Compiler \+: XC32 v2.\+5 MPLAB \+: MPLAB X v5.\+50
+\begin{DoxyItemize}
+\item Modification de la fonction d\textquotesingle{}attente avec utilisation du timer (précision accrue et meilleure gestion du temps).
+\item Ajout de la possibilité de modifier le changement de la consigne PWM avec le Core\+Timer (meilleure flexibilité et contrôle).
+\item Ajout du réglage d\textquotesingle{}intensité automatique avec les "{}rampes"{} (transition douce de l\textquotesingle{}intensité).
+\item Refactorisation et amélioration des commentaires pour une meilleure génération de documentation Doxygen.
+\item Refactorisation de la structure principale du main.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{\texorpdfstring{Informations de générations}{Informations de générations}}\label{md__r_e_a_d_m_e_autotoc_md4}
 
-\href{https://www.gitclear.com/github_profile_dynamic_readme_free?expand_widget=1}{\texttt{ }} \href{https://app.code2flow.com/4KzdjTEuBLGw.png}{\texttt{ }} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Product\ Revision\ \ :\ \ PIC24\ /\ dsPIC33\ /\ PIC32MM\ MCUs\ -\/\ 1.75.1}
+\DoxyCodeLine{Device\ \ \ \ \ \ \ \ \ \ \ \ :\ \ PIC32MM0064GPL020}
+\DoxyCodeLine{}
+\DoxyCodeLine{Les\ drivers\ générés\ sont\ testés\ avec\ :}
+\DoxyCodeLine{\ \ \ \ Compiler\ \ \ \ \ \ :\ \ XC16\ v1.35}
+\DoxyCodeLine{\ \ \ \ MPLAB\ \ \ \ \ \ \ \ \ :\ \ MPLAB\ X\ v5.05}
+\DoxyCodeLine{}
+\DoxyCodeLine{La\ version\ 3\ de\ cette\ application\ est\ conçue\ et\ testée\ avec\ :}
+\DoxyCodeLine{\ \ \ \ Compiler\ \ \ \ \ \ :\ \ XC32\ v2.5\ }
+\DoxyCodeLine{\ \ \ \ MPLAB\ \ \ \ \ \ \ \ \ :\ \ MPLAB\ X\ v5.50}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysection{\texorpdfstring{Compilation}{Compilation}}\label{md__r_e_a_d_m_e_autotoc_md5}
+
+\begin{DoxyEnumerate}
+\item crée un dossier "{}\+PROJ"{} sous"{} C\+:\textbackslash{}microchip\textbackslash{}harmony\textbackslash{}v2\+\_\+06\textbackslash{}apps\textbackslash{}"{} 2. Cloner ce dépôt à l\textquotesingle{}intérieur  le chemin devrais être \+: "{}C\+:\textbackslash{}microchip\textbackslash{}harmony\textbackslash{}v2\+\_\+06\textbackslash{}apps\textbackslash{}\+PROJ\textbackslash{}\+PRJ\+\_\+2113\+\_\+D-\/s\+Electronique"{} 4. Ouvrez le projet dans MPLAB X. 5. Sélectionnez le compilateur XC32 v2.\+5. 6. Compilez le projet ($<$tt$>$\+Build Project$<$/tt$>$).  @section autotoc\+\_\+md6 Utilisation  -\/ Chargez le firmware sur la carte cible (2113\+E\+\_\+\+De\+Electronique) via MPLAB X (la carte doit être alimentée en +1,5\+V). -\/ Retirer la sonde de programation (snap/icd4) appuyer sur le switch environs 1s. -\/ secouer -\/ pour éteindre\+: retirer la pile   @section autotoc\+\_\+md7 Etat actuel -\/ Possibilité d\textquotesingle{}apparition de l\textquotesingle{}interruption sans que le microcontroleur ne soit totalement éteind/allumé à déterminer.  -\/ Après quelques rolls de dé puis laisser \texorpdfstring{$\sim$}{\string~}2h un roll était toujour possible aucun problème... (n\textquotesingle{}empêche pas le point précédent) @section autotoc\+\_\+md8 Documentation Doxygen  \+La documentation complète du code est disponible dans le dossier $<$a href="{}html/"{} \texorpdfstring{$>$}{>}html/
+\end{DoxyEnumerate}. ~\newline
+ \href{./html/index.html}{\texttt{ Consulter la documentation Doxygen}} (ouvrir dans un browser une fois le dépot en local) exemple du rendus \+:
+
+
+
+\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysection{\texorpdfstring{Diagrammes}{Diagrammes}}\label{md__r_e_a_d_m_e_autotoc_md9}
+Précédente version (V2)
+
+
+
+Nouvelle version (V3)
+
+
+
+les autres diagrammes sont disponibles sous "{}\+C\+:\textbackslash{}microchip\textbackslash{}harmony\textbackslash{}v2\+\_\+06\textbackslash{}apps\textbackslash{}\+PROJ\textbackslash{}\+PRJ\+\_\+2113\+\_\+\+D-\/s\+Electronique\textbackslash{}soft\textbackslash{}2113\+\_\+\+De\+Electronique\+\_\+\+V3.\+X\textbackslash{}code2flow"{}
+
+\#\# Ressources
+
+
+\begin{DoxyItemize}
+\item \href{https://app.code2flow.com/}{\texttt{ Diagramme de flux (Code2\+Flow)}}
+\item \href{https://code.visualstudio.com/}{\texttt{ VS Code}}
+\item \href{https://github.com/features/copilot}{\texttt{ Git\+Hub Copilot}}
+\item \href{https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide}{\texttt{ MPLAB X IDE}}
+\item \href{https://graphviz.gitlab.io/}{\texttt{ Graphviz}}
+\item \href{https://www.doxygen.nl/index.html}{\texttt{ Doxygen}}
+\item \href{https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator}{\texttt{ MCC Standalone (MPLAB Code Configurator)}}
+\item \href{https://www.microchip.com/wwwproducts/en/PIC32MM0064GPL020}{\texttt{ Documentation Microchip PIC32\+MM}}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ 

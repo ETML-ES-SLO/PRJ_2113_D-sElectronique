@@ -25,7 +25,17 @@
 var NAVTREE =
 [
   [ "De_ES", "index.html", [
-    [ "README", "md__r_e_a_d_m_e.html", null ],
+    [ "2113_DeElectronique_V3", "md__r_e_a_d_m_e.html", [
+      [ "Sommaire", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
+      [ "Présentation", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
+      [ "Modifications apportées entre V2 et V3", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
+      [ "Informations de générations", "md__r_e_a_d_m_e.html#autotoc_md4", null ],
+      [ "Compilation", "md__r_e_a_d_m_e.html#autotoc_md5", null ],
+      [ "Utilisation", "md__r_e_a_d_m_e.html#autotoc_md6", null ],
+      [ "Etat actuel", "md__r_e_a_d_m_e.html#autotoc_md7", null ],
+      [ "Documentation Doxygen", "md__r_e_a_d_m_e.html#autotoc_md8", null ],
+      [ "Diagrammes", "md__r_e_a_d_m_e.html#autotoc_md9", null ]
+    ] ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
