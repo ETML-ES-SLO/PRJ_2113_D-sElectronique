@@ -85,8 +85,8 @@ events:
     checks:
       - "Detecting CXX compile features"
     directories:
-      source: "C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default/CMakeFiles/CMakeScratch/TryCompile-t7w1k5"
-      binary: "C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default/CMakeFiles/CMakeScratch/TryCompile-t7w1k5"
+      source: "C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default/CMakeFiles/CMakeScratch/TryCompile-60suk3"
+      binary: "C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default/CMakeFiles/CMakeScratch/TryCompile-60suk3"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -96,12 +96,12 @@ events:
       variable: "CMAKE_CXX_FEATURE_TEST"
       cached: true
       stdout: |
-        Change Dir: 'C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default/CMakeFiles/CMakeScratch/TryCompile-t7w1k5'
+        Change Dir: 'C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default/CMakeFiles/CMakeScratch/TryCompile-60suk3'
         
-        Run Build Command(s): C:/Users/aymer/.mplab/app-finder/apps/ninja/v1.12.1/ninja.exe -v cmTC_2e194
-        [1/2] c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\XC32-G~1.EXE   -std=c++1y -o CMakeFiles/cmTC_2e194.dir/feature_tests.cxx.obj -c C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default/CMakeFiles/CMakeScratch/TryCompile-t7w1k5/feature_tests.cxx
-        FAILED: CMakeFiles/cmTC_2e194.dir/feature_tests.cxx.obj 
-        c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\XC32-G~1.EXE   -std=c++1y -o CMakeFiles/cmTC_2e194.dir/feature_tests.cxx.obj -c C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default/CMakeFiles/CMakeScratch/TryCompile-t7w1k5/feature_tests.cxx
+        Run Build Command(s): C:/Users/aymer/.mplab/app-finder/apps/ninja/v1.12.1/ninja.exe -v cmTC_ca6fe
+        [1/2] c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\XC32-G~1.EXE   -std=c++1y -o CMakeFiles/cmTC_ca6fe.dir/feature_tests.cxx.obj -c C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default/CMakeFiles/CMakeScratch/TryCompile-60suk3/feature_tests.cxx
+        FAILED: CMakeFiles/cmTC_ca6fe.dir/feature_tests.cxx.obj 
+        c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\XC32-G~1.EXE   -std=c++1y -o CMakeFiles/cmTC_ca6fe.dir/feature_tests.cxx.obj -c C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default/CMakeFiles/CMakeScratch/TryCompile-60suk3/feature_tests.cxx
         ninja: build stopped: subcommand failed.
         
       exitCode: 1
