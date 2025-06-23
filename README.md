@@ -64,6 +64,7 @@ La version 3 de cette application est conçue et testée avec :
 
 ## Versionning 
  Latest Hardware : 2113E_DeElectronique
+ 
  Latest Software : 2113_DeElectonique_V3.X_2024
 
 
