@@ -1,0 +1,204 @@
+\doxysection{main.\+c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{main.c@{main.c}}
+{\ttfamily \#include "{}Main.\+h"{}}\newline
+{\ttfamily \#include "{}Mc32\+Delays.\+h"{}}\newline
+{\ttfamily \#include "{}mcc\+\_\+generated\+\_\+files/system.\+h"{}}\newline
+{\ttfamily \#include "{}mcc\+\_\+generated\+\_\+files/spi1.\+h"{}}\newline
+{\ttfamily \#include "{}mcc\+\_\+generated\+\_\+files/pin\+\_\+manager.\+h"{}}\newline
+{\ttfamily \#include "{}Accelerometre.\+h"{}}\newline
+{\ttfamily \#include "{}De\+Electronique.\+h"{}}\newline
+{\ttfamily \#include "{}mcc\+\_\+generated\+\_\+files/tmr1.\+h"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for main.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em Point d\textquotesingle{}entrée principal de l\textquotesingle{}application. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_af345062c9eb0b26d8fac05edc69e3e03}{APP\+\_\+\+TMR1\+\_\+\+Call\+Back}} (void)
+\begin{DoxyCompactList}\small\item\em Callback du timer 1, décrémente le délai stocké dans App\+Data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_abcbd1769c7d03ea90681c10fe1f03775}{APP\+\_\+\+Wait\+Start}} (uint16\+\_\+t waiting\+Time\+\_\+ms)
+\begin{DoxyCompactList}\small\item\em Attente bloquante pendant un temps donné en ms (utilise le timer 1). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a4fa8fbe773cf61081a19c1a85c05ff51}{Set\+States}} (\mbox{\hyperlink{_main_8h_aa19be6305a5a4485e1e70de70ed7d677}{states}} newstate)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}état courant de l\textquotesingle{}application. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a096c0676aeef0819a2515076d21a363e}{APP\+\_\+\+CORETIMER\+\_\+\+CALLBACK}} (void)
+\begin{DoxyCompactList}\small\item\em Callback du core timer pour gérer la variation de RC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structapp_data}{app\+Data}} \mbox{\hyperlink{main_8c_a49a8f8cf002afdba8fdadf6769c332c9}{appdata}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8c_a096c0676aeef0819a2515076d21a363e}\index{main.c@{main.c}!APP\_CORETIMER\_CALLBACK@{APP\_CORETIMER\_CALLBACK}}
+\index{APP\_CORETIMER\_CALLBACK@{APP\_CORETIMER\_CALLBACK}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{APP\_CORETIMER\_CALLBACK()}{APP\_CORETIMER\_CALLBACK()}}
+{\footnotesize\ttfamily \label{main_8c_a096c0676aeef0819a2515076d21a363e} 
+void APP\+\_\+\+CORETIMER\+\_\+\+CALLBACK (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Callback du core timer pour gérer la variation de RC. 
+
+\Hypertarget{main_8c_af345062c9eb0b26d8fac05edc69e3e03}\index{main.c@{main.c}!APP\_TMR1\_CallBack@{APP\_TMR1\_CallBack}}
+\index{APP\_TMR1\_CallBack@{APP\_TMR1\_CallBack}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{APP\_TMR1\_CallBack()}{APP\_TMR1\_CallBack()}}
+{\footnotesize\ttfamily \label{main_8c_af345062c9eb0b26d8fac05edc69e3e03} 
+void APP\+\_\+\+TMR1\+\_\+\+Call\+Back (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Callback du timer 1, décrémente le délai stocké dans App\+Data. 
+
+End of File \Hypertarget{main_8c_abcbd1769c7d03ea90681c10fe1f03775}\index{main.c@{main.c}!APP\_WaitStart@{APP\_WaitStart}}
+\index{APP\_WaitStart@{APP\_WaitStart}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{APP\_WaitStart()}{APP\_WaitStart()}}
+{\footnotesize\ttfamily \label{main_8c_abcbd1769c7d03ea90681c10fe1f03775} 
+void APP\+\_\+\+Wait\+Start (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{waiting\+Time\+\_\+ms}{}\end{DoxyParamCaption})}
+
+
+
+Attente bloquante pendant un temps donné en ms (utilise le timer 1). 
+
+Lance une attente bloquante pendant un temps donné (ms).
+
+
+\begin{DoxyParams}{Parameters}
+{\em waiting\+Time\+\_\+ms} & Durée d\textquotesingle{}attente en millisecondes \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_abcbd1769c7d03ea90681c10fe1f03775_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_abcbd1769c7d03ea90681c10fe1f03775_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Point d\textquotesingle{}entrée principal de l\textquotesingle{}application. 
+
+\begin{DoxyReturn}{Returns}
+1 en cas de fin de programme 
+\end{DoxyReturn}
+Initialisation de l\textquotesingle{}application.
+
+
+\begin{DoxyItemize}
+\item Configure le système et les périphériques.
+\item Définit les valeurs par défaut des variables d\textquotesingle{}état.
+\item Vérifie l\textquotesingle{}absence d\textquotesingle{}interruption pour configurer l\textquotesingle{}accéléromètre.
+\item Passe à l\textquotesingle{}état d\textquotesingle{}attente d\textquotesingle{}interruption.
+\end{DoxyItemize}
+
+Attente d\textquotesingle{}une interruption de l\textquotesingle{}accéléromètre.
+
+
+\begin{DoxyItemize}
+\item Lit le registre d\textquotesingle{}état de l\textquotesingle{}accéléromètre.
+\item Vérifie les interruptions de type "{}shake"{} et "{}any motion"{}.
+\item Si une interruption est détectée et que c\textquotesingle{}est la première fois depuis la mise sous tension, passe à l\textquotesingle{}état de calcul.
+\end{DoxyItemize}
+
+Calcule la valeur pseudo-\/aléatoire du dé à partir des registres de l\textquotesingle{}accéléromètre.
+
+
+\begin{DoxyItemize}
+\item Additionne les valeurs des axes X, Y, Z pour obtenir une graine.
+\item Utilise srand/rand pour générer un nombre pseudo-\/aléatoire.
+\item Garantit que le résultat est compris entre 1 et 6 (jamais 0).
+\item Passe à l\textquotesingle{}état d\textquotesingle{}affichage.
+\end{DoxyItemize}
+
+Prépare l\textquotesingle{}affichage du résultat sur les LEDs.
+
+
+\begin{DoxyItemize}
+\item Initialise le rapport cyclique PWM (RC) à 10.
+\item Active l\textquotesingle{}affichage (disp=1).
+\item Passe à l\textquotesingle{}état d\textquotesingle{}attente d\textquotesingle{}affichage.
+\end{DoxyItemize}
+
+Lance l\textquotesingle{}attente d\textquotesingle{}affichage du résultat.
+
+
+\begin{DoxyItemize}
+\item Démarre l\textquotesingle{}attente bloquante (affichage du dé).
+\item Passe à l\textquotesingle{}état d\textquotesingle{}extinction.
+\end{DoxyItemize}
+
+Éteint les LEDs et met le système en veille si aucune interruption n\textquotesingle{}est détectée.
+
+
+\begin{DoxyItemize}
+\item Éteint l\textquotesingle{}affichage.
+\item Efface les interruptions de l\textquotesingle{}accéléromètre.
+\item Si aucune interruption, coupe l\textquotesingle{}alimentation et boucle infinie pour arrêt total.
+\end{DoxyItemize}Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a4fa8fbe773cf61081a19c1a85c05ff51}\index{main.c@{main.c}!SetStates@{SetStates}}
+\index{SetStates@{SetStates}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SetStates()}{SetStates()}}
+{\footnotesize\ttfamily \label{main_8c_a4fa8fbe773cf61081a19c1a85c05ff51} 
+void Set\+States (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_main_8h_aa19be6305a5a4485e1e70de70ed7d677}{states}}}]{newstate}{}\end{DoxyParamCaption})}
+
+
+
+Change l\textquotesingle{}état courant de l\textquotesingle{}application. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em newstate} & Nouvel état à appliquer \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{main_8c_a4fa8fbe773cf61081a19c1a85c05ff51_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8c_a49a8f8cf002afdba8fdadf6769c332c9}\index{main.c@{main.c}!appdata@{appdata}}
+\index{appdata@{appdata}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{appdata}{appdata}}
+{\footnotesize\ttfamily \label{main_8c_a49a8f8cf002afdba8fdadf6769c332c9} 
+\mbox{\hyperlink{structapp_data}{app\+Data}} appdata}
+
+Generated \doxylink{main_8c}{main.\+c} file from MPLAB Code Configurator
+
+@\+Company Microchip Technology Inc.
+
+@\+File Name \doxylink{main_8c}{main.\+c} la
+
+@\+Summary This is the generated \doxylink{main_8c}{main.\+c} using PIC24 / ds\+PIC33 / PIC32\+MM MCUs.
+
+@\+Description This source file provides main entry point for system intialization and application code development. Generation Information \+: Product Revision \+: PIC24 / ds\+PIC33 / PIC32\+MM MCUs -\/ 1.\+75.\+1 Device \+: PIC32\+MM0064\+GPL020 The generated drivers are tested against the following\+: Compiler \+: XC16 v1.\+35 MPLAB \+: MPLAB X v5.\+05 Section\+: Included Files 

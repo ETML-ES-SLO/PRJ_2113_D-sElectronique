@@ -1,0 +1,465 @@
+\doxysection{Accelerometre.\+c File Reference}
+\hypertarget{_accelerometre_8c}{}\label{_accelerometre_8c}\index{Accelerometre.c@{Accelerometre.c}}
+{\ttfamily \#include "{}Accelerometre.\+h"{}}\newline
+{\ttfamily \#include "{}mcc\+\_\+generated\+\_\+files/spi1.\+h"{}}\newline
+{\ttfamily \#include "{}mcc\+\_\+generated\+\_\+files/pin\+\_\+manager.\+h"{}}\newline
+Include dependency graph for Accelerometre.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_accelerometre_8c_a35beee7b0f2f3e294c4a4a69a5f02df4}{DUMMY}}~0x\+A5
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_accelerometre_8c_a4ddd54028cd3a20032912758fdd72cc3}{MC3419\+\_\+start}} (void)
+\item 
+void \mbox{\hyperlink{_accelerometre_8c_a9ae57db275809bc093fb879e023b3c5e}{MC3419\+\_\+\+Set\+Mode}} (\mbox{\hyperlink{_accelerometre_8h_a1bcf1455c237d009bb5dccbee830bc1a}{MC3419\+\_\+\+Mode}} Mode)
+\item 
+void \mbox{\hyperlink{_accelerometre_8c_a62f3cae572e3dbb5e9c5543c135ab40a}{MC3419\+\_\+\+Set\+Rangle\+Ctrl}} (\mbox{\hyperlink{_accelerometre_8h_a52b55d45128b335a672fb9ad0452f4cd}{MC3419\+\_\+\+Range}} \mbox{\hyperlink{_accelerometre_8h_a52b55d45128b335a672fb9ad0452f4cda3f15ba0b662047955ed6b1f0c646d149}{Range}})
+\item 
+void \mbox{\hyperlink{_accelerometre_8c_ade2d67869fb287b6fce417a7c7345db5}{MC3419\+\_\+\+Set\+Sample\+Rate}} (\mbox{\hyperlink{_accelerometre_8h_aab254000632699510f54fe8756d92252}{MC3419\+\_\+\+Sampl\+Rate}} Sample\+Rate)
+\item 
+void \mbox{\hyperlink{_accelerometre_8c_ab015f0c9af2205780b56a76cacc4c51b}{MC3419\+\_\+wake}} (void)
+\item 
+void \mbox{\hyperlink{_accelerometre_8c_ae3823d6c06bbb5bf70eaaac1ce81553c}{MC3419\+\_\+stop}} (void)
+\item 
+void \mbox{\hyperlink{_accelerometre_8c_a85c42d11f42919bc5139bb178d08827a}{MC3419\+\_\+reset}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_accelerometre_8c_a2bd4c1299cf6f9e6428ff7f673d2f93c}{MC3419\+\_\+\+ID}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_accelerometre_8c_a45a6c20144b882f4067231cc340b942c}{Read\+Register8}} (uint8\+\_\+t address)
+\item 
+void \mbox{\hyperlink{_accelerometre_8c_a43618e36fd841e9db9fc0463f6c5d129}{write\+Register8}} (uint8\+\_\+t address, uint8\+\_\+t data)
+\item 
+void \mbox{\hyperlink{_accelerometre_8c_a72d71331159c9324e0ea54e7c8679d43}{delay}} (uint8\+\_\+t Xms)
+\item 
+void \mbox{\hyperlink{_accelerometre_8c_a400d64d562188710fb88ed74c78c3b5e}{MC3419\+\_\+\+Pol\+\_\+\+INT}} (\mbox{\hyperlink{_accelerometre_8h_a620926c3f995817e2771c94edf7d8d86}{MC3419\+\_\+\+GPIO\+\_\+\+CTRL}} GPIO\+\_\+\+CTRL)
+\item 
+void \mbox{\hyperlink{_accelerometre_8c_aef9e9192376cba0f970489c16b859d34}{MC3419\+\_\+\+INT\+\_\+\+Enable}} (\mbox{\hyperlink{_accelerometre_8h_afcafa840f77217dec873ff5b87f35106}{MC3419\+\_\+\+INTR\+\_\+\+CTRL}} INTR\+\_\+\+CTRL)
+\item 
+void \mbox{\hyperlink{_accelerometre_8c_a1d456db336854318ada175c9dff045cc}{MC3419\+\_\+\+Motion\+CTRL}} (\mbox{\hyperlink{_accelerometre_8h_a509f068133649aadfd1b9dea6b6179ff}{MC3419\+\_\+\+Motion\+Control}} Motion)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_accelerometre_8c_af397831feaa9e0d72ba45e015ada2f45}{MC3419\+\_\+\+Read\+Status\+Register}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_accelerometre_8c_a75f1ecb0b258afe70e52c4e36dcc92cf}{MC3419\+\_\+\+Read\+Int\+Status\+Register\+And\+Ack}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_accelerometre_8c_aaafb26a88f3f595d3777156bb382fd4d}{MC3419\+\_\+\+Fi\+Fo\+\_\+\+CTRL\+\_\+\+REG}} (\mbox{\hyperlink{_accelerometre_8h_a9785e3876466c336ec45c5c9a4d3ce6a}{MC3419\+\_\+\+FIFO\+\_\+\+CTRL}} Val\+CTRL)
+\item 
+void \mbox{\hyperlink{_accelerometre_8c_a56de8318574314b7a4dccdaed9ae50a9}{MC3419\+\_\+\+FIFO\+\_\+\+TRESHOLD}} (uint8\+\_\+t Fifo\+\_\+\+Tresh)
+\item 
+void \mbox{\hyperlink{_accelerometre_8c_a49dceec14f9d0b58dc84479135961ce5}{MC3419\+\_\+\+Write\+Shake\+Threshold\+Register}} (uint16\+\_\+t Value)
+\item 
+void \mbox{\hyperlink{_accelerometre_8c_a70eedb9d2a233fac909f9461310be1b2}{MC3419\+\_\+\+Write\+Shake\+Duration\+And\+P2\+PRegister}} (uint8\+\_\+t shake\+Duration, uint16\+\_\+t shake\+P2P)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_accelerometre_8c_a35beee7b0f2f3e294c4a4a69a5f02df4}\index{Accelerometre.c@{Accelerometre.c}!DUMMY@{DUMMY}}
+\index{DUMMY@{DUMMY}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{DUMMY}{DUMMY}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a35beee7b0f2f3e294c4a4a69a5f02df4} 
+\#define DUMMY~0x\+A5}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_accelerometre_8c_a72d71331159c9324e0ea54e7c8679d43}\index{Accelerometre.c@{Accelerometre.c}!delay@{delay}}
+\index{delay@{delay}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{delay()}{delay()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a72d71331159c9324e0ea54e7c8679d43} 
+void delay (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Xms}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a72d71331159c9324e0ea54e7c8679d43_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_aaafb26a88f3f595d3777156bb382fd4d}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_FiFo\_CTRL\_REG@{MC3419\_FiFo\_CTRL\_REG}}
+\index{MC3419\_FiFo\_CTRL\_REG@{MC3419\_FiFo\_CTRL\_REG}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_FiFo\_CTRL\_REG()}{MC3419\_FiFo\_CTRL\_REG()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_aaafb26a88f3f595d3777156bb382fd4d} 
+uint8\+\_\+t MC3419\+\_\+\+Fi\+Fo\+\_\+\+CTRL\+\_\+\+REG (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_accelerometre_8h_a9785e3876466c336ec45c5c9a4d3ce6a}{MC3419\+\_\+\+FIFO\+\_\+\+CTRL}}}]{Val\+CTRL}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{_accelerometre_8c_aaafb26a88f3f595d3777156bb382fd4d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a56de8318574314b7a4dccdaed9ae50a9}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_FIFO\_TRESHOLD@{MC3419\_FIFO\_TRESHOLD}}
+\index{MC3419\_FIFO\_TRESHOLD@{MC3419\_FIFO\_TRESHOLD}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_FIFO\_TRESHOLD()}{MC3419\_FIFO\_TRESHOLD()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a56de8318574314b7a4dccdaed9ae50a9} 
+void MC3419\+\_\+\+FIFO\+\_\+\+TRESHOLD (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Fifo\+\_\+\+Tresh}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{_accelerometre_8c_a56de8318574314b7a4dccdaed9ae50a9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a2bd4c1299cf6f9e6428ff7f673d2f93c}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_ID@{MC3419\_ID}}
+\index{MC3419\_ID@{MC3419\_ID}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_ID()}{MC3419\_ID()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a2bd4c1299cf6f9e6428ff7f673d2f93c} 
+uint8\+\_\+t MC3419\+\_\+\+ID (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{_accelerometre_8c_a2bd4c1299cf6f9e6428ff7f673d2f93c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_aef9e9192376cba0f970489c16b859d34}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_INT\_Enable@{MC3419\_INT\_Enable}}
+\index{MC3419\_INT\_Enable@{MC3419\_INT\_Enable}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_INT\_Enable()}{MC3419\_INT\_Enable()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_aef9e9192376cba0f970489c16b859d34} 
+void MC3419\+\_\+\+INT\+\_\+\+Enable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_accelerometre_8h_afcafa840f77217dec873ff5b87f35106}{MC3419\+\_\+\+INTR\+\_\+\+CTRL}}}]{INTR\+\_\+\+CTRL}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_aef9e9192376cba0f970489c16b859d34_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_aef9e9192376cba0f970489c16b859d34_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a1d456db336854318ada175c9dff045cc}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_MotionCTRL@{MC3419\_MotionCTRL}}
+\index{MC3419\_MotionCTRL@{MC3419\_MotionCTRL}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_MotionCTRL()}{MC3419\_MotionCTRL()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a1d456db336854318ada175c9dff045cc} 
+void MC3419\+\_\+\+Motion\+CTRL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_accelerometre_8h_a509f068133649aadfd1b9dea6b6179ff}{MC3419\+\_\+\+Motion\+Control}}}]{Motion}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a1d456db336854318ada175c9dff045cc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a1d456db336854318ada175c9dff045cc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a400d64d562188710fb88ed74c78c3b5e}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_Pol\_INT@{MC3419\_Pol\_INT}}
+\index{MC3419\_Pol\_INT@{MC3419\_Pol\_INT}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_Pol\_INT()}{MC3419\_Pol\_INT()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a400d64d562188710fb88ed74c78c3b5e} 
+void MC3419\+\_\+\+Pol\+\_\+\+INT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_accelerometre_8h_a620926c3f995817e2771c94edf7d8d86}{MC3419\+\_\+\+GPIO\+\_\+\+CTRL}}}]{GPIO\+\_\+\+CTRL}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a400d64d562188710fb88ed74c78c3b5e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a400d64d562188710fb88ed74c78c3b5e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a75f1ecb0b258afe70e52c4e36dcc92cf}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_ReadIntStatusRegisterAndAck@{MC3419\_ReadIntStatusRegisterAndAck}}
+\index{MC3419\_ReadIntStatusRegisterAndAck@{MC3419\_ReadIntStatusRegisterAndAck}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_ReadIntStatusRegisterAndAck()}{MC3419\_ReadIntStatusRegisterAndAck()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a75f1ecb0b258afe70e52c4e36dcc92cf} 
+uint8\+\_\+t MC3419\+\_\+\+Read\+Int\+Status\+Register\+And\+Ack (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a75f1ecb0b258afe70e52c4e36dcc92cf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a75f1ecb0b258afe70e52c4e36dcc92cf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_af397831feaa9e0d72ba45e015ada2f45}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_ReadStatusRegister@{MC3419\_ReadStatusRegister}}
+\index{MC3419\_ReadStatusRegister@{MC3419\_ReadStatusRegister}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_ReadStatusRegister()}{MC3419\_ReadStatusRegister()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_af397831feaa9e0d72ba45e015ada2f45} 
+uint8\+\_\+t MC3419\+\_\+\+Read\+Status\+Register (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{_accelerometre_8c_af397831feaa9e0d72ba45e015ada2f45_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{_accelerometre_8c_af397831feaa9e0d72ba45e015ada2f45_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a85c42d11f42919bc5139bb178d08827a}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_reset@{MC3419\_reset}}
+\index{MC3419\_reset@{MC3419\_reset}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_reset()}{MC3419\_reset()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a85c42d11f42919bc5139bb178d08827a} 
+void MC3419\+\_\+reset (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a85c42d11f42919bc5139bb178d08827a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{_accelerometre_8c_a85c42d11f42919bc5139bb178d08827a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a9ae57db275809bc093fb879e023b3c5e}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_SetMode@{MC3419\_SetMode}}
+\index{MC3419\_SetMode@{MC3419\_SetMode}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_SetMode()}{MC3419\_SetMode()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a9ae57db275809bc093fb879e023b3c5e} 
+void MC3419\+\_\+\+Set\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_accelerometre_8h_a1bcf1455c237d009bb5dccbee830bc1a}{MC3419\+\_\+\+Mode}}}]{Mode}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{_accelerometre_8c_a9ae57db275809bc093fb879e023b3c5e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a9ae57db275809bc093fb879e023b3c5e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a62f3cae572e3dbb5e9c5543c135ab40a}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_SetRangleCtrl@{MC3419\_SetRangleCtrl}}
+\index{MC3419\_SetRangleCtrl@{MC3419\_SetRangleCtrl}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_SetRangleCtrl()}{MC3419\_SetRangleCtrl()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a62f3cae572e3dbb5e9c5543c135ab40a} 
+void MC3419\+\_\+\+Set\+Rangle\+Ctrl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_accelerometre_8h_a52b55d45128b335a672fb9ad0452f4cd}{MC3419\+\_\+\+Range}}}]{Range}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a62f3cae572e3dbb5e9c5543c135ab40a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a62f3cae572e3dbb5e9c5543c135ab40a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_ade2d67869fb287b6fce417a7c7345db5}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_SetSampleRate@{MC3419\_SetSampleRate}}
+\index{MC3419\_SetSampleRate@{MC3419\_SetSampleRate}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_SetSampleRate()}{MC3419\_SetSampleRate()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_ade2d67869fb287b6fce417a7c7345db5} 
+void MC3419\+\_\+\+Set\+Sample\+Rate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_accelerometre_8h_aab254000632699510f54fe8756d92252}{MC3419\+\_\+\+Sampl\+Rate}}}]{Sample\+Rate}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_ade2d67869fb287b6fce417a7c7345db5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_ade2d67869fb287b6fce417a7c7345db5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a4ddd54028cd3a20032912758fdd72cc3}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_start@{MC3419\_start}}
+\index{MC3419\_start@{MC3419\_start}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_start()}{MC3419\_start()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a4ddd54028cd3a20032912758fdd72cc3} 
+void MC3419\+\_\+start (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a4ddd54028cd3a20032912758fdd72cc3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{_accelerometre_8c_a4ddd54028cd3a20032912758fdd72cc3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_ae3823d6c06bbb5bf70eaaac1ce81553c}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_stop@{MC3419\_stop}}
+\index{MC3419\_stop@{MC3419\_stop}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_stop()}{MC3419\_stop()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_ae3823d6c06bbb5bf70eaaac1ce81553c} 
+void MC3419\+\_\+stop (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_ae3823d6c06bbb5bf70eaaac1ce81553c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_ae3823d6c06bbb5bf70eaaac1ce81553c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_ab015f0c9af2205780b56a76cacc4c51b}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_wake@{MC3419\_wake}}
+\index{MC3419\_wake@{MC3419\_wake}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_wake()}{MC3419\_wake()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_ab015f0c9af2205780b56a76cacc4c51b} 
+void MC3419\+\_\+wake (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_ab015f0c9af2205780b56a76cacc4c51b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{_accelerometre_8c_ab015f0c9af2205780b56a76cacc4c51b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a70eedb9d2a233fac909f9461310be1b2}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_WriteShakeDurationAndP2PRegister@{MC3419\_WriteShakeDurationAndP2PRegister}}
+\index{MC3419\_WriteShakeDurationAndP2PRegister@{MC3419\_WriteShakeDurationAndP2PRegister}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_WriteShakeDurationAndP2PRegister()}{MC3419\_WriteShakeDurationAndP2PRegister()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a70eedb9d2a233fac909f9461310be1b2} 
+void MC3419\+\_\+\+Write\+Shake\+Duration\+And\+P2\+PRegister (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{shake\+Duration}{, }\item[{uint16\+\_\+t}]{shake\+P2P}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{_accelerometre_8c_a70eedb9d2a233fac909f9461310be1b2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a70eedb9d2a233fac909f9461310be1b2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a49dceec14f9d0b58dc84479135961ce5}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_WriteShakeThresholdRegister@{MC3419\_WriteShakeThresholdRegister}}
+\index{MC3419\_WriteShakeThresholdRegister@{MC3419\_WriteShakeThresholdRegister}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_WriteShakeThresholdRegister()}{MC3419\_WriteShakeThresholdRegister()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a49dceec14f9d0b58dc84479135961ce5} 
+void MC3419\+\_\+\+Write\+Shake\+Threshold\+Register (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Value}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{_accelerometre_8c_a49dceec14f9d0b58dc84479135961ce5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a49dceec14f9d0b58dc84479135961ce5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a45a6c20144b882f4067231cc340b942c}\index{Accelerometre.c@{Accelerometre.c}!ReadRegister8@{ReadRegister8}}
+\index{ReadRegister8@{ReadRegister8}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{ReadRegister8()}{ReadRegister8()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a45a6c20144b882f4067231cc340b942c} 
+uint8\+\_\+t Read\+Register8 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{address}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a45a6c20144b882f4067231cc340b942c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a43618e36fd841e9db9fc0463f6c5d129}\index{Accelerometre.c@{Accelerometre.c}!writeRegister8@{writeRegister8}}
+\index{writeRegister8@{writeRegister8}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{writeRegister8()}{writeRegister8()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a43618e36fd841e9db9fc0463f6c5d129} 
+void write\+Register8 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{address}{, }\item[{uint8\+\_\+t}]{data}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a43618e36fd841e9db9fc0463f6c5d129_icgraph}
+\end{center}
+\end{figure}

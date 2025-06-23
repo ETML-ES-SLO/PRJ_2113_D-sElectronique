@@ -1,0 +1,325 @@
+\doxysection{De\+Electronique.\+h File Reference}
+\hypertarget{_de_electronique_8h}{}\label{_de_electronique_8h}\index{DeElectronique.h@{DeElectronique.h}}
+{\ttfamily \#include "{}xc.\+h"{}}\newline
+{\ttfamily \#include "{}Accelerometre.\+h"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+Include dependency graph for De\+Electronique.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{_de_electronique_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{_de_electronique_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_de_electronique_8h_aa825ce22aa6958b046ed24e44b5968ea}{INT\+\_\+\+SHAKE}}~PORTBbits.\+RB12
+\item 
+\#define \mbox{\hyperlink{_de_electronique_8h_ae8d5b4e7e2d9d21caaa4744d385d7cc7}{LED0}}~LATAbits.\+LATA0
+\item 
+\#define \mbox{\hyperlink{_de_electronique_8h_a8aa85ae9867fabf70ec72cd3bf6fb6b9}{LED1}}~LATAbits.\+LATA1
+\item 
+\#define \mbox{\hyperlink{_de_electronique_8h_ad09fe5bf321b9a2de26bd5e5b9af6424}{LED2}}~LATAbits.\+LATA2
+\item 
+\#define \mbox{\hyperlink{_de_electronique_8h_a4b7ff8e253a7412f83deba3a447028a8}{LED3}}~LATBbits.\+LATB2
+\item 
+\#define \mbox{\hyperlink{_de_electronique_8h_ae048837f20072bed467332b1bd1da9fa}{LED4}}~LATAbits.\+LATA3
+\item 
+\#define \mbox{\hyperlink{_de_electronique_8h_aefae505e2588183f1921a9e840b16044}{LED5}}~LATBbits.\+LATB4
+\item 
+\#define \mbox{\hyperlink{_de_electronique_8h_ab922b15d42b90025c9e13c087d86ce81}{LED6}}~LATAbits.\+LATA4
+\item 
+\#define \mbox{\hyperlink{_de_electronique_8h_a364696146cc4ac177d6cd3a0f75212bc}{POWER\+\_\+\+HOLD}}~LATBbits.\+LATB13
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_de_electronique_8h_a2b7baeecff321599b1ce6a9cd382d3be}{DISPLAYNONUM}} (void)
+\begin{DoxyCompactList}\small\item\em Éteint toutes les LEDs du dé. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_de_electronique_8h_a28929f15efdb26514cd26785f1e90955}{DISPLAY\+\_\+\+NUM1}} (void)
+\begin{DoxyCompactList}\small\item\em Affiche le chiffre 1 sur le dé. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_de_electronique_8h_a55b739360abda791ab8bc6398dc07c0a}{DISPLAY\+\_\+\+NUM2}} (void)
+\begin{DoxyCompactList}\small\item\em Affiche le chiffre 2 sur le dé. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_de_electronique_8h_acacd3ccf8a1498c93fab8d3083505f04}{DISPLAY\+\_\+\+NUM3}} (void)
+\begin{DoxyCompactList}\small\item\em Affiche le chiffre 3 sur le dé. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_de_electronique_8h_a8822d5517ac6a269e892b9448b840e64}{DISPLAY\+\_\+\+NUM4}} (void)
+\begin{DoxyCompactList}\small\item\em Affiche le chiffre 4 sur le dé. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_de_electronique_8h_aedcea15551a71efee52fc60287f0056d}{DISPLAY\+\_\+\+NUM5}} (void)
+\begin{DoxyCompactList}\small\item\em Affiche le chiffre 5 sur le dé. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_de_electronique_8h_a338c49d01f7b26e96e341913b84978d1}{DISPLAY\+\_\+\+NUM6}} (void)
+\begin{DoxyCompactList}\small\item\em Affiche le chiffre 6 sur le dé. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_de_electronique_8h_a19aa8cfabaac6b4b667a1aa5af004484}{Random\+Num}} (int Number)
+\begin{DoxyCompactList}\small\item\em Affiche un nombre aléatoire entre 1 et 6 sur le dé. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_de_electronique_8h_a742bce1c2f22b159570e071b6b4c855d}{Display\+\_\+\+Dice\+\_\+\+PWM}} (int Number\+To\+Display, char duty\+Cycle)
+\begin{DoxyCompactList}\small\item\em Affiche le nombre sur le dé avec PWM (effet de fade). \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{_de_electronique_8h_aed74f9affa4c12dd6010eada444c278e}{fade}} (char duty\+Cycle)
+\begin{DoxyCompactList}\small\item\em Applique un effet de fondu sur le PWM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_de_electronique_8h_aa825ce22aa6958b046ed24e44b5968ea}\index{DeElectronique.h@{DeElectronique.h}!INT\_SHAKE@{INT\_SHAKE}}
+\index{INT\_SHAKE@{INT\_SHAKE}!DeElectronique.h@{DeElectronique.h}}
+\doxysubsubsection{\texorpdfstring{INT\_SHAKE}{INT\_SHAKE}}
+{\footnotesize\ttfamily \label{_de_electronique_8h_aa825ce22aa6958b046ed24e44b5968ea} 
+\#define INT\+\_\+\+SHAKE~PORTBbits.\+RB12}
+
+\Hypertarget{_de_electronique_8h_ae8d5b4e7e2d9d21caaa4744d385d7cc7}\index{DeElectronique.h@{DeElectronique.h}!LED0@{LED0}}
+\index{LED0@{LED0}!DeElectronique.h@{DeElectronique.h}}
+\doxysubsubsection{\texorpdfstring{LED0}{LED0}}
+{\footnotesize\ttfamily \label{_de_electronique_8h_ae8d5b4e7e2d9d21caaa4744d385d7cc7} 
+\#define LED0~LATAbits.\+LATA0}
+
+\Hypertarget{_de_electronique_8h_a8aa85ae9867fabf70ec72cd3bf6fb6b9}\index{DeElectronique.h@{DeElectronique.h}!LED1@{LED1}}
+\index{LED1@{LED1}!DeElectronique.h@{DeElectronique.h}}
+\doxysubsubsection{\texorpdfstring{LED1}{LED1}}
+{\footnotesize\ttfamily \label{_de_electronique_8h_a8aa85ae9867fabf70ec72cd3bf6fb6b9} 
+\#define LED1~LATAbits.\+LATA1}
+
+\Hypertarget{_de_electronique_8h_ad09fe5bf321b9a2de26bd5e5b9af6424}\index{DeElectronique.h@{DeElectronique.h}!LED2@{LED2}}
+\index{LED2@{LED2}!DeElectronique.h@{DeElectronique.h}}
+\doxysubsubsection{\texorpdfstring{LED2}{LED2}}
+{\footnotesize\ttfamily \label{_de_electronique_8h_ad09fe5bf321b9a2de26bd5e5b9af6424} 
+\#define LED2~LATAbits.\+LATA2}
+
+\Hypertarget{_de_electronique_8h_a4b7ff8e253a7412f83deba3a447028a8}\index{DeElectronique.h@{DeElectronique.h}!LED3@{LED3}}
+\index{LED3@{LED3}!DeElectronique.h@{DeElectronique.h}}
+\doxysubsubsection{\texorpdfstring{LED3}{LED3}}
+{\footnotesize\ttfamily \label{_de_electronique_8h_a4b7ff8e253a7412f83deba3a447028a8} 
+\#define LED3~LATBbits.\+LATB2}
+
+\Hypertarget{_de_electronique_8h_ae048837f20072bed467332b1bd1da9fa}\index{DeElectronique.h@{DeElectronique.h}!LED4@{LED4}}
+\index{LED4@{LED4}!DeElectronique.h@{DeElectronique.h}}
+\doxysubsubsection{\texorpdfstring{LED4}{LED4}}
+{\footnotesize\ttfamily \label{_de_electronique_8h_ae048837f20072bed467332b1bd1da9fa} 
+\#define LED4~LATAbits.\+LATA3}
+
+\Hypertarget{_de_electronique_8h_aefae505e2588183f1921a9e840b16044}\index{DeElectronique.h@{DeElectronique.h}!LED5@{LED5}}
+\index{LED5@{LED5}!DeElectronique.h@{DeElectronique.h}}
+\doxysubsubsection{\texorpdfstring{LED5}{LED5}}
+{\footnotesize\ttfamily \label{_de_electronique_8h_aefae505e2588183f1921a9e840b16044} 
+\#define LED5~LATBbits.\+LATB4}
+
+\Hypertarget{_de_electronique_8h_ab922b15d42b90025c9e13c087d86ce81}\index{DeElectronique.h@{DeElectronique.h}!LED6@{LED6}}
+\index{LED6@{LED6}!DeElectronique.h@{DeElectronique.h}}
+\doxysubsubsection{\texorpdfstring{LED6}{LED6}}
+{\footnotesize\ttfamily \label{_de_electronique_8h_ab922b15d42b90025c9e13c087d86ce81} 
+\#define LED6~LATAbits.\+LATA4}
+
+\Hypertarget{_de_electronique_8h_a364696146cc4ac177d6cd3a0f75212bc}\index{DeElectronique.h@{DeElectronique.h}!POWER\_HOLD@{POWER\_HOLD}}
+\index{POWER\_HOLD@{POWER\_HOLD}!DeElectronique.h@{DeElectronique.h}}
+\doxysubsubsection{\texorpdfstring{POWER\_HOLD}{POWER\_HOLD}}
+{\footnotesize\ttfamily \label{_de_electronique_8h_a364696146cc4ac177d6cd3a0f75212bc} 
+\#define POWER\+\_\+\+HOLD~LATBbits.\+LATB13}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_de_electronique_8h_a742bce1c2f22b159570e071b6b4c855d}\index{DeElectronique.h@{DeElectronique.h}!Display\_Dice\_PWM@{Display\_Dice\_PWM}}
+\index{Display\_Dice\_PWM@{Display\_Dice\_PWM}!DeElectronique.h@{DeElectronique.h}}
+\doxysubsubsection{\texorpdfstring{Display\_Dice\_PWM()}{Display\_Dice\_PWM()}}
+{\footnotesize\ttfamily \label{_de_electronique_8h_a742bce1c2f22b159570e071b6b4c855d} 
+void Display\+\_\+\+Dice\+\_\+\+PWM (\begin{DoxyParamCaption}\item[{int}]{Number\+To\+Display}{, }\item[{char}]{duty\+Cycle}{}\end{DoxyParamCaption})}
+
+
+
+Affiche le nombre sur le dé avec PWM (effet de fade). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Number\+To\+Display} & Nombre à afficher. \\
+\hline
+{\em duty\+Cycle} & Rapport cyclique du PWM.\\
+\hline
+\end{DoxyParams}
+Gère l\textquotesingle{}affichage du nombre avec modulation de largeur d\textquotesingle{}impulsion pour un effet visuel. 
+\begin{DoxyParams}{Parameters}
+{\em Number\+To\+Display} & Nombre à afficher (1 à 6). \\
+\hline
+{\em duty\+Cycle} & Rapport cyclique du PWM. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{_de_electronique_8h_a742bce1c2f22b159570e071b6b4c855d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_de_electronique_8h_a742bce1c2f22b159570e071b6b4c855d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_de_electronique_8h_a28929f15efdb26514cd26785f1e90955}\index{DeElectronique.h@{DeElectronique.h}!DISPLAY\_NUM1@{DISPLAY\_NUM1}}
+\index{DISPLAY\_NUM1@{DISPLAY\_NUM1}!DeElectronique.h@{DeElectronique.h}}
+\doxysubsubsection{\texorpdfstring{DISPLAY\_NUM1()}{DISPLAY\_NUM1()}}
+{\footnotesize\ttfamily \label{_de_electronique_8h_a28929f15efdb26514cd26785f1e90955} 
+void DISPLAY\+\_\+\+NUM1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Affiche le chiffre 1 sur le dé. 
+
+Allume la LED centrale pour représenter le 1. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_de_electronique_8h_a28929f15efdb26514cd26785f1e90955_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_de_electronique_8h_a55b739360abda791ab8bc6398dc07c0a}\index{DeElectronique.h@{DeElectronique.h}!DISPLAY\_NUM2@{DISPLAY\_NUM2}}
+\index{DISPLAY\_NUM2@{DISPLAY\_NUM2}!DeElectronique.h@{DeElectronique.h}}
+\doxysubsubsection{\texorpdfstring{DISPLAY\_NUM2()}{DISPLAY\_NUM2()}}
+{\footnotesize\ttfamily \label{_de_electronique_8h_a55b739360abda791ab8bc6398dc07c0a} 
+void DISPLAY\+\_\+\+NUM2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Affiche le chiffre 2 sur le dé. 
+
+Allume deux LEDs opposées pour représenter le 2. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_de_electronique_8h_a55b739360abda791ab8bc6398dc07c0a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_de_electronique_8h_acacd3ccf8a1498c93fab8d3083505f04}\index{DeElectronique.h@{DeElectronique.h}!DISPLAY\_NUM3@{DISPLAY\_NUM3}}
+\index{DISPLAY\_NUM3@{DISPLAY\_NUM3}!DeElectronique.h@{DeElectronique.h}}
+\doxysubsubsection{\texorpdfstring{DISPLAY\_NUM3()}{DISPLAY\_NUM3()}}
+{\footnotesize\ttfamily \label{_de_electronique_8h_acacd3ccf8a1498c93fab8d3083505f04} 
+void DISPLAY\+\_\+\+NUM3 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Affiche le chiffre 3 sur le dé. 
+
+Allume trois LEDs pour représenter le 3. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_de_electronique_8h_acacd3ccf8a1498c93fab8d3083505f04_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_de_electronique_8h_a8822d5517ac6a269e892b9448b840e64}\index{DeElectronique.h@{DeElectronique.h}!DISPLAY\_NUM4@{DISPLAY\_NUM4}}
+\index{DISPLAY\_NUM4@{DISPLAY\_NUM4}!DeElectronique.h@{DeElectronique.h}}
+\doxysubsubsection{\texorpdfstring{DISPLAY\_NUM4()}{DISPLAY\_NUM4()}}
+{\footnotesize\ttfamily \label{_de_electronique_8h_a8822d5517ac6a269e892b9448b840e64} 
+void DISPLAY\+\_\+\+NUM4 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Affiche le chiffre 4 sur le dé. 
+
+Allume quatre LEDs pour représenter le 4. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_de_electronique_8h_a8822d5517ac6a269e892b9448b840e64_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_de_electronique_8h_aedcea15551a71efee52fc60287f0056d}\index{DeElectronique.h@{DeElectronique.h}!DISPLAY\_NUM5@{DISPLAY\_NUM5}}
+\index{DISPLAY\_NUM5@{DISPLAY\_NUM5}!DeElectronique.h@{DeElectronique.h}}
+\doxysubsubsection{\texorpdfstring{DISPLAY\_NUM5()}{DISPLAY\_NUM5()}}
+{\footnotesize\ttfamily \label{_de_electronique_8h_aedcea15551a71efee52fc60287f0056d} 
+void DISPLAY\+\_\+\+NUM5 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Affiche le chiffre 5 sur le dé. 
+
+Allume cinq LEDs pour représenter le 5. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_de_electronique_8h_aedcea15551a71efee52fc60287f0056d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_de_electronique_8h_a338c49d01f7b26e96e341913b84978d1}\index{DeElectronique.h@{DeElectronique.h}!DISPLAY\_NUM6@{DISPLAY\_NUM6}}
+\index{DISPLAY\_NUM6@{DISPLAY\_NUM6}!DeElectronique.h@{DeElectronique.h}}
+\doxysubsubsection{\texorpdfstring{DISPLAY\_NUM6()}{DISPLAY\_NUM6()}}
+{\footnotesize\ttfamily \label{_de_electronique_8h_a338c49d01f7b26e96e341913b84978d1} 
+void DISPLAY\+\_\+\+NUM6 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Affiche le chiffre 6 sur le dé. 
+
+Allume six LEDs pour représenter le 6. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_de_electronique_8h_a338c49d01f7b26e96e341913b84978d1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_de_electronique_8h_a2b7baeecff321599b1ce6a9cd382d3be}\index{DeElectronique.h@{DeElectronique.h}!DISPLAYNONUM@{DISPLAYNONUM}}
+\index{DISPLAYNONUM@{DISPLAYNONUM}!DeElectronique.h@{DeElectronique.h}}
+\doxysubsubsection{\texorpdfstring{DISPLAYNONUM()}{DISPLAYNONUM()}}
+{\footnotesize\ttfamily \label{_de_electronique_8h_a2b7baeecff321599b1ce6a9cd382d3be} 
+void DISPLAYNONUM (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Éteint toutes les LEDs du dé. 
+
+Met toutes les sorties LED à 0 pour éteindre l\textquotesingle{}affichage du dé. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_de_electronique_8h_a2b7baeecff321599b1ce6a9cd382d3be_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_de_electronique_8h_aed74f9affa4c12dd6010eada444c278e}\index{DeElectronique.h@{DeElectronique.h}!fade@{fade}}
+\index{fade@{fade}!DeElectronique.h@{DeElectronique.h}}
+\doxysubsubsection{\texorpdfstring{fade()}{fade()}}
+{\footnotesize\ttfamily \label{_de_electronique_8h_aed74f9affa4c12dd6010eada444c278e} 
+char fade (\begin{DoxyParamCaption}\item[{char}]{duty\+Cycle}{}\end{DoxyParamCaption})}
+
+
+
+Applique un effet de fondu sur le PWM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duty\+Cycle} & Rapport cyclique actuel. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nouveau rapport cyclique. 
+\end{DoxyReturn}
+\Hypertarget{_de_electronique_8h_a19aa8cfabaac6b4b667a1aa5af004484}\index{DeElectronique.h@{DeElectronique.h}!RandomNum@{RandomNum}}
+\index{RandomNum@{RandomNum}!DeElectronique.h@{DeElectronique.h}}
+\doxysubsubsection{\texorpdfstring{RandomNum()}{RandomNum()}}
+{\footnotesize\ttfamily \label{_de_electronique_8h_a19aa8cfabaac6b4b667a1aa5af004484} 
+void Random\+Num (\begin{DoxyParamCaption}\item[{int}]{Number}{}\end{DoxyParamCaption})}
+
+
+
+Affiche un nombre aléatoire entre 1 et 6 sur le dé. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Number} & Nombre à afficher.\\
+\hline
+\end{DoxyParams}
+Utilise le modulo pour garantir une valeur entre 1 et 6. 
+\begin{DoxyParams}{Parameters}
+{\em Number} & Nombre à afficher. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{_de_electronique_8h_a19aa8cfabaac6b4b667a1aa5af004484_cgraph}
+\end{center}
+\end{figure}

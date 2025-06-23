@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=2113_DeElectronique_V1.X
+PROJECTNAME=2113_DeElectronique_V2.X
 
 # Active Configuration
 DEFAULTCONF=default

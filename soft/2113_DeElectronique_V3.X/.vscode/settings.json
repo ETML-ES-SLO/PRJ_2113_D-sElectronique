@@ -1,0 +1,7 @@
+{
+    "mplab.clangd.arguments": [
+        "--compile-commands-dir=${workspaceRoot}\\_build\\2113_DeElectronique_V3\\default"
+    ],
+    "mplab.clangd.path": "",
+    "C_Cpp.intelliSenseEngine": "disabled"
+}

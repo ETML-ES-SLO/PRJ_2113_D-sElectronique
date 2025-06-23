@@ -1,0 +1,74 @@
+\doxysection{Main.\+h}
+\hypertarget{_main_8h_source}{}\label{_main_8h_source}\mbox{\hyperlink{_main_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ Main.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ maxcolloud}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ October\ 26,\ 2021,\ 10:37\ AM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ MAIN\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ MAIN\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}stdint.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}stdbool.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{//set\ the\ display\ time\ to\ 10s\ \ cause\ setting\ are\ in\ ms\ \ \ }}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ DISPLAYTIME\ \ 3000\ }\textcolor{comment}{//set\ to\ 3S}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ STEPON\ 3\ }\textcolor{comment}{//there\ is\ 3\ step\ in\ display\ sequence}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ DISPLAY\_UP\ \ 1000\ }\textcolor{comment}{//ramp\ up\ is\ 1s}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ DISPLAY\_ON\ \ 1000\ \ \ \ }\textcolor{comment}{//static\ up\ is\ 1s}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ DISPLAY\_DODW\ \ \ \ 1000\ \ \ \ }\textcolor{comment}{//ramp\ down\ is\ 1s}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ STEPPWM\ 10\ \ \ \ }\textcolor{comment}{//there\ is\ 10\ \ step\ to\ do\ }}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ STEPWMSEC\ (DISPLAY\_ON/STEPPWM)\ }\textcolor{comment}{//so\ this\ is\ the\ time\ per\ pwm\ step\ }}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ TIMERATIO\ 1000\ }\textcolor{comment}{//and\ this\ is\ time\ ratio\ cause\ 1s=\ 1000ms}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_main_8h_aa65e3b592c27609a542733310b34f5d9ab5575ced64a85a80c2a5291874b2260e}{RAMPUP}},}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_main_8h_aa65e3b592c27609a542733310b34f5d9a2a89782e8e8f6c0c05b2d210691785ba}{RAMPSTATIC}},}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_main_8h_aa65e3b592c27609a542733310b34f5d9a7d6a07aa33f1af3a304e45232fc6024a}{RAMPDOWN}},}
+\DoxyCodeLine{00031\ \ \ \ \ \}\ \mbox{\hyperlink{_main_8h_aa65e3b592c27609a542733310b34f5d9}{sens}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_main_8h_aa19be6305a5a4485e1e70de70ed7d677af38a4894f599027defe062e4f1577048}{APP\_INIT}},}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_main_8h_aa19be6305a5a4485e1e70de70ed7d677a3190183ccf4ade1010f5e3dae417b3f0}{APP\_WAIT\_FOR\_INT}},}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_main_8h_aa19be6305a5a4485e1e70de70ed7d677aaf877a9f996db43dc8938b1336d9ff74}{APP\_CALC}},}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_main_8h_aa19be6305a5a4485e1e70de70ed7d677a7d5eb351e5f8c0253242f8f710ce15e9}{APP\_DISPLAY}},}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_main_8h_aa19be6305a5a4485e1e70de70ed7d677a87ea3abd92e38c30fe6e683fbe9f5238}{APP\_DELAY}},}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_main_8h_aa19be6305a5a4485e1e70de70ed7d677aaf1a97b54c86f50867979727be16f3a9}{APP\_KILL}},}
+\DoxyCodeLine{00040\ \ \ \ \ \}\ \mbox{\hyperlink{_main_8h_aa19be6305a5a4485e1e70de70ed7d677}{states}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structapp_data_a0b57aa10271a66f3dc936bba1d2f3830}{state}};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structapp_data_a77acccb471d413f2a269d0ab4a7b529d}{disp}};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structapp_data_aad83fe6a88c6192a84d6a4611bdd7433}{firstTimeSincePowerUp}};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structapp_data_a66b353b5823279a62385758e1652a43b}{shakenHasOccured}};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structapp_data_a42cb580157451995c4f80dd588d638c9}{anymHasOccured}};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structapp_data_a3b98f7c2463a4ee686752b1b9577a022}{APP\_DelayTimeIsRunning}};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structapp_data_a05390bfb0cd9f4c2a1c7d5b994c83fc2}{AppDelay}};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structapp_data_ade818037fd6c985038ff29656089758d}{status}};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structapp_data_a16309b30f805fad761343a13a379c0f7}{nombreEntier}};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structapp_data_a858b3ed855e3dfc9a6a0e8ac44be25d3}{RC}};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structapp_data_a542b326dde2570543add3f490ae3af81}{cntPwmWaiting}};}
+\DoxyCodeLine{00054\ \ \ \ \ \}\ \mbox{\hyperlink{structapp_data}{appData}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_main_8h_af17135b0b2caa21b1a63311721256716}{APP\_WaitStart}}(uint16\_t\ waitingTime);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_main_8h_a752c081d384b751671e688f2ddfc6a1e}{APP\_TMR1\_CallBack}}();}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_main_8h_a7271e512a31b59dc88d9d9e17f5d4b16}{APP\_WaitStart\_noBlocking}}();}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_main_8h_a4fa8fbe773cf61081a19c1a85c05ff51}{SetStates}}(\mbox{\hyperlink{_main_8h_aa19be6305a5a4485e1e70de70ed7d677}{states}}\ newstate);}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_main_8h_a096c0676aeef0819a2515076d21a363e}{APP\_CORETIMER\_CALLBACK}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00082\ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ MAIN\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00087\ }
+
+\end{DoxyCode}

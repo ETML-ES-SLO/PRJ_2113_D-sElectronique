@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/2113_DeElectronique_V1.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=2113_DeElectronique_V1.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=2113deelectroniquev1.x/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/2113_DeElectronique_V2.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=2113_DeElectronique_V2.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=2113deelectroniquev2.x/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/2113deelectroniquev1.x/bin
+makeDirectory ${TMPDIR}/2113deelectroniquev2.x/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/2113deelectroniquev1.x.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/2113deelectroniquev2.x.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/2113deelectroniquev1.x.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/2113deelectroniquev2.x.tar *
 checkReturnCode
 
 # Cleanup
