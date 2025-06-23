@@ -62,6 +62,13 @@ La version 3 de cette application est conçue et testée avec :
     MPLAB         :  MPLAB X v5.50
 ```
 
+## Versionning 
+ Latest Hardware : 2113E_DeElectronique
+ Latest Software : 2113_DeElectonique_V3.X_2024
+
+
+le Hardware version D et E sont compatibles avec le soft V3  
+
 ## Compilation
 
 1. crée un dossier "PROJ" sous" C:\microchip\harmony\v2_06\apps\"
