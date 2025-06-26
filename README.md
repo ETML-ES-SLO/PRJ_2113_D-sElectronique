@@ -87,9 +87,8 @@ le Hardware version D et E sont compatibles avec le soft V3
 
 ## Etat actuel 
 
-- Possibilité d'apparition de l'interruption sans que le microcontroleur ne soit totalement éteind/allumé à déterminer. 
+- Il faut changer les résistances en sortie du DC/DC 1k & 5k6 --> 10k & 56k 
 
-- Après quelques rolls de dé puis laisser ~2h un roll était toujour possible aucun problème... (n'empêche pas le point précédent)
 
 ### Résultat des tirrages 
 - sur 130 tirrages: 
