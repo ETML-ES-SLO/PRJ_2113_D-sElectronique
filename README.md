@@ -81,13 +81,14 @@ le Hardware version D et E sont compatibles avec le soft V3
 ## Utilisation
 
 - Chargez le firmware sur la carte cible (2113E_DeElectronique) via MPLAB X (la carte doit être alimentée en +1,5V).
+- Maintenire le bouton S1 enfoncer pendant la durée de programmation de la carte.
 - Retirer la sonde de programation (snap/icd4) appuyer sur le switch environs 1s.
 - secouer
 - pour éteindre: retirer la pile 
 
 ## Etat actuel 
 
-- Il faut changer les résistances en sortie du DC/DC 1k & 5k6 --> 10k & 56k 
+- Les résistances R14 et R17 ont été changées, 1k & 5k6 --> 10k & 56k.
 
 
 ### Résultat des tirrages 
