@@ -138,6 +138,8 @@ Les autres diagrammes sont disponibles sous "C:\microchip\harmony\v2_06\apps\PRO
 
 
 Nouvelle version (V4)
+
+
 ![Texte alternatif](doc/Version_4/Machines_d_etat/Machin_d_etat_De_Electronique_finale_code_V4.png)
 
 
