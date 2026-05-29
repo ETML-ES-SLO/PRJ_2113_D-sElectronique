@@ -1,4 +1,4 @@
-# 2113_DeElectronique_V3
+# 2113_DeElectronique_V4
 
 Ce projet implémente une application pour microcontrôleur PIC32MM0064GPL020, développée avec MPLAB X et XC32.
 
@@ -47,6 +47,11 @@ La documentation technique est générée avec Doxygen.
 - Refactorisation et amélioration des commentaires pour une meilleure génération de documentation Doxygen.
 - Refactorisation de la structure principale du main.
 
+## Modifications apportées entre V3 et V4
+- Ajout d'un chenillard dans l'état APP_INIT pour tester les LED.
+- Mise en commentaire de l'état APP_KILL et ajout de l'état APP_SLEEP.
+- Modification du code de manière à ce que le chenillard se déclanche uniquement lorsque la pile est enlevée et remise.
+
 ## Informations de générations
 
 ```
@@ -60,19 +65,24 @@ Les drivers générés sont testés avec :
 La version 3 de cette application est conçue et testée avec :
     Compiler      :  XC32 v2.5 
     MPLAB         :  MPLAB X v5.50
+
+La version 4 de cette application est conçue et testée avec :
+    Compiler      :  XC32 v2.5 
+    MPLAB         :  MPLAB X v6.15
 ```
 
 ## Versionning 
  Latest Hardware : 2113E_DeElectronique
  
- Latest Software : 2113_DeElectonique_V3.X_2024
+ Latest Software : 2113_DeElectonique_V4.X_2026
 
+Le Hardware version D et E sont compatibles avec le soft V3
 
-le Hardware version D et E sont compatibles avec le soft V3  
+Le Hardware version E sont compatibles avec le soft V4
 
 ## Compilation
 
-1. crée un dossier "PROJ" sous" C:\microchip\harmony\v2_06\apps\"
+1. Crée un dossier "PROJ" sous" C:\microchip\harmony\v2_06\apps\"
 2. Cloner ce dépôt à l'intérieur  le chemin devrais être : "C:\microchip\harmony\v2_06\apps\PROJ\PRJ_2113_D-sElectronique"
 4. Ouvrez le projet dans MPLAB X.
 5. Sélectionnez le compilateur XC32 v2.5.
@@ -83,8 +93,8 @@ le Hardware version D et E sont compatibles avec le soft V3
 - Chargez le firmware sur la carte cible (2113E_DeElectronique) via MPLAB X (la carte doit être alimentée en +1,5V).
 - Maintenire le bouton S1 enfoncer pendant la durée de programmation de la carte.
 - Retirer la sonde de programation (snap/icd4) appuyer sur le switch environs 1s.
-- secouer
-- pour éteindre: retirer la pile 
+- Secouer
+- Pour éteindre: retirer la pile 
 
 ## Etat actuel 
 
@@ -118,12 +128,20 @@ Précédente version (V2)
 
 <img src="https://github.com/user-attachments/assets/d62e0037-c5a4-41ff-92a0-f798ec1ad384" alt="drawing" width="200"/>
 
-Nouvelle version (V3) 
+Précédente version (V3) 
 
 
 <img src="https://github.com/user-attachments/assets/66971962-94b2-4289-b230-344099b36478 " alt="drawing" width="700"/>
 
-les autres diagrammes sont disponibles sous "C:\microchip\harmony\v2_06\apps\PROJ\PRJ_2113_D-sElectronique\soft\2113_DeElectronique_V3.X\code2flow"
+Les autres diagrammes sont disponibles sous "C:\microchip\harmony\v2_06\apps\PROJ\PRJ_2113_D-sElectronique\soft\2113_DeElectronique_V3.X\code2flow"
+
+
+
+Nouvelle version (V4)
+
+<img scr="https://github.com/ETML-ES-SLO/PRJ_2113_D-sElectronique/blob/Kazanaris-patch-1/doc/Version%204/Machines%20d'%C3%A9tat/Machin%20d'%C3%A9tat%20d%C3%A9%20%C3%A9lectronique%20finale%20code%20V4.drawio.png">
+
+Les autres diagrammes sont disponibles sous "C:\microchip\harmony\v2_06\apps\PROJ\PRJ_2113_D-sElectronique\doc\Version 4\Machines d'état"
 
 ## Ressources
 
