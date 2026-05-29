@@ -1,0 +1,668 @@
+\doxysection{Accelerometre.\+c File Reference}
+\hypertarget{_accelerometre_8c}{}\label{_accelerometre_8c}\index{Accelerometre.c@{Accelerometre.c}}
+{\ttfamily \#include "{}Accelerometre.\+h"{}}\newline
+{\ttfamily \#include "{}main.\+h"{}}\newline
+{\ttfamily \#include "{}mcc\+\_\+generated\+\_\+files/spi1.\+h"{}}\newline
+{\ttfamily \#include "{}mcc\+\_\+generated\+\_\+files/pin\+\_\+manager.\+h"{}}\newline
+{\ttfamily \#include "{}Mc32\+Delays.\+h"{}}\newline
+{\ttfamily \#include "{}De\+Electronique.\+h"{}}\newline
+Include dependency graph for Accelerometre.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_accelerometre_8c_a35beee7b0f2f3e294c4a4a69a5f02df4}{DUMMY}}~0x\+A5
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_accelerometre_8c_a8ea12ebbf01e3244f8119d5b9cbf6308}{MC3419\+\_\+\+Write\+Any\+Motion\+Register}} (uint16\+\_\+t treshold)
+\begin{DoxyCompactList}\small\item\em Écrit la valeur du seuil Any\+Motion dans le registre du capteur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_accelerometre_8c_a53d6ab39b4d4e5ba1643be45970ab18e}{MC3419\+\_\+\+Write\+Any\+Motion\+Debounce\+Register}} (uint8\+\_\+t tresholda)
+\begin{DoxyCompactList}\small\item\em Écrit la valeur de debounce Any\+Motion dans le registre du capteur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_accelerometre_8c_a3add481cd74b85a6100f501bc62df540}{MC3419\+\_\+start}} ()
+\begin{DoxyCompactList}\small\item\em Initialise le capteur MC34\+X9 avec la configuration par défaut. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_accelerometre_8c_a9ae57db275809bc093fb879e023b3c5e}{MC3419\+\_\+\+Set\+Mode}} (\mbox{\hyperlink{_accelerometre_8h_a1bcf1455c237d009bb5dccbee830bc1a}{MC3419\+\_\+\+Mode}} Mode)
+\begin{DoxyCompactList}\small\item\em Définit le mode de fonctionnement du capteur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_accelerometre_8c_a62f3cae572e3dbb5e9c5543c135ab40a}{MC3419\+\_\+\+Set\+Rangle\+Ctrl}} (\mbox{\hyperlink{_accelerometre_8h_a52b55d45128b335a672fb9ad0452f4cd}{MC3419\+\_\+\+Range}} \mbox{\hyperlink{_accelerometre_8h_a52b55d45128b335a672fb9ad0452f4cda3f15ba0b662047955ed6b1f0c646d149}{Range}})
+\begin{DoxyCompactList}\small\item\em Définit la plage de mesure du capteur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_accelerometre_8c_ade2d67869fb287b6fce417a7c7345db5}{MC3419\+\_\+\+Set\+Sample\+Rate}} (\mbox{\hyperlink{_accelerometre_8h_aab254000632699510f54fe8756d92252}{MC3419\+\_\+\+Sampl\+Rate}} Sample\+Rate)
+\begin{DoxyCompactList}\small\item\em Définit la fréquence d\textquotesingle{}échantillonnage du capteur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_accelerometre_8c_ab015f0c9af2205780b56a76cacc4c51b}{MC3419\+\_\+wake}} (void)
+\begin{DoxyCompactList}\small\item\em Met le capteur en mode wake (actif). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_accelerometre_8c_ae3823d6c06bbb5bf70eaaac1ce81553c}{MC3419\+\_\+stop}} (void)
+\begin{DoxyCompactList}\small\item\em Met le capteur en mode standby (veille). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_accelerometre_8c_a85c42d11f42919bc5139bb178d08827a}{MC3419\+\_\+reset}} (void)
+\begin{DoxyCompactList}\small\item\em Effectue un reset initial du capteur. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_accelerometre_8c_a2bd4c1299cf6f9e6428ff7f673d2f93c}{MC3419\+\_\+\+ID}} (void)
+\begin{DoxyCompactList}\small\item\em Lit l\textquotesingle{}identifiant du capteur. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_accelerometre_8c_a45a6c20144b882f4067231cc340b942c}{Read\+Register8}} (uint8\+\_\+t address)
+\begin{DoxyCompactList}\small\item\em Lit un registre 8 bits du capteur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_accelerometre_8c_a43618e36fd841e9db9fc0463f6c5d129}{write\+Register8}} (uint8\+\_\+t address, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Écrit une valeur 8 bits dans un registre du capteur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_accelerometre_8c_a400d64d562188710fb88ed74c78c3b5e}{MC3419\+\_\+\+Pol\+\_\+\+INT}} (\mbox{\hyperlink{_accelerometre_8h_a620926c3f995817e2771c94edf7d8d86}{MC3419\+\_\+\+GPIO\+\_\+\+CTRL}} GPIO\+\_\+\+CTRL)
+\begin{DoxyCompactList}\small\item\em Définit la polarité des interruptions du capteur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_accelerometre_8c_aef9e9192376cba0f970489c16b859d34}{MC3419\+\_\+\+INT\+\_\+\+Enable}} (\mbox{\hyperlink{_accelerometre_8h_afcafa840f77217dec873ff5b87f35106}{MC3419\+\_\+\+INTR\+\_\+\+CTRL}} INTR\+\_\+\+CTRL)
+\begin{DoxyCompactList}\small\item\em Active les interruptions du capteur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_accelerometre_8c_a1d456db336854318ada175c9dff045cc}{MC3419\+\_\+\+Motion\+CTRL}} (\mbox{\hyperlink{_accelerometre_8h_a509f068133649aadfd1b9dea6b6179ff}{MC3419\+\_\+\+Motion\+Control}} Motion)
+\begin{DoxyCompactList}\small\item\em Configure le contrôle de mouvement du capteur. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_accelerometre_8c_af397831feaa9e0d72ba45e015ada2f45}{MC3419\+\_\+\+Read\+Status\+Register}} (void)
+\begin{DoxyCompactList}\small\item\em Lit le registre de statut des interruptions du capteur. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_accelerometre_8c_a75f1ecb0b258afe70e52c4e36dcc92cf}{MC3419\+\_\+\+Read\+Int\+Status\+Register\+And\+Ack}} (void)
+\begin{DoxyCompactList}\small\item\em Lit et acquitte le registre de statut des interruptions du capteur. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_accelerometre_8c_aaafb26a88f3f595d3777156bb382fd4d}{MC3419\+\_\+\+Fi\+Fo\+\_\+\+CTRL\+\_\+\+REG}} (\mbox{\hyperlink{_accelerometre_8h_a9785e3876466c336ec45c5c9a4d3ce6a}{MC3419\+\_\+\+FIFO\+\_\+\+CTRL}} Val\+CTRL)
+\begin{DoxyCompactList}\small\item\em Configure le registre de contrôle FIFO du capteur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_accelerometre_8c_a56de8318574314b7a4dccdaed9ae50a9}{MC3419\+\_\+\+FIFO\+\_\+\+TRESHOLD}} (uint8\+\_\+t Fifo\+\_\+\+Tresh)
+\begin{DoxyCompactList}\small\item\em Définit le seuil FIFO du capteur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_accelerometre_8c_a49dceec14f9d0b58dc84479135961ce5}{MC3419\+\_\+\+Write\+Shake\+Threshold\+Register}} (uint16\+\_\+t Value)
+\begin{DoxyCompactList}\small\item\em Écrit le seuil de détection de secousse (Shake) dans le capteur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_accelerometre_8c_a70eedb9d2a233fac909f9461310be1b2}{MC3419\+\_\+\+Write\+Shake\+Duration\+And\+P2\+PRegister}} (uint8\+\_\+t shake\+Duration, uint16\+\_\+t shake\+P2P)
+\begin{DoxyCompactList}\small\item\em Écrit la durée et la valeur P2P de secousse dans le capteur. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_accelerometre_8c_a24b81b9170980c73554d363bd7c2257b}{MC3419\+\_\+clear\+Register}} (void)
+\begin{DoxyCompactList}\small\item\em Efface le registre de statut des interruptions du capteur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_accelerometre_8c_a35beee7b0f2f3e294c4a4a69a5f02df4}\index{Accelerometre.c@{Accelerometre.c}!DUMMY@{DUMMY}}
+\index{DUMMY@{DUMMY}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{DUMMY}{DUMMY}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a35beee7b0f2f3e294c4a4a69a5f02df4} 
+\#define DUMMY~0x\+A5}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_accelerometre_8c_a24b81b9170980c73554d363bd7c2257b}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_clearRegister@{MC3419\_clearRegister}}
+\index{MC3419\_clearRegister@{MC3419\_clearRegister}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_clearRegister()}{MC3419\_clearRegister()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a24b81b9170980c73554d363bd7c2257b} 
+uint8\+\_\+t MC3419\+\_\+clear\+Register (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Efface le registre de statut des interruptions du capteur. 
+
+\begin{DoxyReturn}{Returns}
+Statut effacé 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{_accelerometre_8c_a24b81b9170980c73554d363bd7c2257b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{_accelerometre_8c_a24b81b9170980c73554d363bd7c2257b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_aaafb26a88f3f595d3777156bb382fd4d}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_FiFo\_CTRL\_REG@{MC3419\_FiFo\_CTRL\_REG}}
+\index{MC3419\_FiFo\_CTRL\_REG@{MC3419\_FiFo\_CTRL\_REG}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_FiFo\_CTRL\_REG()}{MC3419\_FiFo\_CTRL\_REG()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_aaafb26a88f3f595d3777156bb382fd4d} 
+uint8\+\_\+t MC3419\+\_\+\+Fi\+Fo\+\_\+\+CTRL\+\_\+\+REG (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_accelerometre_8h_a9785e3876466c336ec45c5c9a4d3ce6a}{MC3419\+\_\+\+FIFO\+\_\+\+CTRL}}}]{Val\+CTRL}{}\end{DoxyParamCaption})}
+
+
+
+Configure le registre de contrôle FIFO du capteur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Val\+CTRL} & Valeur de configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Valeur précédente lue 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{_accelerometre_8c_aaafb26a88f3f595d3777156bb382fd4d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a56de8318574314b7a4dccdaed9ae50a9}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_FIFO\_TRESHOLD@{MC3419\_FIFO\_TRESHOLD}}
+\index{MC3419\_FIFO\_TRESHOLD@{MC3419\_FIFO\_TRESHOLD}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_FIFO\_TRESHOLD()}{MC3419\_FIFO\_TRESHOLD()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a56de8318574314b7a4dccdaed9ae50a9} 
+void MC3419\+\_\+\+FIFO\+\_\+\+TRESHOLD (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Fifo\+\_\+\+Tresh}{}\end{DoxyParamCaption})}
+
+
+
+Définit le seuil FIFO du capteur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Fifo\+\_\+\+Tresh} & Seuil FIFO \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{_accelerometre_8c_a56de8318574314b7a4dccdaed9ae50a9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a2bd4c1299cf6f9e6428ff7f673d2f93c}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_ID@{MC3419\_ID}}
+\index{MC3419\_ID@{MC3419\_ID}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_ID()}{MC3419\_ID()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a2bd4c1299cf6f9e6428ff7f673d2f93c} 
+uint8\+\_\+t MC3419\+\_\+\+ID (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Lit l\textquotesingle{}identifiant du capteur. 
+
+\begin{DoxyReturn}{Returns}
+Valeur de l\textquotesingle{}ID 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{_accelerometre_8c_a2bd4c1299cf6f9e6428ff7f673d2f93c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_aef9e9192376cba0f970489c16b859d34}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_INT\_Enable@{MC3419\_INT\_Enable}}
+\index{MC3419\_INT\_Enable@{MC3419\_INT\_Enable}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_INT\_Enable()}{MC3419\_INT\_Enable()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_aef9e9192376cba0f970489c16b859d34} 
+void MC3419\+\_\+\+INT\+\_\+\+Enable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_accelerometre_8h_afcafa840f77217dec873ff5b87f35106}{MC3419\+\_\+\+INTR\+\_\+\+CTRL}}}]{INTR\+\_\+\+CTRL}{}\end{DoxyParamCaption})}
+
+
+
+Active les interruptions du capteur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em INTR\+\_\+\+CTRL} & Masque d\textquotesingle{}interruptions à activer \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_aef9e9192376cba0f970489c16b859d34_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_aef9e9192376cba0f970489c16b859d34_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a1d456db336854318ada175c9dff045cc}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_MotionCTRL@{MC3419\_MotionCTRL}}
+\index{MC3419\_MotionCTRL@{MC3419\_MotionCTRL}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_MotionCTRL()}{MC3419\_MotionCTRL()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a1d456db336854318ada175c9dff045cc} 
+void MC3419\+\_\+\+Motion\+CTRL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_accelerometre_8h_a509f068133649aadfd1b9dea6b6179ff}{MC3419\+\_\+\+Motion\+Control}}}]{Motion}{}\end{DoxyParamCaption})}
+
+
+
+Configure le contrôle de mouvement du capteur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Motion} & Masque de configuration \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a1d456db336854318ada175c9dff045cc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a1d456db336854318ada175c9dff045cc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a400d64d562188710fb88ed74c78c3b5e}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_Pol\_INT@{MC3419\_Pol\_INT}}
+\index{MC3419\_Pol\_INT@{MC3419\_Pol\_INT}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_Pol\_INT()}{MC3419\_Pol\_INT()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a400d64d562188710fb88ed74c78c3b5e} 
+void MC3419\+\_\+\+Pol\+\_\+\+INT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_accelerometre_8h_a620926c3f995817e2771c94edf7d8d86}{MC3419\+\_\+\+GPIO\+\_\+\+CTRL}}}]{GPIO\+\_\+\+CTRL}{}\end{DoxyParamCaption})}
+
+
+
+Définit la polarité des interruptions du capteur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIO\+\_\+\+CTRL} & Configuration GPIO \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a400d64d562188710fb88ed74c78c3b5e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a400d64d562188710fb88ed74c78c3b5e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a75f1ecb0b258afe70e52c4e36dcc92cf}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_ReadIntStatusRegisterAndAck@{MC3419\_ReadIntStatusRegisterAndAck}}
+\index{MC3419\_ReadIntStatusRegisterAndAck@{MC3419\_ReadIntStatusRegisterAndAck}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_ReadIntStatusRegisterAndAck()}{MC3419\_ReadIntStatusRegisterAndAck()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a75f1ecb0b258afe70e52c4e36dcc92cf} 
+uint8\+\_\+t MC3419\+\_\+\+Read\+Int\+Status\+Register\+And\+Ack (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Lit et acquitte le registre de statut des interruptions du capteur. 
+
+\begin{DoxyReturn}{Returns}
+Valeur lue 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a75f1ecb0b258afe70e52c4e36dcc92cf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a75f1ecb0b258afe70e52c4e36dcc92cf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_af397831feaa9e0d72ba45e015ada2f45}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_ReadStatusRegister@{MC3419\_ReadStatusRegister}}
+\index{MC3419\_ReadStatusRegister@{MC3419\_ReadStatusRegister}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_ReadStatusRegister()}{MC3419\_ReadStatusRegister()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_af397831feaa9e0d72ba45e015ada2f45} 
+uint8\+\_\+t MC3419\+\_\+\+Read\+Status\+Register (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Lit le registre de statut des interruptions du capteur. 
+
+\begin{DoxyReturn}{Returns}
+Statut des interruptions 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{_accelerometre_8c_af397831feaa9e0d72ba45e015ada2f45_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{_accelerometre_8c_af397831feaa9e0d72ba45e015ada2f45_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a85c42d11f42919bc5139bb178d08827a}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_reset@{MC3419\_reset}}
+\index{MC3419\_reset@{MC3419\_reset}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_reset()}{MC3419\_reset()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a85c42d11f42919bc5139bb178d08827a} 
+void MC3419\+\_\+reset (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Effectue un reset initial du capteur. 
+
+Réinitialise le capteur.
+
+Met le capteur en veille, attend, effectue un power-\/on-\/reset, désactive les interruptions. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a85c42d11f42919bc5139bb178d08827a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{_accelerometre_8c_a85c42d11f42919bc5139bb178d08827a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a9ae57db275809bc093fb879e023b3c5e}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_SetMode@{MC3419\_SetMode}}
+\index{MC3419\_SetMode@{MC3419\_SetMode}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_SetMode()}{MC3419\_SetMode()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a9ae57db275809bc093fb879e023b3c5e} 
+void MC3419\+\_\+\+Set\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_accelerometre_8h_a1bcf1455c237d009bb5dccbee830bc1a}{MC3419\+\_\+\+Mode}}}]{Mode}{}\end{DoxyParamCaption})}
+
+
+
+Définit le mode de fonctionnement du capteur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Mode} & Mode à appliquer \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{_accelerometre_8c_a9ae57db275809bc093fb879e023b3c5e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a9ae57db275809bc093fb879e023b3c5e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a62f3cae572e3dbb5e9c5543c135ab40a}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_SetRangleCtrl@{MC3419\_SetRangleCtrl}}
+\index{MC3419\_SetRangleCtrl@{MC3419\_SetRangleCtrl}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_SetRangleCtrl()}{MC3419\_SetRangleCtrl()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a62f3cae572e3dbb5e9c5543c135ab40a} 
+void MC3419\+\_\+\+Set\+Rangle\+Ctrl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_accelerometre_8h_a52b55d45128b335a672fb9ad0452f4cd}{MC3419\+\_\+\+Range}}}]{Range}{}\end{DoxyParamCaption})}
+
+
+
+Définit la plage de mesure du capteur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Range} & Plage à appliquer \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a62f3cae572e3dbb5e9c5543c135ab40a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a62f3cae572e3dbb5e9c5543c135ab40a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_ade2d67869fb287b6fce417a7c7345db5}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_SetSampleRate@{MC3419\_SetSampleRate}}
+\index{MC3419\_SetSampleRate@{MC3419\_SetSampleRate}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_SetSampleRate()}{MC3419\_SetSampleRate()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_ade2d67869fb287b6fce417a7c7345db5} 
+void MC3419\+\_\+\+Set\+Sample\+Rate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_accelerometre_8h_aab254000632699510f54fe8756d92252}{MC3419\+\_\+\+Sampl\+Rate}}}]{Sample\+Rate}{}\end{DoxyParamCaption})}
+
+
+
+Définit la fréquence d\textquotesingle{}échantillonnage du capteur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Sample\+Rate} & Fréquence à appliquer \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_ade2d67869fb287b6fce417a7c7345db5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_ade2d67869fb287b6fce417a7c7345db5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a3add481cd74b85a6100f501bc62df540}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_start@{MC3419\_start}}
+\index{MC3419\_start@{MC3419\_start}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_start()}{MC3419\_start()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a3add481cd74b85a6100f501bc62df540} 
+void MC3419\+\_\+start (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initialise le capteur MC34\+X9 avec la configuration par défaut. 
+
+Initialise le capteur avec la configuration par défaut.
+
+Effectue un reset, configure la plage, la fréquence, les interruptions et met le capteur en mode actif. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a3add481cd74b85a6100f501bc62df540_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{_accelerometre_8c_a3add481cd74b85a6100f501bc62df540_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_ae3823d6c06bbb5bf70eaaac1ce81553c}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_stop@{MC3419\_stop}}
+\index{MC3419\_stop@{MC3419\_stop}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_stop()}{MC3419\_stop()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_ae3823d6c06bbb5bf70eaaac1ce81553c} 
+void MC3419\+\_\+stop (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Met le capteur en mode standby (veille). 
+
+Met le capteur en mode veille. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_ae3823d6c06bbb5bf70eaaac1ce81553c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_ae3823d6c06bbb5bf70eaaac1ce81553c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_ab015f0c9af2205780b56a76cacc4c51b}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_wake@{MC3419\_wake}}
+\index{MC3419\_wake@{MC3419\_wake}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_wake()}{MC3419\_wake()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_ab015f0c9af2205780b56a76cacc4c51b} 
+void MC3419\+\_\+wake (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Met le capteur en mode wake (actif). 
+
+Met le capteur en mode réveil. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_ab015f0c9af2205780b56a76cacc4c51b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{_accelerometre_8c_ab015f0c9af2205780b56a76cacc4c51b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a53d6ab39b4d4e5ba1643be45970ab18e}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_WriteAnyMotionDebounceRegister@{MC3419\_WriteAnyMotionDebounceRegister}}
+\index{MC3419\_WriteAnyMotionDebounceRegister@{MC3419\_WriteAnyMotionDebounceRegister}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_WriteAnyMotionDebounceRegister()}{MC3419\_WriteAnyMotionDebounceRegister()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a53d6ab39b4d4e5ba1643be45970ab18e} 
+void MC3419\+\_\+\+Write\+Any\+Motion\+Debounce\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{tresholda}{}\end{DoxyParamCaption})}
+
+
+
+Écrit la valeur de debounce Any\+Motion dans le registre du capteur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tresholda} & Valeur de debounce \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a53d6ab39b4d4e5ba1643be45970ab18e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a53d6ab39b4d4e5ba1643be45970ab18e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a8ea12ebbf01e3244f8119d5b9cbf6308}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_WriteAnyMotionRegister@{MC3419\_WriteAnyMotionRegister}}
+\index{MC3419\_WriteAnyMotionRegister@{MC3419\_WriteAnyMotionRegister}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_WriteAnyMotionRegister()}{MC3419\_WriteAnyMotionRegister()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a8ea12ebbf01e3244f8119d5b9cbf6308} 
+void MC3419\+\_\+\+Write\+Any\+Motion\+Register (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{treshold}{}\end{DoxyParamCaption})}
+
+
+
+Écrit la valeur du seuil Any\+Motion dans le registre du capteur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em treshold} & Seuil Any\+Motion (16 bits) \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a8ea12ebbf01e3244f8119d5b9cbf6308_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a8ea12ebbf01e3244f8119d5b9cbf6308_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a70eedb9d2a233fac909f9461310be1b2}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_WriteShakeDurationAndP2PRegister@{MC3419\_WriteShakeDurationAndP2PRegister}}
+\index{MC3419\_WriteShakeDurationAndP2PRegister@{MC3419\_WriteShakeDurationAndP2PRegister}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_WriteShakeDurationAndP2PRegister()}{MC3419\_WriteShakeDurationAndP2PRegister()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a70eedb9d2a233fac909f9461310be1b2} 
+void MC3419\+\_\+\+Write\+Shake\+Duration\+And\+P2\+PRegister (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{shake\+Duration}{, }\item[{uint16\+\_\+t}]{shake\+P2P}{}\end{DoxyParamCaption})}
+
+
+
+Écrit la durée et la valeur P2P de secousse dans le capteur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shake\+Duration} & Durée de secousse \\
+\hline
+{\em shake\+P2P} & Valeur P2P \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{_accelerometre_8c_a70eedb9d2a233fac909f9461310be1b2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a70eedb9d2a233fac909f9461310be1b2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a49dceec14f9d0b58dc84479135961ce5}\index{Accelerometre.c@{Accelerometre.c}!MC3419\_WriteShakeThresholdRegister@{MC3419\_WriteShakeThresholdRegister}}
+\index{MC3419\_WriteShakeThresholdRegister@{MC3419\_WriteShakeThresholdRegister}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{MC3419\_WriteShakeThresholdRegister()}{MC3419\_WriteShakeThresholdRegister()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a49dceec14f9d0b58dc84479135961ce5} 
+void MC3419\+\_\+\+Write\+Shake\+Threshold\+Register (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Value}{}\end{DoxyParamCaption})}
+
+
+
+Écrit le seuil de détection de secousse (Shake) dans le capteur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Value} & Seuil Shake \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{_accelerometre_8c_a49dceec14f9d0b58dc84479135961ce5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a49dceec14f9d0b58dc84479135961ce5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a45a6c20144b882f4067231cc340b942c}\index{Accelerometre.c@{Accelerometre.c}!ReadRegister8@{ReadRegister8}}
+\index{ReadRegister8@{ReadRegister8}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{ReadRegister8()}{ReadRegister8()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a45a6c20144b882f4067231cc340b942c} 
+uint8\+\_\+t Read\+Register8 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{address}{}\end{DoxyParamCaption})}
+
+
+
+Lit un registre 8 bits du capteur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & Adresse du registre \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Valeur lue 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a45a6c20144b882f4067231cc340b942c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_accelerometre_8c_a43618e36fd841e9db9fc0463f6c5d129}\index{Accelerometre.c@{Accelerometre.c}!writeRegister8@{writeRegister8}}
+\index{writeRegister8@{writeRegister8}!Accelerometre.c@{Accelerometre.c}}
+\doxysubsubsection{\texorpdfstring{writeRegister8()}{writeRegister8()}}
+{\footnotesize\ttfamily \label{_accelerometre_8c_a43618e36fd841e9db9fc0463f6c5d129} 
+void write\+Register8 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{address}{, }\item[{uint8\+\_\+t}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Écrit une valeur 8 bits dans un registre du capteur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & Adresse du registre \\
+\hline
+{\em data} & Donnée à écrire \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accelerometre_8c_a43618e36fd841e9db9fc0463f6c5d129_icgraph}
+\end{center}
+\end{figure}

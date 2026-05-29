@@ -1,0 +1,171 @@
+{
+    "importedFrom": "./",
+    "version": "1.4",
+    "configurations": [
+        {
+            "name": "default",
+            "id": "conf1",
+            "device": "PIC32MM0064GPL020",
+            "imageType": "application",
+            "imagePath": "./out/2113_DeElectronique_V3/default.elf",
+            "toolProperties": "default-tool",
+            "packs": [
+                {
+                    "name": "PIC32MM-GPL-0XX_DFP",
+                    "vendor": "Microchip",
+                    "version": "1.2.33"
+                }
+            ],
+            "fileSet": "Project files",
+            "toolchain": "default-XC32_15"
+        }
+    ],
+    "propertyGroups": [
+        {
+            "name": "default-XC32",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc32@2.50",
+            "properties": {
+                "assembler.extra-include-directories-for-preprocessor": [
+                    "."
+                ],
+                "assembler.extra-include-directories-for-assembler": [
+                    "."
+                ],
+                "compiler.tentative-definitions": "",
+                "compiler.extra-include-directories": [
+                    "."
+                ],
+                "compiler.additional-warnings": true,
+                "compiler++.extra-include-directories": [
+                    "."
+                ],
+                "linker.extra-lib-directories": [
+                    "."
+                ],
+                "linker.fill-flash-options-inc-const": "1",
+                "linker.map-file": "",
+                "linker.report-memory-usage": false,
+                "compiler.toplevel-reordering": "",
+                "compiler++.toplevel-reordering": "",
+                "archiver.additional-options-chop-files": false,
+                "linker.additional-options-use-response-files": false,
+                "linker.exclude-floating-point-library": false,
+                "linker.fill-flash-options-what": "0",
+                "linker.kseg-origin": "",
+                "global.legacy-libc": true
+            }
+        },
+        {
+            "name": "default-XC32_1",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc32@2.50",
+            "properties": {}
+        },
+        {
+            "name": "default-XC32_10",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc32@2.50",
+            "properties": {}
+        },
+        {
+            "name": "default-XC32_11",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc32@2.50",
+            "properties": {}
+        },
+        {
+            "name": "default-XC32_12",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc32@2.50",
+            "properties": {}
+        },
+        {
+            "name": "default-XC32_13",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc32@2.50",
+            "properties": {}
+        },
+        {
+            "name": "default-XC32_14",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc32@2.50",
+            "properties": {}
+        },
+        {
+            "name": "default-XC32_15",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc32@2.50",
+            "properties": {}
+        },
+        {
+            "name": "default-XC32_2",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc32@2.50",
+            "properties": {}
+        },
+        {
+            "name": "default-XC32_3",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc32@2.50",
+            "properties": {}
+        },
+        {
+            "name": "default-XC32_4",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc32@2.50",
+            "properties": {}
+        },
+        {
+            "name": "default-XC32_5",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc32@2.50",
+            "properties": {}
+        },
+        {
+            "name": "default-XC32_6",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc32@2.50",
+            "properties": {}
+        },
+        {
+            "name": "default-XC32_7",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc32@2.50",
+            "properties": {}
+        },
+        {
+            "name": "default-XC32_8",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc32@2.50",
+            "properties": {}
+        },
+        {
+            "name": "default-XC32_9",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc32@2.50",
+            "properties": {}
+        },
+        {
+            "name": "default-tool",
+            "type": "tool",
+            "properties": {
+                "memories.programmemory.ranges": "1d000000-1d00ffff",
+                "programmerToGoFilePath": "C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/debug/default/2113_DeElectronique_V3_ptg"
+            }
+        }
+    ],
+    "fileSets": [
+        {
+            "name": "Project files",
+            "files": [
+                "Makefile",
+                "*.c",
+                "*.h",
+                "*.mc3",
+                "mcc_generated_files/*"
+            ],
+            "encoding": "ISO-8859-1"
+        }
+    ]
+}

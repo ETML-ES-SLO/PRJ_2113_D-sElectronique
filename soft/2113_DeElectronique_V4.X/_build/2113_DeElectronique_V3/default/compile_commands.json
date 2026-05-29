@@ -1,0 +1,80 @@
+[
+{
+  "directory": "C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default",
+  "command": "c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\xc32-gcc.exe -DXPRJ_default=default -x c -g -x c -c -mprocessor=32MM0064GPL020 -fno-common -o CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\Accelerometre.c.o -c C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\Accelerometre.c",
+  "file": "C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\Accelerometre.c",
+  "output": "CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\Accelerometre.c.o"
+},
+{
+  "directory": "C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default",
+  "command": "c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\xc32-gcc.exe -DXPRJ_default=default -x c -g -x c -c -mprocessor=32MM0064GPL020 -fno-common -o CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\DeElectronique.c.o -c C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\DeElectronique.c",
+  "file": "C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\DeElectronique.c",
+  "output": "CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\DeElectronique.c.o"
+},
+{
+  "directory": "C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default",
+  "command": "c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\xc32-gcc.exe -DXPRJ_default=default -x c -g -x c -c -mprocessor=32MM0064GPL020 -fno-common -o CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\Mc32Delays.c.o -c C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\Mc32Delays.c",
+  "file": "C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\Mc32Delays.c",
+  "output": "CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\Mc32Delays.c.o"
+},
+{
+  "directory": "C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default",
+  "command": "c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\xc32-gcc.exe -DXPRJ_default=default -x c -g -x c -c -mprocessor=32MM0064GPL020 -fno-common -o CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\main.c.o -c C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\main.c",
+  "file": "C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\main.c",
+  "output": "CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\main.c.o"
+},
+{
+  "directory": "C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default",
+  "command": "c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\xc32-gcc.exe -DXPRJ_default=default -x c -g -x c -c -mprocessor=32MM0064GPL020 -fno-common -o CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\clock.c.o -c C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\clock.c",
+  "file": "C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\clock.c",
+  "output": "CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\clock.c.o"
+},
+{
+  "directory": "C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default",
+  "command": "c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\xc32-gcc.exe -DXPRJ_default=default -x c -g -x c -c -mprocessor=32MM0064GPL020 -fno-common -o CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\coretimer.c.o -c C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\coretimer.c",
+  "file": "C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\coretimer.c",
+  "output": "CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\coretimer.c.o"
+},
+{
+  "directory": "C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default",
+  "command": "c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\xc32-gcc.exe -DXPRJ_default=default -x c -g -x c -c -mprocessor=32MM0064GPL020 -fno-common -o CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\exceptions.c.o -c C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\exceptions.c",
+  "file": "C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\exceptions.c",
+  "output": "CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\exceptions.c.o"
+},
+{
+  "directory": "C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default",
+  "command": "c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\xc32-gcc.exe -DXPRJ_default=default -x c -g -x c -c -mprocessor=32MM0064GPL020 -fno-common -o CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\interrupt_manager.c.o -c C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\interrupt_manager.c",
+  "file": "C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\interrupt_manager.c",
+  "output": "CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\interrupt_manager.c.o"
+},
+{
+  "directory": "C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default",
+  "command": "c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\xc32-gcc.exe -DXPRJ_default=default -x c -g -x c -c -mprocessor=32MM0064GPL020 -fno-common -o CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\mcc.c.o -c C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\mcc.c",
+  "file": "C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\mcc.c",
+  "output": "CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\mcc.c.o"
+},
+{
+  "directory": "C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default",
+  "command": "c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\xc32-gcc.exe -DXPRJ_default=default -x c -g -x c -c -mprocessor=32MM0064GPL020 -fno-common -o CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\pin_manager.c.o -c C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\pin_manager.c",
+  "file": "C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\pin_manager.c",
+  "output": "CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\pin_manager.c.o"
+},
+{
+  "directory": "C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default",
+  "command": "c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\xc32-gcc.exe -DXPRJ_default=default -x c -g -x c -c -mprocessor=32MM0064GPL020 -fno-common -o CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\spi1.c.o -c C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\spi1.c",
+  "file": "C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\spi1.c",
+  "output": "CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\spi1.c.o"
+},
+{
+  "directory": "C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default",
+  "command": "c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\xc32-gcc.exe -DXPRJ_default=default -x c -g -x c -c -mprocessor=32MM0064GPL020 -fno-common -o CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\system.c.o -c C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\system.c",
+  "file": "C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\system.c",
+  "output": "CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\system.c.o"
+},
+{
+  "directory": "C:/microchip/harmony/v2_06/apps/PROJ/PRJ_2113_D-sElectronique/soft/2113_DeElectronique_V3.X/_build/2113_DeElectronique_V3/default",
+  "command": "c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\xc32-gcc.exe -DXPRJ_default=default -x c -g -x c -c -mprocessor=32MM0064GPL020 -fno-common -o CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\tmr1.c.o -c C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\tmr1.c",
+  "file": "C:\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\tmr1.c",
+  "output": "CMakeFiles\\A_2113_DeElectronique_V3_default_default_XC32_15_compile.dir\\C_\\microchip\\harmony\\v2_06\\apps\\PROJ\\PRJ_2113_D-sElectronique\\soft\\2113_DeElectronique_V3.X\\mcc_generated_files\\tmr1.c.o"
+}
+]
